@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  ...
+</head>
+<body>
+  <p>hello from 11ty</p>
+  {% if build.env === "production" %}
+  <p>production</p>
+  <img src="/img/img01.png" alt="">
+  <script type="module" src="./main.js"></script>
+  {% else %}
+  <p>not prod</p>
+  <img src="/img/img01.png" alt="">
+  <script type="module" src="http://localhost:3000/src/client/main.js"></script>
+  <script type="module" src="src/client/main.js"></script>
+  {% endif %}
+
+</body>
+</html>

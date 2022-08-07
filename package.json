@@ -1,0 +1,30 @@
+{
+  "name": "portfolio2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "dev": "concurrently npm:dev:*",
+    "dev:eleventy": "eleventy --serve",
+    "dev:vite": "vite",
+    "build": "npm run build:vite && npm run build:eleventy",
+    "build:eleventy": "NODE_ENV=production eleventy",
+    "build:vite": "NODE_ENV=production vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyzuru/portfolio2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyzuru/portfolio2022/issues"
+  },
+  "homepage": "https://github.com/hyzuru/portfolio2022#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "concurrently": "^7.3.0",
+    "vite": "^3.0.4"
+  }
+}
