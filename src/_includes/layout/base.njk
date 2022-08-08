@@ -52,8 +52,7 @@ description: おいしい、ヘルシー、環境にやさしい植物肉。そ�
     {% if build.env == "production" %}
       {% viteScriptTag "src/assets/js/main.js" %}
     {% else %}
-      <script type="module" src="http://localhost:3000/@vite/client"></script>
-      <script type="module" src="http://localhost:3000/src/assets/js/main.js"></script>
+      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
     {% endif %}
   </body>
 </html>
