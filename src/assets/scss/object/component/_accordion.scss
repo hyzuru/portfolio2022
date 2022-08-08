@@ -1,0 +1,26 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* accordion */
+.c-accordion {
+  &__tab-panel {
+    height: 0;
+    overflow: hidden;
+    transition: visibility .4s ease-out, height .4s ease-out;
+
+    &[aria-hidden="true"] {
+      visibility: hidden;
+    }
+
+    &[aria-hidden="false"] {
+      visibility: visible;
+    }
+  }
+}

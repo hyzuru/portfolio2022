@@ -1,0 +1,46 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* products-pickup */
+.products-pickup {
+  &__heading {
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 20,
+      $line-height: 28,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.flex(
+        $align-items: center
+      );
+      @include m.font(
+        $color: v.$COLOR_GREEN,
+        $font-size: 24,
+        $letter-spacing: 40
+      );
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: f.rem(32) f.rem(21);
+    margin-top: f.rem(32);
+    @include m.responsive(md) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: f.rem(56) percentage(math.div(40, 1088));
+      margin-top: f.rem(36);
+    }
+  }
+}

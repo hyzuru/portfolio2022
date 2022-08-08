@@ -1,0 +1,117 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* pagination */
+.pagination {
+  .page-numbers {
+    @include m.flex(
+      $justify-content: center,
+      $align-items: center
+    );
+
+    .page-numbers {
+      margin-right: f.rem(17);
+      margin-left: f.rem(17);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 500;
+      @include m.font(
+        $font-size: 15,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        margin-right: f.rem(19);
+        margin-left: f.rem(19);
+        transition: color .3s ease-in-out;
+        @include m.font(
+          $font-size: 18
+        );
+      }
+
+      &[aria-current="page"] {
+        position: relative;
+        width: f.rem(40);
+        height: f.rem(40);
+        margin: 0;
+        border-radius: 50%;
+        background-color: v.$COLOR_YELLOW_GREEN;
+        pointer-events: none;
+        @include m.flex(
+          $justify-content: center,
+          $align-items: center
+        );
+        @include m.font(
+          $color: v.$COLOR_WHITE
+        );
+        @include m.responsive(md) {
+          width: f.rem(56);
+          height: f.rem(56);
+        }
+      }
+
+      &.dots {
+        position: relative;
+        margin-right: f.rem(3);
+        margin-left: f.rem(3);
+        @include m.responsive(md) {
+          margin-right: f.rem(15);
+          margin-left: f.rem(15);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: f.rem(25);
+          height: f.rem(5);
+          margin-top: f.rem(5);
+          padding-top: f.rem(5);
+          padding-bottom: f.rem(5);
+          background-image: url('#{v.$root}assets/images/icon_dots.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include m.responsive(md) {
+            width: f.rem(34);
+            height: f.rem(6);
+            margin-top: f.rem(6);
+            padding-top: f.rem(6);
+            padding-bottom: f.rem(6);
+          }
+        }
+      }
+
+      @include m.hover() {
+        color: v.$COLOR_YELLOW_GREEN;
+      }
+    }
+  }
+}
+
+.review-index {
+  .page-numbers {
+    .page-numbers {
+      &.dots {
+        &::before {
+          background-color: v.$COLOR_GRAY_1;
+        }
+      }
+    }
+  }
+}
+
+.news-index {
+  .page-numbers {
+    .page-numbers {
+      &.dots {
+        &::before {
+          background-color: v.$COLOR_BEIGE;
+        }
+      }
+    }
+  }
+}

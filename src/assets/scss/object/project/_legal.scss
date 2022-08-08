@@ -1,0 +1,102 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* legal */
+.legal {
+  padding-top: f.rem(120);
+  padding-bottom: f.rem(90);
+  background-color: v.$COLOR_GRAY_5;
+  @include m.responsive(md) {
+    padding-top: f.rem(160);
+    padding-bottom: f.rem(160);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__block {
+    margin-top: f.rem(34);
+    padding: f.rem(28) f.rem(24) f.rem(64);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      margin-top: f.rem(45);
+      padding: f.rem(40) f.rem(104) f.rem(80);
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  }
+
+  &__column {
+    padding: f.rem(19.2) 0;
+    border-bottom: solid 2px v.$COLOR_GRAY_5;
+    @include m.responsive(md) {
+      padding: f.rem(33) f.rem(16);
+      @include m.flex(
+        $align-items: flex-start
+      );
+    }
+  }
+
+  &__head {
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 14,
+      $line-height: 21,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(174, 880));
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(7);
+    @include m.font(
+      $font-size: 14,
+      $line-height: 22,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(706, 880));
+      margin-top: 0;
+      padding-left: percentage(math.div(16, 880));
+      @include m.font(
+        $font-size: 14,
+        $line-height: 21
+      );
+    }
+
+    span {
+      display: block;
+      margin-bottom: f.rem(4);
+      font-weight: 600;
+      @include m.font(
+        $font-size: 14,
+        $line-height: 21,
+        $letter-spacing: 60
+      );
+      @include m.responsive(md) {
+        margin-bottom: 0;
+      }
+
+      &:not(:first-of-type) {
+        margin-top: f.rem(12);
+        @include m.responsive(md) {
+          margin-top: f.rem(16);
+        }
+      }
+    }
+  }
+}

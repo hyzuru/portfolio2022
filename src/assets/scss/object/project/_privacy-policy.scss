@@ -1,0 +1,142 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* privacy-policy */
+.privacy-policy {
+  padding-top: f.rem(120);
+  padding-bottom: f.rem(90);
+  background-color: v.$COLOR_GRAY_5;
+  @include m.responsive(md) {
+    padding-top: f.rem(160);
+    padding-bottom: f.rem(160);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__block {
+    margin-top: f.rem(34);
+    padding: f.rem(50) f.rem(24) f.rem(60);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      margin-top: f.rem(45);
+      padding: f.rem(75) f.rem(104);
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(6);
+    @include m.font(
+      $font-size: 14,
+      $line-height: 22,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+      @include m.font(
+        $font-size: 14,
+        $line-height: 21
+      );
+    }
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(16);
+    }
+  }
+
+  &__list {
+    margin-top: f.rem(10);
+    margin-bottom: f.rem(10);
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+      margin-bottom: f.rem(16);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 1em;
+    @include m.font(
+      $font-size: 14,
+      $line-height: 22,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 14,
+        $line-height: 21
+      );
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8.5px;
+      left: 2px;
+      width: f.rem(2.5);
+      height: f.rem(2.5);
+      border-radius: 50%;
+      background-color: v.$COLOR_BROWN;
+      @include m.responsive(md) {
+        width: f.rem(2);
+        height: f.rem(2);
+      }
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    @include m.font(
+      $font-size: 15,
+      $line-height: 21,
+      $letter-spacing: 60
+    );
+    margin-top: f.rem(24);
+    @include m.responsive(md) {
+      margin-top: f.rem(45);
+      @include m.font(
+        $font-size: 16,
+        $line-height: 24
+      );
+    }
+  }
+
+  &__sub-item {
+    position: relative;
+    padding-left: 0.7em;
+    @include m.font(
+      $font-size: 14,
+      $line-height: 21,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 15,
+        $line-height: 24
+      );
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: f.rem(4);
+      height: f.rem(1);
+      background-color: v.$COLOR_BROWN;
+    }
+  }
+}

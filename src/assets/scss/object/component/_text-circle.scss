@@ -1,0 +1,62 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* text-circle */
+.c-text-circle {
+  position: absolute;
+  width: f.vw(145, 375);
+  height: f.vw(145, 375);
+  will-change: transform;
+  @include m.responsive(md) {
+    width: f.vw(256, 1280);
+    height: f.vw(256, 1280);
+  }
+
+  &--drawer {
+    top: 274px;
+    right: -59px;
+    width: f.rem(156);
+    height: f.rem(156);
+    @include m.responsive(md) {
+      display: none;
+    }
+  }
+
+  &--mainvisual {
+    top: f.vw(348.75, 375);
+    right: f.vw(-64, 375);
+    @include m.responsive(md) {
+      top: f.vw(540, 1280);
+      right: f.vw(-98, 1280);
+    }
+  }
+
+  &--quality {
+    bottom: f.vw(-70, 375);
+    left: f.vw(-57, 375);
+    @include m.responsive(md) {
+      bottom: f.vw(-62, 1280);
+      left: f.vw(-76, 1280);
+    }
+  }
+
+  &--story {
+    top: f.vw(12, 375);
+    left: f.vw(-82, 375);
+    @include m.responsive(md) {
+      top: f.vw(-108, 1280);
+      left: f.vw(-96, 1280);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

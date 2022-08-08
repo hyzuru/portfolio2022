@@ -1,0 +1,226 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* news-single */
+.news-single {
+  padding-top: f.rem(128);
+  padding-bottom: f.rem(90);
+  background-color: v.$COLOR_BEIGE;
+  @include m.responsive(md) {
+    padding-top: f.rem(152);
+    padding-bottom: f.rem(160);
+  }
+
+  &__inner {
+    @include m.inner();
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__header {
+    @include m.responsive(md) {
+      padding-left: f.rem(52);
+    }
+  }
+
+  &__meta {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.flex(
+      $align-items: center
+    );
+  }
+
+  &__category {
+    width: fit-content;
+    padding: f.rem(6) f.rem(10);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: v.$COLOR_GREEN;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(8) f.rem(14);
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__time {
+    margin-left: f.rem(12);
+    font-weight: 500;
+    @include m.flex(
+      $align-items: center
+    );
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(24);
+      @include m.font(
+        $font-size: 18
+      );
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: f.rem(16);
+      height: f.rem(16);
+      margin-right: f.rem(8);
+      background-image: url('#{v.$root}assets/images/icon_time.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        width: f.rem(20);
+        height: f.rem(20);
+      }
+    }
+  }
+
+  &__heading {
+    margin-top: f.rem(8);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 24,
+      $line-height: 34,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+      @include m.font(
+        $font-size: 30,
+        $line-height: 45
+      );
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(26);
+    padding: f.rem(50) f.rem(25) f.rem(62);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      margin-top: f.rem(40);
+      padding: f.rem(72) f.rem(104) f.rem(78);
+      border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: f.rem(40);
+      padding-left: 1em;
+      text-indent: -1em;
+      font-weight: 600;
+      @include m.font(
+        $font-size: 20,
+        $line-height: 28,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        margin-top: f.rem(36);
+        @include m.font(
+          $font-size: 24,
+          $line-height: 51
+        );
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: f.rem(18);
+        height: f.rem(18);
+        margin-right: f.rem(8);
+        border-top-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        background-color: v.$COLOR_GREEN;
+      }
+
+      sup {
+        top: 0em;
+        font-size: f.rem(20);
+        @include m.responsive(md) {
+          font-size: f.rem(24);
+        }
+      }
+    }
+
+    p {
+      margin-top: f.rem(13);
+      @include m.font(
+        $font-size: 15,
+        $line-height: 24,
+        $letter-spacing: 60
+      );
+      @include m.responsive(md) {
+        margin-top: f.rem(10);
+        @include m.font(
+          $font-size: 16,
+          $line-height: 28
+        );
+      }
+
+      sup {
+        top: 0em;
+        font-size: f.rem(15);
+        @include m.responsive(md) {
+          font-size: f.rem(16);
+        }
+      }
+    }
+
+    .wp-block-image {
+      margin-top: f.rem(26);
+      margin-bottom: f.rem(26);
+      @include m.responsive(md) {
+        width: f.rem(560);
+      }
+    }
+  }
+
+  &__share-wrapper {
+    margin-top: f.rem(50);
+    @include m.responsive(md) {
+      margin-top: f.rem(64);
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(40);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(48);
+    }
+  }
+
+  &__recipe-link-wrapper {
+    margin-top: f.rem(64);
+    @include m.responsive(md) {
+      margin-top: f.rem(104);
+    }
+  }
+}

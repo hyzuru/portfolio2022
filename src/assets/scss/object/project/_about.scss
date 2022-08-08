@@ -1,0 +1,73 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* about */
+.about {
+  position: relative;
+  padding-top: f.rem(62);
+  padding-bottom: f.rem(90);
+  @include m.responsive(md) {
+    padding-top: f.rem(116);
+    padding-bottom: f.rem(160);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__feature-wrapper {
+    margin-top: f.rem(35);
+    @include m.responsive(md) {
+      margin-top: f.rem(48);
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      top: f.vw(315, 375);
+      left: f.vw(-38, 375);
+      width: f.vw(60, 375);
+      height: f.vw(55, 375);
+      @include m.responsive(md) {
+        top: f.vw(312, 1280);
+        left: f.vw(-25, 1280);
+        width: f.vw(120, 1280);
+        height: f.vw(110, 1280);
+      }
+    }
+
+    &--02 {
+      top: f.vw(198, 375);
+      left: f.vw(-90, 375);
+      width: f.vw(150, 375);
+      height: f.vw(137.5, 375);
+      @include m.responsive(md) {
+        top: f.vw(77, 1280);
+        left: f.vw(-105, 1280);
+        width: f.vw(300, 1280);
+        height: f.vw(281, 1280);
+      }
+
+      path {
+        stroke-width: 4px;
+        @include m.responsive(md) {
+          stroke-width: 2px;
+        }
+      }
+    }
+  }
+}

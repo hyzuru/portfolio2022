@@ -1,0 +1,82 @@
+/**
+* Layout
+* ========================== */
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variables" as v;
+
+/* header */
+.l-header {
+  position: fixed;
+  top: 16px;
+  left: 13px;
+  z-index: 100;
+  width: calc(100% - 26px);
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  @include m.responsive(xl) {
+    top: 24px;
+    left: 50px;
+    width: calc(100% - 100px);
+    height: 80px;
+    padding-top: min(1.172vw, 15px);
+    padding-bottom: min(1.172vw, 15px);
+    border-radius: 40px;
+  }
+
+  &__inner {
+    padding-right: f.rem(9);
+    padding-left: f.rem(9);
+    @include m.responsive(xl) {
+      height: 100%;
+      padding-right: f.rem(16);
+      padding-left: f.rem(16);
+    }
+  }
+
+  &__block {
+    @include m.flex(
+      $justify-content: space-between,
+      $align-items: center
+    );
+    @include m.responsive(xl) {
+      height: 100%;
+    }
+  }
+
+  &__logo {
+    width: f.rem(160);
+    margin-top: f.rem(-4);
+    @include m.responsive(xl) {
+      width: f.rem(238);
+      margin-top: 0;
+    }
+  }
+
+  &__button {
+    width: f.rem(60);
+    height: f.rem(60);
+    @include m.responsive(xl) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    @include m.font(
+      $color: v.$COLOR_BROWN,
+      $font-size: 10,
+      $letter-spacing: 180
+    )
+  }
+
+  &__dot-wrapper {
+    position: absolute;
+    top: 39px;
+    left: 24px;
+  }
+}

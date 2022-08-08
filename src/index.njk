@@ -5,15 +5,22 @@
 </head>
 <body>
   <p>hello from 11ty</p>
+
+  
+  <main>
+
+
+  </main>
   {% if build.env === "production" %}
   <p>production</p>
   <img src="/img/img01.png" alt="">
   <script type="module" src="./main.js"></script>
+  {% viteScriptTag "src/assets/js/main.js" %}
+
   {% else %}
   <p>not prod</p>
   <img src="/img/img01.png" alt="">
-  <script type="module" src="http://localhost:5173/src/client/main.js"></script>
-  <script type="module" src="src/client/main.js"></script>
+  <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
   {% endif %}
 
 </body>

@@ -1,0 +1,494 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* cart */
+.cart {
+  position: relative;
+  padding-top: f.rem(106);
+  padding-bottom: f.rem(90);
+  @include m.responsive(md) {
+    padding-top: f.rem(150);
+    padding-bottom: f.rem(160);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__block {
+    margin-top: f.rem(38);
+    padding: f.rem(26) f.rem(25) f.rem(50);
+    border-radius: 9px;
+    background-color: v.$COLOR_GRAY_5;
+    @include m.responsive(md) {
+      margin-top: f.rem(52);
+      padding: f.rem(48) percentage(math.div(80, 1088)) f.rem(58);
+      border-radius: 12px;
+    }
+  }
+
+  &__head {
+    display: none;
+    @include m.responsive(md) {
+      padding: f.rem(16) f.rem(8);
+      @include m.flex();
+      @include m.font(
+        $font-size: 16,
+        $letter-spacing: 40
+      );
+    }
+  }
+
+  &__name-head {
+    @include m.responsive(md) {
+      flex: 1;
+    }
+  }
+
+  &__quantity-head {
+    @include m.responsive(md) {
+      flex-basis: f.rem(176);
+    }
+  }
+
+  &__price-head {
+    @include m.responsive(md) {
+      flex-basis: f.rem(132);
+      text-align: right;
+    }
+  }
+
+  &__list {
+    border-bottom: solid 2px v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      border-top: solid 2px v.$COLOR_WHITE;
+    }
+  }
+
+  &__item {
+    padding: f.rem(24) 0;
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      justify-content: flex-start;
+      padding: f.rem(24) f.rem(8);
+    }
+
+    &:not(:first-of-type) {
+      border-top: solid 2px v.$COLOR_WHITE;
+    }
+  }
+
+  &__image {
+    flex-basis: percentage(math.div(72, 275));
+    border-radius: 8px;
+    overflow: hidden;
+    @include m.responsive(md) {
+      flex-basis: f.rem(104);
+    }
+  }
+
+  &__text {
+    flex: 1;
+    padding-left: percentage(math.div(16, 275));
+    @include m.responsive(md) {
+      padding-left: percentage(math.div(32, 912));
+      @include m.flex();
+    }
+  }
+
+  &__products-body {
+    flex: 1;
+    @include m.flex();
+  }
+
+  &__image-body {
+    flex-basis: percentage(math.div(104, 664));
+  }
+
+  &__name-body {
+    @include m.responsive(md) {
+      flex: 1;
+      padding-top: f.rem(4);
+    }
+  }
+
+  &__name-link {
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 17,
+        $line-height: 24
+      );
+    }
+
+    sup {
+      top: 0em;
+      font-size: f.rem(15);
+    }
+  }
+
+  &__name-price {
+    margin-top: f.rem(8);
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+    }
+
+    span {
+      &:nth-of-type(1) {
+        font-family: 'Heebo', sans-serif;
+        font-weight: 500;
+        @include m.font(
+          $font-size: 14,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 16
+          );
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-left: f.rem(4);
+        @include m.font(
+          $font-size: 12,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          margin-left: f.rem(2);
+          @include m.font(
+            $font-size: 15
+          );
+        }
+      }
+
+      &:nth-of-type(3) {
+        margin-left: f.rem(2);
+        @include m.font(
+          $font-size: 11,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          margin-left: f.rem(4);
+          @include m.font(
+            $font-size: 13
+          );
+        }
+      }
+    }
+  }
+
+  &__quantity {
+    margin-top: f.rem(14);
+    @include m.flex(
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      flex-basis: f.rem(176);
+      margin-top: 0;
+    }
+  }
+
+  &__quantity-text {
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      display: none;
+    }
+  }
+
+  &__quantity-input {
+    width: f.rem(60);
+    height: f.rem(40);
+    margin-left: f.rem(6);
+    border-radius: 4px;
+    background-color: v.$COLOR_WHITE;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 21
+    );
+    @include m.responsive(md) {
+      width: f.rem(74);
+      height: f.rem(56);
+      margin-left: 0;
+    }
+  }
+
+  &__quantity-update {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: f.rem(40);
+    height: f.rem(40);
+    margin-left: f.rem(10);
+    border-radius: 4px;
+    background-color: v.$COLOR_GRAY_2;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      width: f.rem(56);
+      height: f.rem(56);
+      margin-left: f.rem(8);
+      border-radius: 8px;
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__quantity-remove {
+    width: f.rem(16);
+    height: f.rem(15.5);
+    margin-top: f.rem(-9.6);
+    margin-left: f.rem(24);
+    @include m.responsive(md) {
+      margin-top: f.rem(-4);
+      margin-left: f.rem(16);
+    }
+  }
+
+  &__price-body {
+    margin-top: f.rem(18);
+    @include m.responsive(md) {
+      flex-basis: f.rem(132);
+      margin-top: 0;
+      @include m.flex(
+        $justify-content: flex-end,
+        $align-items: center
+      );
+    }
+    span {
+      &:nth-of-type(1) {
+        @include m.font(
+          $font-size: 12,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-left: f.rem(6);
+        font-family: 'Heebo', sans-serif;
+        font-weight: 600;
+        @include m.font(
+          $font-size: 18,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 21
+          );
+        }
+      }
+
+      &:nth-of-type(3) {
+        font-weight: 600;
+        @include m.font(
+          $font-size: 15,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          margin-left: f.rem(2);
+          @include m.font(
+            $font-size: 18
+          );
+        }
+      }
+    }
+  }
+
+  &__column {
+    margin-top: f.rem(20);
+    @include m.flex(
+      $direction: column,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: f.rem(22);
+      padding-right: f.rem(6);
+    }
+  }
+
+  &__total-text {
+    @include m.font(
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__total-price {
+    margin-left: f.rem(-2);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 26,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(4);
+      @include m.font(
+        $font-size: 28
+      );
+    }
+  }
+
+  &__total-yen {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-4);
+      @include m.font(
+        $font-size: 18
+      );
+    }
+  }
+
+  &__continue {
+    margin-top: f.rem(40);
+    @include m.responsive(md) {
+      margin-top: 0;
+    }
+  }
+
+  &__continue-link {
+    font-weight: 600;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      transition: color .3s ease-out;
+      @include m.font(
+        $font-size: 17
+      );
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: f.rem(8);
+      height: f.rem(12);
+      margin-right: f.rem(5);
+      background-image: url('#{v.$root}assets/images/icon_arrow_left.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        margin-right: f.rem(8);
+        transition: transform .3s ease-out;
+      }
+    }
+
+    @include m.hover() {
+      @include m.font(
+        $color: v.$COLOR_GREEN
+      );
+
+      &::before {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  &__purchase-button {
+    margin-top: f.rem(40);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(48);
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      top: f.vw(-29, 375);
+      left: f.vw(-49, 375);
+      width: f.vw(150, 375);
+      height: f.vw(140.5, 375);
+      @include m.responsive(md) {
+        top: f.rem(-117);
+        left: f.rem(-44);
+        width: f.rem(300);
+        height: f.rem(375);
+      }
+
+      path {
+        stroke-width: 2px;
+      }
+    }
+
+    &--02 {
+      top: f.vw(-18, 375);
+      right: f.vw(60, 375);
+      width: f.vw(60, 375);
+      height: f.vw(55, 375);
+      @include m.responsive(md) {
+        top: f.rem(-36);
+        right: f.rem(109);
+        width: f.rem(120);
+        height: f.rem(110);
+      }
+    }
+
+    &--03 {
+      top: f.vw(-31, 375);
+      right: f.vw(-58, 375);
+      width: f.vw(150, 375);
+      height: f.vw(137.5, 375);
+      @include m.responsive(md) {
+        top: f.rem(-62);
+        right: f.rem(-126);
+        width: f.rem(300);
+        height: f.rem(281);
+      }
+    }
+  }
+
+  .incart-total-item {
+    margin-top: f.rem(38);
+    text-align: center;
+    @include m.responsive(md) {
+      margin-top: f.rem(52);
+    }
+  }
+}

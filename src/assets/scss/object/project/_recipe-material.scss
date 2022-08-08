@@ -1,0 +1,117 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* recipe-material */
+.recipe-material {
+  &__heading {
+    padding: f.rem(20);
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    background: v.$COLOR_YELLOW_GREEN;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(19);
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      @include m.font(
+        $font-size: 18
+      );
+    }
+  }
+
+  &__block {
+    padding: f.rem(19) f.rem(24) f.rem(32);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: v.$COLOR_GRAY_5;
+    @include m.responsive(md) {
+      padding: f.rem(24) f.rem(32) f.rem(40);
+    }
+  }
+
+  &__header {
+    padding-bottom: f.rem(12);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding-bottom: f.rem(15);
+      @include m.font(
+        $font-size: 16
+      );
+    }
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(18);
+      @include m.responsive(md) {
+        margin-top: f.rem(24);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: f.rem(12);
+      height: f.rem(12);
+      margin-right: f.rem(9);
+      border-top-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background-color: v.$COLOR_YELLOW_GREEN;
+      @include m.responsive(md) {
+        width: f.rem(14);
+        height: f.rem(14);
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+  }
+
+  &__column {
+    border-bottom: 1px solid v.$COLOR_GRAY_6;
+    @include m.flex(
+      $justify-content: space-between
+    );
+
+    &:first-of-type {
+      border-top: 1px solid v.$COLOR_GRAY_6;
+    }
+  }
+
+  &__head {
+    @include m.font(
+      $font-size: 13,
+      $line-height: 30,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 14,
+        $line-height: 32
+      );
+    }
+  }
+
+  &__body {
+    @include m.font(
+      $font-size: 14,
+      $line-height: 32,
+      $letter-spacing: 40
+    );
+  }
+}

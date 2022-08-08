@@ -1,0 +1,85 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* guide-tab-ui */
+.guide-tab-ui {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-basis: calc(50% - 4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 15,
+      $line-height: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      flex-basis: calc(50% - 8px);
+      @include m.font(
+        $font-size: 22
+      );
+    }
+  }
+
+  &__tab {
+    width: 100%;
+    height: 100%;
+    padding: f.rem(19);
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    color: v.$COLOR_WHITE;
+    text-align: center;
+    font-weight: 600;
+    @include m.responsive(md) {
+      padding: f.rem(22) f.rem(16);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      transition: background-color .3s ease-in-out;
+    }
+
+    &[aria-selected="true"] {
+      background-color: v.$COLOR_GREEN;
+    }
+
+    &[aria-selected="false"] {
+      background-color: v.$COLOR_GRAY_2;
+    }
+
+    @include m.hover() {
+      background-color: v.$COLOR_GREEN;
+    }
+
+    sup {
+      top: -0.25em;
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 16
+        );
+      }
+    }
+  }
+
+  &__body {
+    padding: f.rem(12) f.rem(24) f.rem(40);
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-color: v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      padding: f.rem(24) f.rem(80) f.rem(64) f.rem(80);
+    }
+  }
+}

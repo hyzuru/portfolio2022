@@ -9,7 +9,8 @@
     "dev:vite": "vite",
     "build": "npm run build:vite && npm run build:eleventy",
     "build:eleventy": "NODE_ENV=production eleventy",
-    "build:vite": "NODE_ENV=production vite build"
+    "build:vite": "NODE_ENV=production vite build",
+    "prod": "NODE_ENV=production npm run build && serve dist"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,15 @@
   "homepage": "https://github.com/hyzuru/portfolio2022#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "autoprefixer": "^10.4.8",
     "concurrently": "^7.3.0",
+    "gsap": "^3.10.4",
+    "sass": "^1.54.3",
+    "serve": "^14.0.1",
+    "swiper": "^8.3.2",
     "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.10"
   }
 }

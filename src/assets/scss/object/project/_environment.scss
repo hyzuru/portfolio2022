@@ -1,0 +1,147 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* environment */
+.environment {
+  &__contents {
+    @include m.responsive(md) {
+      margin-top: f.rem(40);
+      @include m.flex();
+    }
+  }
+
+  &__text {
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(468, 824));
+      padding-top: f.rem(36);
+      padding-right: percentage(math.div(48, 824));
+    }
+  }
+
+  &__graph {
+    margin-top: f.rem(28);
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    background-color: v.$COLOR_GRAY_1;
+    @include m.responsive(md) {
+      margin-top: 0;
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  }
+
+  &__block {
+    padding: f.rem(43) f.rem(40) f.rem(36);
+    @include m.responsive(md) {
+      display: grid;
+      grid-template:
+        "title image" auto
+        "list image" 1fr / 51.9417476% 43.2038835%;
+      gap: f.rem(34) 4.85436893%;
+      padding: f.rem(40) percentage(math.div(80, 984)) f.rem(48);
+    }
+  }
+
+  &__head {
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(294, 554));
+      padding-right: percentage(math.div(36, 554))
+    }
+  }
+
+  &__body {
+    flex-basis: percentage(math.div(260, 554));
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 20,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      grid-area: title;
+      padding-top: f.rem(38);
+      text-align: left;
+      @include m.font(
+        $color: v.$COLOR_GREEN,
+        $font-size: 24,
+        $line-height: 28
+      );
+    }
+
+    & > span {
+      display: inline-block;
+      margin-top: f.rem(5);
+      @include m.font(
+        $font-size: 14,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        margin-left: f.rem(14);
+        @include m.font(
+          $font-size: 16
+        );
+      }
+
+      span {
+        @include m.font(
+          $font-size: 15
+        );
+      }
+    }
+  }
+
+  &__image {
+    margin-top: f.rem(16);
+    @include m.responsive(md) {
+      grid-area: image;
+      align-self: center;
+      flex-basis: percentage(math.div(356, 824));
+      margin-top: 0;
+    }
+  }
+
+  &__notes-list {
+    margin-top: f.rem(34);
+    @include m.font(
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      grid-area: list;
+      margin-top: 0;
+      @include m.font(
+        $font-size: 13,
+        $line-height: 18
+      );
+    }
+  }
+
+  &__notes-item {
+    padding-left: 1em;
+    text-indent: -1em;
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(5);
+    }
+
+    sup {
+      top: 0;
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+}

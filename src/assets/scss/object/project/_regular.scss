@@ -1,0 +1,733 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* regular */
+.regular {
+  &__head {
+    padding: f.rem(17);
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: v.$COLOR_BROWN_2;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 22,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(22);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+
+  &__body {
+    position: relative;
+    padding: f.rem(40) f.rem(25) f.rem(58);
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-color: v.$COLOR_WHITE;
+    @include m.responsive(md) {
+      padding: f.rem(48) percentage(math.div(52, 1088)) f.rem(62);
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+  }
+
+  &__main {
+    padding: f.rem(38) f.rem(25) f.rem(36);
+    border: 2px solid v.$COLOR_GRAY_1;
+    border-radius: 9px;
+    @include m.responsive(md) {
+      padding: f.rem(46) percentage(math.div(62, 984)) f.rem(52);
+      border-radius: 12px;
+    }
+  }
+
+  &__column {
+    @include m.responsive(lg) {
+      @include m.flex(
+        $align-items: center
+      );
+    }
+  }
+
+  &__image {
+    @include m.responsive(lg) {
+      flex-basis: percentage(math.div(366, 852));
+    }
+  }
+
+  &__text {
+    margin-top: f.rem(32);
+    text-align: center;
+    @include m.responsive(lg) {
+      flex-basis: percentage(math.div(486, 852));
+      margin-top: 0;
+      padding-left: percentage(math.div(40, 852));
+    }
+  }
+
+  &__label {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding: f.rem(7.5) f.rem(12);
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: v.$COLOR_GREEN;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(9.5) f.rem(15);
+    }
+  }
+
+  &__name {
+    margin-top: f.rem(10);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 18,
+      $line-height: 25,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+      @include m.font(
+        $font-size: 22,
+        $letter-spacing: 40
+      );
+    }
+  }
+
+  &__price {
+    position: relative;
+    margin-top: f.rem(18);
+    @include m.flex(
+      $direction: column,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: baseline;
+      margin-top: f.rem(22);
+      padding-left: f.rem(52);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: f.rem(20.5);
+      height: f.rem(16);
+      background-image: url('#{v.$root}assets/images/icon_arrow_price.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        top: 12px;
+        left: 52%;
+        transform: translateX(-50%) rotate(-90deg);
+        width: f.rem(20);
+        height: f.rem(15);
+      }
+    }
+  }
+
+  &__price-before {
+    position: relative;
+    width: fit-content;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: f.rem(2);
+      background-image: linear-gradient(v.$COLOR_RED, v.$COLOR_RED);
+      background-position: 0 50%;
+      background-size: 100% 2px;
+      background-repeat: repeat-x;
+    }
+  }
+
+  &__price-before-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 28,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 32
+      );
+    }
+  }
+
+  &__price-before-yen {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 18
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+
+  &__price-after {
+    margin-top: f.rem(32);
+    padding-left: f.rem(18);
+    @include m.responsive(md) {
+      margin-top: 0;
+      padding-left: f.rem(52);
+    }
+  }
+
+  &__price-after-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 36,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 40
+      );
+    }
+  }
+
+  &__price-after-yen {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 24
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 30
+      );
+    }
+  }
+
+  &__price-tax {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-2);
+    }
+  }
+
+  &__price-postage {
+    display: block;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(-2);
+      text-align: left;
+    }
+  }
+
+  &__quantity {
+    margin-top: f.rem(12);
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+    }
+  }
+
+  &__quantity-gram {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+  }
+
+  &__quantity-multiply {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 20
+    );
+  }
+
+  &__quantity-number {
+    margin-left: f.rem(-2);
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18
+    );
+  }
+
+  &__buttons {
+    max-width: f.rem(220);
+    margin-top: f.rem(24);
+    margin-right: auto;
+    margin-left: auto;
+    @include m.responsive(md) {
+      max-width: 100%;
+      margin-top: f.rem(30);
+      @include m.flex(
+        $justify-content: center
+      );
+    }
+  }
+
+  &__button + &__button {
+    margin-top: f.rem(14);
+    @include m.responsive(md) {
+      margin-top: 0;
+      margin-left: f.rem(16);
+    }
+  }
+
+  &__button {
+    @include m.responsive(md) {
+      flex-basis: f.rem(200);
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    width: f.rem(80);
+    height: f.rem(80);
+    padding: f.rem(18) f.rem(8);
+    border: 2px solid v.$COLOR_RED;
+    border-radius: 50%;
+    background-color: v.$COLOR_WHITE;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $color: v.$COLOR_RED
+    );
+    @include m.responsive(md) {
+      top: 24px;
+      right: 28px;
+      width: f.rem(96);
+      height: f.rem(96);
+      padding: f.rem(22) f.rem(8);
+    }
+  }
+
+  &__discount-number {
+    font-weight: 500;
+    @include m.font(
+      $font-size: 24,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 30
+      );
+    }
+  }
+
+  &__discount-percentage {
+    margin-left: f.rem(-4);
+    @include m.font(
+      $font-size: 16
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 20
+      );
+    }
+  }
+
+  &__discount-off {
+    display: block;
+    margin-top: f.rem(2);
+    font-weight: 500;
+    @include m.font(
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 20
+      );
+    }
+  }
+
+  &__sub {
+    margin-top: f.rem(52);
+    @include m.responsive(md) {
+      margin-top: f.rem(64);
+      @include m.flex(
+        $align-items: center
+      );
+    }
+  }
+
+  &__sub-item {
+    @include m.responsive(md) {
+      padding-right: f.rem(24);
+      padding-left: f.rem(40);
+    }
+    &:not(:first-of-type) {
+      margin-top: f.rem(52);
+      @include m.responsive(md) {
+        margin-top: 0;
+        border-left: 2px solid v.$COLOR_GRAY_1;
+      }
+    }
+  }
+
+  &__sub-column {
+    @include m.responsive(md) {
+      @include m.flex(
+        $align-items: center
+      );
+    }
+  }
+
+  &__sub-image {
+    position: relative;
+    border: 2px solid v.$COLOR_GRAY_1;
+    border-radius: 9px;
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(196, 443));
+    }
+
+    img {
+      width: 100%;
+      border-radius: 9px;
+    }
+  }
+
+  &__sub-discount {
+    position: absolute;
+    top: -22px;
+    right: -18px;
+    width: f.rem(80);
+    height: f.rem(80);
+    padding: f.rem(18) f.rem(8);
+    border: 2px solid v.$COLOR_RED;
+    border-radius: 50%;
+    background-color: v.$COLOR_WHITE;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $color: v.$COLOR_RED
+    );
+    @include m.responsive(md) {
+      top: -26px;
+      right: -26px;
+    }
+  }
+
+  &__sub-discount-number {
+    font-weight: 500;
+    @include m.font(
+      $font-size: 24,
+      $letter-spacing: 40
+    );
+  }
+
+  &__sub-discount-percentage {
+    margin-left: f.rem(-4);
+    @include m.font(
+      $font-size: 16
+    );
+  }
+
+  &__sub-discount-off {
+    display: block;
+    margin-top: f.rem(2);
+    font-weight: 500;
+    @include m.font(
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+  }
+
+  &__sub-text {
+    padding-top: f.rem(24);
+    text-align: center;
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(247, 443));
+      margin-top: f.rem(-4);
+      padding-top: 0;
+    }
+  }
+
+  &__sub-label {
+    display: inline-block;
+    padding: f.rem(7.5) f.rem(12);
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: v.$COLOR_BROWN_2;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      width: f.rem(124);
+      padding: f.rem(9.5) f.rem(12);
+    }
+  }
+
+  &__sub-name {
+    display: inline-block;
+    margin-left: f.rem(6);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      display: block;
+      margin-top: f.rem(16);
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__sub-price {
+    margin-top: f.rem(8);
+    @include m.flex(
+      $justify-content: center,
+      $align-items: baseline
+    );
+    @include m.responsive(md) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: f.rem(14);
+    }
+  }
+
+  &__sub-price-before {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: -28px;
+      transform: rotate(-90deg);
+      width: f.rem(16);
+      height: f.rem(15);
+      background-image: url('#{v.$root}assets/images/icon_arrow_price.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        top: 29px;
+        left: 50%;
+        transform: translateX(-50%) rotate(0deg);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: f.rem(2);
+      background-image: linear-gradient(v.$COLOR_RED, v.$COLOR_RED);
+      background-position: 0 50%;
+      background-size: 100% 2px;
+      background-repeat: repeat-x;
+    }
+  }
+
+  &__sub-price-before-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 22,
+      $letter-spacing: 40
+    );
+  }
+
+  &__sub-price-before-yen {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 18
+    );
+  }
+
+  &__sub-price-after {
+    margin-left: f.rem(34);
+    @include m.responsive(md) {
+      margin-top: f.rem(24);
+      margin-left: 0;
+    }
+  }
+
+  &__sub-price-after-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 30,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 32
+      );
+    }
+  }
+
+  &__sub-price-after-yen {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 20
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+
+  &__sub-price-tax {
+    margin-left: f.rem(-4);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 12,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__sub-price-postage {
+    display: block;
+    margin-top: f.rem(4);
+    text-align: left;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      text-align: center;
+    }
+  }
+
+  &__sub-quantity {
+    margin-top: f.rem(14);
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+    }
+  }
+
+  &__sub-quantity-gram {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+  }
+
+  &__sub-quantity-multiply {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 20
+    );
+  }
+
+  &__sub-quantity-number {
+    margin-left: f.rem(-2);
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18
+    );
+  }
+
+  &__sub-quantity-pieces {
+    margin-left: f.rem(-5);
+    @include m.font(
+      $font-size: 16
+    );
+  }
+
+  &__sub-buttons {
+    max-width: f.rem(220);
+    margin-top: f.rem(24);
+    margin-right: auto;
+    margin-left: auto;
+    @include m.responsive(lg) {
+      max-width: 100%;
+      margin-top: f.rem(40);
+      @include m.flex(
+        $justify-content: center
+      );
+    }
+  }
+
+  &__sub-button + &__sub-button {
+    margin-top: f.rem(14);
+    @include m.responsive(lg) {
+      margin-top: 0;
+      margin-left: f.rem(16);
+    }
+  }
+
+  &__sub-button {
+    @include m.responsive(lg) {
+      flex-basis: f.rem(200);
+    }
+
+    &:not(:first-of-type) {
+      @include m.responsive(lg) {
+        margin-left: f.rem(16);
+      }
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+}

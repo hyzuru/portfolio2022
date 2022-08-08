@@ -1,0 +1,294 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* recipe-how-to-use */
+.recipe-how-to-use {
+  $this: &;
+  position: relative;
+  transform: translateZ(0);
+  overflow: hidden;
+  border-radius: 9px;
+  background-color: v.$COLOR_GRAY_5;
+  @include m.responsive(md) {
+    border-radius: 12px;
+  }
+
+  &__inner {
+    padding: f.rem(52) f.rem(25) f.rem(60);
+    @include m.responsive(md) {
+      padding: f.rem(48) f.rem(52) f.rem(56);
+    }
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__head {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding: f.rem(14.5) f.rem(20);
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: v.$COLOR_GREEN;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 15
+    );
+    @include m.responsive(md) {
+      padding: f.rem(19) f.rem(30);
+      border-top-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      @include m.font(
+        $font-size: 18
+      );
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: f.rem(40) 0;
+    margin-top: f.rem(32);
+    @include m.responsive(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 f.rem(36);
+      margin-top: f.rem(40);
+    }
+  }
+
+  &__name {
+    margin-top: f.rem(16);
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 22,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(22);
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(6);
+    @include m.font(
+      $font-size: 15,
+      $line-height: 24,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(8);
+      @include m.font(
+        $font-size: 16,
+        $line-height: 28
+      );
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(14);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(18);
+    }
+  }
+
+  &__trigger {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: f.rem(210);
+    padding: f.rem(17);
+    border-style: solid;
+    border-width: 2px;
+    border-color: v.$COLOR_YELLOW_GREEN;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: v.$COLOR_WHITE;
+    color: v.$COLOR_YELLOW_GREEN;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      max-width: f.rem(224);
+      padding: f.rem(18.5);
+      border-radius: 28px;
+      transition-property: border-color, color;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+      @include m.font(
+        $font-size: 15
+      );
+    }
+
+    &[aria-expanded='true'] {
+      #{$this}__tabicon::after {
+        opacity: 0;
+        transform: rotate(0);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      background: v.$COLOR_YELLOW_GREEN;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      padding-top: 100%;
+      border-radius: 100%;
+      transform-origin: center left;
+      @include m.responsive(md) {
+        transition: transform .4s ease-in-out;
+      }
+    }
+
+    @include m.hover() {
+      #{$this}__text {
+        position: relative;
+        @include m.font($color: v.$COLOR_WHITE );
+      }
+
+      #{$this}__tabicon {
+        &::before,
+        &::after {
+          background-color: v.$COLOR_WHITE;
+        }
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+  }
+
+  &__tabicon {
+    position: absolute;
+    top: 50%;
+    right: f.rem(18);
+    transform: translateY(-50%);
+    width: f.rem(12);
+    height: f.rem(12);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: v.$COLOR_YELLOW_GREEN;
+      inset: 0;
+      width: 100%;
+      height: 2px;
+      margin: auto;
+    }
+
+    &::before {
+      @include m.responsive(md) {
+        transition: background-color .3s ease-in-out;
+      }
+    }
+
+    &::after {
+      opacity: 1;
+      transform: rotate(90deg);
+      @include m.responsive(md) {
+        transition: opacity .5s ease-in-out, transform .5s ease-in-out, background-color .3s ease-in-out;
+      }
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      bottom: f.vw(14, 375);
+      left: f.vw(-88, 375);
+      z-index: 1;
+      width: f.vw(115, 375);
+      height: f.vw(115, 375);
+      @include m.responsive(md) {
+        bottom: f.rem(44);
+        left: f.rem(-80);
+        width: f.rem(112);
+        height: f.rem(112);
+      }
+
+      path {
+        stroke-width: 1px;
+        @include m.responsive(md) {
+          stroke-width: 2px;
+        }
+      }
+    }
+
+    &--02 {
+      bottom: f.vw(-37, 375);
+      left: f.vw(-65, 375);
+      width: f.vw(120, 375);
+      height: f.vw(111, 375);
+      @include m.responsive(md) {
+        bottom: f.rem(-24);
+        left: f.rem(-28);
+        width: f.rem(120);
+        height: f.rem(110);
+      }
+    }
+
+    &--03 {
+      top: f.vw(-50, 375);
+      right: f.vw(-12, 375);
+      width: f.vw(107, 375);
+      height: f.vw(97, 375);
+      @include m.responsive(md) {
+        top: f.rem(-84);
+        right: f.rem(-20);
+        width: f.rem(214);
+        height: f.rem(194);
+      }
+    }
+
+    &--04 {
+      top: f.vw(16, 375);
+      right: f.vw(-55, 375);
+      width: f.vw(104.5, 375);
+      height: f.vw(95.5, 375);
+      @include m.responsive(md) {
+        top: f.rem(40);
+        right: f.rem(-100);
+        width: f.rem(206);
+        height: f.rem(188);
+      }
+
+      path {
+        stroke-width: 2px;
+        @include m.responsive(md) {
+          stroke-width: 2px;
+        }
+      }
+    }
+  }
+}

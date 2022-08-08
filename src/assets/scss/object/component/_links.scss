@@ -1,0 +1,119 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* c-links */
+.c-links {
+  $this: &;
+  background-color: v.$COLOR_WHITE;
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__list {
+    @include m.responsive(md) {
+      @include m.flex(
+        $justify-content: space-between
+      );
+    }
+  }
+
+  &__item {
+    @include m.responsive(md) {
+      flex-basis: calc(100% / 3 - 32px);
+    }
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(40);
+      @include m.responsive(md) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    @include m.responsive(md) {
+      transition: color .3s ease-in-out;
+    }
+
+    @include m.hover() {
+      color: v.$COLOR_GREEN;
+
+      #{$this}__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__image {
+    transform: translateZ(0);
+    border: solid 2px v.$COLOR_GRAY_1;
+    border-radius: 14px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      @include m.responsive(md) {
+        transition: transform .3s ease;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: f.rem(14);
+    font-weight: 500;
+  }
+
+  &__name {
+    span {
+      display: block;
+      font-weight: 600;
+
+      &:nth-of-type(1) {
+        @include m.font(
+          $font-size: 15,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 17,
+            $line-height: 22.5
+          );
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: f.rem(12);
+          height: f.rem(12);
+          margin-left: f.rem(7);
+          background-image:  url('#{v.$root}assets/images/icon_blank.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-top: f.rem(4);
+        @include m.font(
+          $font-size: 12
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 13
+          );
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,249 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* review-products */
+.c-review-products {
+  $this: &;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: v.$COLOR_GREEN;
+  @include m.font(
+    $color: v.$COLOR_WHITE
+  );
+  @include m.responsive(md) {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  &__inner {
+    padding: f.rem(40) f.rem(25) f.rem(36);
+    @include m.responsive(md) {
+      padding: f.rem(32) f.rem(52);
+    }
+  }
+
+  &__column {
+    @include m.responsive(md) {
+      @include m.flex(
+        $justify-content: space-between,
+        $align-items: center
+      );
+    }
+  }
+
+  &__contents {
+    @include m.flex(
+      $align-items: flex-start
+    );
+    @include m.responsive(md) {
+      flex: 1;
+    }
+  }
+
+  &__image {
+    flex-basis: f.rem(72);
+    border-radius: 8px;
+    overflow: hidden;
+    @include m.responsive(md) {
+      flex-basis: f.rem(98);
+    }
+  }
+
+  &__text {
+    flex: 1;
+    margin-top: f.rem(-2);
+    padding-left: f.rem(16);
+    @include m.responsive(md) {
+      margin-top: f.rem(-8);
+      padding-top: f.rem(12);
+      padding-left: f.rem(32);
+    }
+  }
+
+  &__name {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 15,
+      $line-height: 20,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16,
+        $line-height: 27,
+        $letter-spacing: 60
+      );
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: f.rem(12);
+      height: f.rem(12);
+      margin-right: f.rem(8);
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: v.$COLOR_YELLOW_GREEN;
+      vertical-align: middle;
+      @include m.responsive(md) {
+        width: f.rem(13);
+        height: f.rem(13);
+        margin-right: f.rem(12);
+      }
+    }
+
+    sup {
+      top: 0em;
+    }
+  }
+
+  &__score {
+    margin-top: f.rem(12);
+    @include m.flex(
+      $align-items: flex-start
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+    }
+  }
+
+  &__score-head {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 21
+      );
+    }
+  }
+
+  &__score-body {
+    margin-left: f.rem(10);
+    @include m.responsive(md) {
+      margin-top: f.rem(-2);
+    }
+
+    span {
+      display: inline-block;
+      width: f.rem(18);
+      height: f.rem(17);
+      @include m.responsive(md) {
+        width: f.rem(21);
+        height: f.rem(20);
+      }
+
+      &:not(:first-of-type) {
+        margin-left: f.rem(-4);
+        @include m.responsive(md) {
+          margin-left: f.rem(-2);
+        }
+      }
+
+      img {
+        vertical-align: top;
+        @include m.responsive(md) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__total {
+    margin-top: f.rem(10);
+    @include m.font(
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+    }
+
+    span {
+      margin-left: f.rem(2);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 500;
+      @include m.font(
+        $font-size: 14,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 15
+        );
+      }
+    }
+  }
+
+  &__button-wrapper {
+    width: f.rem(214);
+    margin-top: f.rem(30);
+    margin-right: auto;
+    margin-left: auto;
+    @include m.responsive(md) {
+      width: f.rem(220);
+      margin: 0;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    border: solid 2px v.$COLOR_GREEN;
+    text-align: center;
+    background-color: v.$COLOR_WHITE;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(20);
+      border-radius: 28px;
+      transition-property: background-color, color;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+    }
+    @include m.hover() {
+      background-color: v.$COLOR_YELLOW_GREEN;
+      color: v.$COLOR_WHITE;
+      #{$this}__arrow {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: f.rem(20);
+    transform: translateY(-50%);
+    width: f.rem(8);
+    height: f.rem(12);
+
+    path {
+      @include m.responsive(md) {
+        transition: fill .3s ease-in-out;
+      }
+    }
+  }
+}

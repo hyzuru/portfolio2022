@@ -1,0 +1,303 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* dot */
+.c-dot {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: v.$COLOR_GREEN;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: v.$COLOR_YELLOW_GREEN;
+  }
+
+  &--header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: f.rem(6);
+    height: f.rem(6);
+    &::before, &::after {
+      width: f.rem(6);
+      height: f.rem(6);
+    }
+    &::before {
+      left: -12px;
+    }
+    &::after {
+      right: -12px;
+    }
+  }
+
+  &--stores {
+    width: f.rem(4);
+    height: f.rem(4);
+    background-color: v.$COLOR_YELLOW;
+    @include m.responsive(md) {
+      background-color: v.$COLOR_GREEN;
+    }
+    &::before,
+    &::after {
+      width: f.rem(4);
+      height: f.rem(4);
+    }
+    &::before {
+      left: -8px;
+    }
+    &::after {
+      right: -8px;
+    }
+  }
+
+  &--review {
+    display: block;
+    width: f.rem(8);
+    height: f.rem(8);
+    margin-top: f.rem(18);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: v.$COLOR_GREEN;
+    @include m.responsive(md) {
+      margin-top: f.rem(22);
+    }
+
+    &::before,
+    &::after {
+      width: f.rem(8);
+      height: f.rem(8);
+    }
+
+    &::before {
+      left: -21px;
+    }
+
+    &::after {
+      right: -21px;
+    }
+  }
+
+  &--pickup {
+    display: block;
+    width: f.rem(6);
+    height: f.rem(6);
+    margin-top: f.rem(12);
+    margin-right: auto;
+    margin-left: auto;
+    @include m.responsive(md) {
+      width: f.rem(5);
+      height: f.rem(5);
+      margin-left: f.rem(18);
+    }
+    &::before,
+    &::after {
+      width: f.rem(6);
+      height: f.rem(6);
+      @include m.responsive(md) {
+        width: f.rem(5);
+        height: f.rem(5);
+      }
+    }
+    &::before {
+      left: -12px;
+      @include m.responsive(md) {
+        left: f.vw(-12, 1280);
+      }
+    }
+    &::after {
+      right: -12px;
+      @include m.responsive(md) {
+        right: f.vw(-12, 1280);
+      }
+    }
+  }
+
+  &--make {
+    width: f.rem(6);
+    height: f.rem(6);
+    background-color: v.$COLOR_GREEN;
+
+    &::before,
+    &::after {
+      width: f.rem(6);
+      height: f.rem(6);
+    }
+
+    &::before {
+      left: -12px;
+      @include m.responsive(md) {
+        left: -14px;
+      }
+    }
+
+    &::after {
+      right: -12px;
+      @include m.responsive(md) {
+        right: -14px;
+      }
+    }
+  }
+
+  &--guide {
+    width: f.rem(6);
+    height: f.rem(6);
+    background-color: v.$COLOR_GREEN;
+
+    &::before,
+    &::after {
+      width: f.rem(6);
+      height: f.rem(6);
+    }
+
+    &::before {
+      left: -12px;
+      @include m.responsive(md) {
+        left: -14px;
+      }
+    }
+
+    &::after {
+      right: -12px;
+      @include m.responsive(md) {
+        right: -14px;
+      }
+    }
+  }
+
+  &--corporate {
+    width: f.rem(4);
+    height: f.rem(4);
+    background-color: v.$COLOR_YELLOW;
+    @include m.responsive(md) {
+      background-color: v.$COLOR_GREEN;
+    }
+
+    &::before,
+    &::after {
+      width: f.rem(4);
+      height: f.rem(4);
+      background-color: v.$COLOR_BEIGE;
+      @include m.responsive(md) {
+        background-color: v.$COLOR_YELLOW_GREEN;
+      }
+    }
+
+    &::before {
+      left: -8px;
+    }
+
+    &::after {
+      right: -8px;
+    }
+  }
+
+  &--recipe {
+    width: f.rem(8);
+    height: f.rem(8);
+    background-color: v.$COLOR_GREEN;
+    @include m.responsive(md) {
+      width: f.rem(9);
+      height: f.rem(9);
+    }
+
+    &::before,
+    &::after {
+      width: f.rem(8);
+      height: f.rem(8);
+      background-color: v.$COLOR_YELLOW_GREEN;
+      @include m.responsive(md) {
+        width: f.rem(9);
+        height: f.rem(9);
+      }
+    }
+
+    &::before {
+      left: -20px;
+    }
+
+    &::after {
+      right: -20px;
+    }
+  }
+
+  &--slider {
+    width: f.rem(5);
+    height: f.rem(5);
+    background-color: v.$COLOR_GREEN;
+    @include m.responsive(md) {
+      width: f.rem(6);
+      height: f.rem(6);
+    }
+
+    &::before,
+    &::after {
+      width: f.rem(5);
+      height: f.rem(5);
+      background-color: v.$COLOR_YELLOW_GREEN;
+      @include m.responsive(md) {
+        width: f.rem(6);
+        height: f.rem(6);
+      }
+    }
+
+    &::before {
+      left: -10px;
+      @include m.responsive(md) {
+        left: -14px;
+      }
+    }
+
+    &::after {
+      right: -10px;
+      @include m.responsive(md) {
+        right: -14px;
+      }
+    }
+  }
+
+  &--modal {
+    width: f.rem(6);
+    height: f.rem(6);
+    background-color: v.$COLOR_GREEN;
+    @include m.responsive(md) {
+      width: f.rem(6);
+      height: f.rem(6);
+    }
+
+    &::before,
+    &::after {
+      width: f.rem(6);
+      height: f.rem(6);
+      background-color: v.$COLOR_YELLOW_GREEN;
+      @include m.responsive(md) {
+        width: f.rem(6);
+        height: f.rem(6);
+      }
+    }
+
+    &::before {
+      left: -12px;
+      @include m.responsive(md) {
+        left: -14px;
+      }
+    }
+
+    &::after {
+      right: -12px;
+      @include m.responsive(md) {
+        right: -14px;
+      }
+    }
+  }
+}

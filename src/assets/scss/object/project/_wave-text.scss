@@ -1,0 +1,32 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* wave-text */
+.wave-text {
+  position: relative;
+  padding-top: percentage(math.div(108, 375));
+  padding-bottom: percentage(math.div(88, 375));
+  @include m.flex(
+    $justify-content: center
+  );
+  @include m.responsive(md) {
+    padding-top: f.rem(120);
+    padding-bottom: f.rem(140);
+  }
+
+  img {
+    min-width: percentage(math.div(496, 375));
+    @include m.responsive(md) {
+      width: f.rem(790);
+      min-width: inherit;
+    }
+  }
+}

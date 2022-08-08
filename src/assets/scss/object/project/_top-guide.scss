@@ -1,0 +1,243 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* top-guide */
+.top-guide {
+  position: relative;
+  padding-top: f.rem(64);
+  @include m.responsive(md) {
+    margin-top: f.rem(-104);
+    padding-top: f.rem(104);
+    padding-bottom: 0;
+  }
+
+  &__contents {
+    padding-top: f.rem(42);
+    padding-bottom: f.rem(90);
+    background-color: v.$COLOR_GRAY_5;
+    @include m.responsive(md) {
+      padding-top: f.rem(98);
+      padding-bottom: f.rem(128);
+    }
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__sub {
+    display: inline-block;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $color: v.$COLOR_YELLOW_GREEN,
+      $font-size: 16,
+      $letter-spacing: 80
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 20
+      );
+    }
+  }
+
+  &__main {
+    display: block;
+    margin-top: f.rem(16);
+    font-weight: 700;
+    @include m.font(
+      $font-size: 32,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+      @include m.font(
+        $font-size: 46
+      );
+    }
+  }
+
+  &__tab-ui-wrapper {
+    margin-top: f.rem(38);
+    @include m.responsive(md) {
+      margin-top: f.rem(56);
+    }
+  }
+
+  &__lead {
+    @include m.font(
+      $font-size: 14,
+      $line-height: 22
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 15,
+        $line-height: 28
+      );
+    }
+    sup {
+      @include m.responsive(md) {
+        top: 0.1em;
+        @include m.font(
+          $font-size: 18
+        );
+      }
+    }
+  }
+
+  &__sub-heading {
+    @include m.responsive(md) {
+      @include m.flex(
+        $align-items: center
+      );
+    }
+
+    &:nth-of-type(2) {
+      margin-top: f.rem(35);
+      @include m.responsive(md) {
+        margin-top: f.rem(41);
+      }
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(14);
+    @include m.font(
+      $font-size: 14,
+      $line-height: 22
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(20);
+      @include m.font(
+        $font-size: 15,
+        $line-height: 27
+      );
+    }
+  }
+
+  &__notes-list {
+    margin-top: f.rem(37);
+    @include m.font(
+      $font-size: 12,
+      $line-height: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(48);
+      @include m.font(
+        $font-size: 13,
+        $line-height: 18,
+        $letter-spacing: 60
+      );
+    }
+  }
+
+  &__notes-item {
+    padding-left: 2.1em;
+    text-indent: -2.1em;
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(8);
+      @include m.responsive(md) {
+        margin-top: f.rem(7);
+      }
+    }
+  }
+
+  &__block {
+    @include m.responsive(md) {
+      @include m.flex();
+    }
+  }
+
+  &__list {
+    font-weight: 700;
+
+    &:nth-child(1) {
+      margin-top: f.rem(29);
+      @include m.responsive(md) {
+        flex-basis: 54.6%;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: f.rem(20.5);
+      @include m.responsive(md) {
+        flex-basis: 45.4%;
+        margin-top: f.rem(29);
+      }
+    }
+  }
+
+  &__item {
+    padding-left: 1em;
+    text-indent: -1em;
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(20.5);
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: f.rem(8);
+      height: f.rem(8);
+      border-radius: 50%;
+      margin-right: f.rem(4);
+      background-color: v.$COLOR_GREEN;
+      vertical-align: middle;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 700;
+    @include m.font(
+      $font-size: 15,
+      $line-height: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      transition: color .3s ease-in-out;
+      @include m.font(
+        $font-size: 18,
+        $line-height: 22.5
+      );
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: f.rem(12);
+      height: f.rem(12);
+      margin-left: f.rem(7);
+      background-image:  url('#{v.$root}assets/images/icon_blank.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    @include m.hover() {
+      color: v.$COLOR_GREEN;
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(39);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(48);
+    }
+  }
+}

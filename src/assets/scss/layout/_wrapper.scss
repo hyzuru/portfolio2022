@@ -1,0 +1,14 @@
+/**
+* Layout
+* ========================== */
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variables" as v;
+
+/* wrapper */
+.l-wrapper {
+  min-height: 100vh;
+  @include m.flex(
+    $direction: column
+  );
+}

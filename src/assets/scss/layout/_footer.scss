@@ -1,0 +1,192 @@
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variables" as v;
+
+/**
+ * Layout
+ * ========================== */
+
+/* footer */
+.l-footer {
+  padding-top: f.rem(56);
+  padding-bottom: f.rem(73);
+  background-color: v.$COLOR_BROWN;
+  @include m.responsive(md) {
+    padding-top: f.rem(64);
+    padding-bottom: f.rem(88);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__column {
+    @include m.responsive(md) {
+      @include m.flex(
+        $direction: row-reverse,
+        $justify-content: space-between,
+        $align-items: flex-start
+      );
+    }
+  }
+
+  &__links {
+    flex-direction: column;
+    @include m.flex(
+      $justify-content: center,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      @include m.flex(
+        $align-items: flex-end
+      );
+    }
+  }
+
+  &__sns-head {
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      text-align: left;
+      @include m.font(
+        $font-size: 14
+      );
+    }
+  }
+
+  &__sns-body {
+    margin-top: f.rem(13);
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+    }
+  }
+
+  &__sns-list {
+    padding: f.rem(11.5) f.rem(18) f.rem(10);
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: v.$COLOR_WHITE;
+    @include m.flex();
+    @include m.responsive(md) {
+      padding: f.rem(13) f.rem(22);
+      border-top-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  }
+
+  &__sns-item {
+    &:not(:first-of-type) {
+      margin-left: f.rem(16);
+    }
+  }
+
+  &__sns-link {
+    svg {
+      width: f.rem(36);
+      height: f.rem(36);
+    }
+
+    path, ellipse {
+      @include m.responsive(md) {
+        transition: fill .3s ease-in-out;
+      }
+    }
+
+    @include m.hover() {
+      path, ellipse {
+        fill: v.$COLOR_YELLOW_GREEN;
+      }
+    }
+  }
+
+  &__nav {
+    margin-top: f.rem(56);
+    @include m.responsive(md) {
+      margin-top: f.rem(36);
+    }
+  }
+
+  &__list {
+    margin-top: f.rem(-28);
+    margin-left: f.rem(-16);
+    @include m.flex(
+      $wrap: wrap,
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    margin-top: f.rem(28);
+    margin-left: f.rem(16);
+  }
+
+  &__link {
+    padding: f.rem(8);
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      transition: color .3s ease-in-out;
+    }
+
+    @include m.hover() {
+      @include m.font(
+        $color: v.$COLOR_YELLOW_GREEN
+      );
+    }
+  }
+
+  &__company {
+    margin-top: f.rem(40);
+    @include m.flex(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      align-items: flex-start;
+      margin-top: f.rem(12);
+    }
+  }
+
+  &__logo {
+    margin-left: f.rem(-11);
+    @include m.responsive(md) {
+      margin-left: 0;
+    }
+
+    img {
+      width: f.rem(201.5);
+      @include m.responsive(md) {
+        width: f.rem(300);
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: f.rem(27);
+    text-align: center;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 10,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(38);
+      text-align: left;
+      @include m.font(
+        $font-size: 13,
+        $line-height: 26
+      );
+    }
+  }
+}

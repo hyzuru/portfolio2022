@@ -1,0 +1,17 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+* Object
+* ========================== */
+
+/* Utility ------------ */
+
+/* uppercase */
+.u-sp {
+  display: block;
+  @include m.responsive(md) {
+    display: none;
+  }
+}

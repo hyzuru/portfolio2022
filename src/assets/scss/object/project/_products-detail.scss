@@ -1,0 +1,478 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* products-detail */
+.products-detail {
+  $this: &;
+
+  &__column {
+    @include m.flex(
+      $direction: column
+    );
+    @include m.responsive(md) {
+      display: grid;
+      grid-template:
+        "image text" auto
+        "image buy" 1fr / 44.1176471% 49.9999935%;
+      gap: f.rem(36) 5.88235294%;
+    }
+  }
+
+  &__text {
+    margin-top: f.rem(28);
+    @include m.responsive(md) {
+      grid-area: text;
+      margin-top: f.rem(6);
+    }
+  }
+
+  &__name {
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 21,
+      $line-height: 28
+    );
+    @include m.responsive(md) {
+      @include m.flex(
+        $wrap: wrap,
+        $align-items: center
+      );
+      @include m.font(
+        $font-size: 28,
+        $line-height: 38
+      );
+    }
+
+    sup {
+      top: -0.75em;
+    }
+  }
+
+  &__code {
+    margin-top: f.rem(5);
+    @include m.responsive(md) {
+      margin-top: f.rem(8);
+    }
+    @include m.font(
+      $color: v.$COLOR_GRAY_2,
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+  }
+
+  &__code-head {
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__code-body {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-6);
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__price {
+    margin-top: f.rem(12);
+    @include m.flex(
+      $align-items: baseline
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+    }
+  }
+
+  &__price-after-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 26
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 34
+      );
+    }
+  }
+
+  &__price-after-yen {
+    margin-left: f.rem(-3);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 16
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-2);
+      @include m.font(
+        $font-size: 21
+      );
+    }
+  }
+
+  &__price-after-tax {
+    margin-left: f.rem(-3);
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      margin-left: 0;
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__price-after-postage {
+    display: block;
+    margin-top: f.rem(3);
+    @include m.font(
+      $font-size: 12,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__price-before {
+    margin-left: f.rem(8);
+    background-image: linear-gradient(v.$COLOR_GRAY_7, v.$COLOR_GRAY_7);
+    background-position: 0 50%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+    @include m.font(
+      $color: v.$COLOR_GRAY_7
+    );
+  }
+
+  &__price-before-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+
+  &__price-before-yen {
+    margin-left: f.rem(-5);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 11
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-2);
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(18);
+    @include m.font(
+      $font-size: 15,
+      $line-height: 24,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+      @include m.font(
+        $font-size: 15,
+        $line-height: 27
+      );
+    }
+  }
+
+  &__quantity {
+    margin-top: f.rem(4);
+    @include m.responsive(md) {
+      margin-top: f.rem(6);
+    }
+  }
+
+  &__quantity-gram {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+  }
+
+  &__quantity-multiply {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 20
+    );
+  }
+
+  &__quantity-number {
+    margin-left: f.rem(-2);
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18
+    );
+  }
+
+  &__status {
+    margin-top: f.rem(12);
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+    }
+
+    & > span {
+      font-weight: 600;
+      @include m.font(
+        $font-size: 15,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 15
+        );
+      }
+    }
+  }
+
+  &__number {
+    margin-left: f.rem(4);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 20,
+      $letter-spacing: 40
+    );
+
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 21
+      );
+    }
+  }
+
+  &__gram {
+    margin-left: f.rem(2);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 16,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-left: 0;
+      @include m.font(
+        $font-size: 15
+      );
+    }
+  }
+
+  &__slash {
+    margin-right: f.rem(4);
+    margin-left: f.rem(4);
+    @include m.responsive(md) {
+      margin-right: f.rem(2);
+      margin-left: f.rem(2);
+    }
+  }
+
+  &__brackets {
+    @include m.font(
+      $font-size: 15,
+      $line-height: 28,
+      $letter-spacing: 40
+    );
+  }
+
+  &__tags {
+    margin-top: f.rem(6);
+    margin-left: f.rem(-4);
+    font-weight: 500;
+    @include m.flex(
+      $wrap: wrap
+    );
+    @include m.font(
+      $color: v.$COLOR_YELLOW_GREEN,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(8);
+      margin-left: f.rem(-8);
+      border-radius: 12px;
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__tag {
+    margin-top: f.rem(8);
+    margin-left: f.rem(4);
+    padding: f.rem(3) f.rem(11.5);
+    border: 2px solid v.$COLOR_YELLOW_GREEN;
+    border-radius: 12px;
+    background-color: v.$COLOR_WHITE;
+    font-weight: 700;
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+      margin-left: f.rem(8);
+      padding: f.rem(3.5) f.rem(14);
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__label {
+    width: fit-content;
+    margin-top: f.rem(32);
+    padding: f.rem(7.5) f.rem(11);
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: v.$COLOR_GREEN;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(32);
+      padding: f.rem(9.5) f.rem(15);
+      border-top-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+  }
+
+  &__figure {
+    margin-top: f.rem(16);
+  }
+
+  &__notes {
+    margin-top: f.rem(14);
+    padding-left: 1em;
+    text-indent: -1em;
+    @include m.font(
+      $color: v.$COLOR_RED,
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+      @include m.font(
+        $letter-spacing: 60
+      );
+    }
+
+    &::before {
+      content: "※";
+    }
+  }
+
+  &__images {
+    order: -1;
+    @include m.responsive(md) {
+      grid-area: image;
+    }
+  }
+
+  &__image {
+    border-radius: 9px;
+    overflow: hidden;
+    @include m.responsive(md) {
+      border-radius: 12px;
+    }
+  }
+
+  &__products-buy-wrapper {
+    margin-top: f.rem(36);
+    @include m.responsive(md) {
+      grid-area: buy;
+      margin-top: 0;
+    }
+  }
+
+  &__sub-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 f.rem(9.5);
+    margin-top: f.rem(14);
+    @include m.responsive(md) {
+      display: grid;
+      gap: 0 f.rem(20);
+      margin-top: f.rem(24);
+    }
+  }
+
+  &__item {
+    border-radius: 8px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    overflow: hidden;
+    @include m.responsive(md) {
+      border-width: 4px;
+      transition: border .3s ease-in-out;
+    }
+
+    &:first-of-type {
+      border-width: 2px;
+      border-color: v.$COLOR_GRAY_1;
+
+      &.is-current {
+        border-width: 3px;
+        @include m.responsive(md) {
+          border-width: 4px;
+        }
+      }
+    }
+
+    &.is-current {
+      border-color: v.$COLOR_GREEN;
+    }
+  }
+
+  &__share-wrapper {
+    margin-top: f.rem(24);
+    @include m.responsive(md) {
+      width: 49.9999935%;
+      margin-top: f.rem(32);
+      margin-left: auto;
+    }
+  }
+}

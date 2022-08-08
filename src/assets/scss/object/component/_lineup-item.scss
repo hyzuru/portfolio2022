@@ -1,0 +1,179 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* lineup-item */
+.c-lineup-item {
+  position: relative;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  @include m.responsive(md) {
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  &__image {
+    border: 2px solid v.$COLOR_GRAY_1;
+    border-radius: 9px;
+
+    img {
+      border-radius: 9px;
+    }
+  }
+
+  &__name {
+    margin-top: f.rem(24);
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__price {
+    margin-top: f.rem(8);
+    text-align: center;
+    @include m.responsive(md) {
+      margin-top: f.rem(8);
+    }
+
+    span {
+      &:nth-of-type(1) {
+        font-family: 'Heebo', sans-serif;
+        font-weight: 600;
+        @include m.font(
+          $font-size: 30,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 32
+          );
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-left: f.rem(-4);
+        font-weight: 600;
+        @include m.font(
+          $font-size: 20
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 24
+          );
+        }
+      }
+
+      &:nth-of-type(3) {
+        margin-left: f.rem(-4);
+        font-weight: 600;
+        @include m.font(
+          $font-size: 12,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 16
+          );
+        }
+      }
+
+      &:nth-of-type(4) {
+        display: block;
+        margin-top: f.rem(4);
+        @include m.font(
+          $font-size: 13,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__quantity {
+    margin-top: f.rem(15);
+    text-align: center;
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+    }
+  }
+
+  &__gram {
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(24);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(24);
+    }
+  }
+
+  &__button-wrapper + &__button-wrapper {
+    margin-top: f.rem(16);
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+    }
+  }
+
+  &__pickup {
+    position: absolute;
+    top: -34px;
+    right: -19px;
+    width: f.rem(80);
+    height: f.rem(80);
+    border-radius: 50%;
+    background-color: v.$COLOR_YELLOW_GREEN;
+    @include m.flex(
+      $justify-content: center,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      top: -32px;
+      right: -32px;
+    }
+  }
+
+  &__pickup-inner {
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $letter-spacing: 40
+    );
+  }
+
+  &__number {
+    @include m.font(
+      $font-size: 24
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+}

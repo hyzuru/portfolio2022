@@ -1,0 +1,161 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* product */
+.product {
+  $this: &;
+  @include m.flex(
+    $direction: column
+  );
+
+  &__block {
+    position: relative;
+    width: f.vw(350, 375);
+    padding: f.vw(20, 375) f.vw(20, 375) f.vw(26, 375);
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    background-color: v.$COLOR_GREEN;
+    @include m.responsive(md) {
+      width: f.vw(720, 1280);
+      margin-top: f.vw(13, 1280);
+      padding: f.vw(48, 1280) f.vw(24, 1280) f.vw(48, 1280) f.vw(28, 1280);
+      border-top-left-radius: f.vw(90, 1280);
+      border-bottom-right-radius: f.vw(90, 1280);
+    }
+  }
+
+  &__column {
+    @include m.flex();
+  }
+
+  &__image {
+    flex-basis: f.vw(100, 375);
+    @include m.responsive(md) {
+      flex-basis: f.vw(183, 1280);
+      margin-top: f.rem(-8);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    padding-top: f.vw(4, 375);
+    padding-left: f.vw(11, 375);
+    @include m.responsive(md) {
+      flex-basis: f.vw(485, 1280);
+      padding-top: 0;
+      padding-left: f.vw(30, 1280);
+    }
+  }
+
+  &__sub {
+    position: relative;
+    width: fit-content;
+    padding: f.vw(4, 375) f.vw(4, 375);
+    border-radius: f.vw(4, 375);
+    background-color: v.$COLOR_YELLOW_GREEN;
+    font-weight: 600;
+    color: v.$COLOR_WHITE;
+    font-size: f.vw(12, 375);
+    letter-spacing: f.ls(40);
+    @include m.responsive(md) {
+      padding: f.vw(7, 1280) f.vw(14, 1280);
+      border-radius: f.vw(6, 1280);
+      font-size: f.vw(14, 1280);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: f.vw(24, 375);
+      bottom: f.vw(-10, 375);
+      width: f.vw(12, 375);
+      height: f.vw(12, 375);
+      background-color: v.$COLOR_YELLOW_GREEN;
+      clip-path: polygon(0 0, 100% 0%, 100% 70%);
+      @include m.responsive(md) {
+        left: f.vw(58, 1280);
+        bottom: f.vw(-12, 1280);
+        width: f.vw(13, 1280);
+        height: f.vw(13, 1280);
+        clip-path: polygon(0 0, 100% 0%, 100% 70%);
+      }
+    }
+  }
+
+  &__main {
+    margin-top: f.vw(12, 375);
+    color: v.$COLOR_WHITE;
+    font-size: f.vw(17, 375);
+    line-height: f.lh(30, 17);
+    letter-spacing: f.ls(40);
+    font-weight: 600;
+    @include m.responsive(md) {
+      margin-top: f.vw(24, 1280);
+      font-size: f.vw(23, 1280);
+      line-height: f.lh(32, 23);
+    }
+
+    span {
+      position: relative;
+      padding-top: 0.45em;
+      @include m.responsive(md) {
+        padding-top: 0.55em;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.2em;
+        height: 0.2em;
+        border-radius: 50%;
+        background-color: v.$COLOR_WHITE;
+        @include m.responsive(md) {
+          width: 0.3em;
+          height: 0.3em;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: f.vw(12, 375);
+    @include m.flex(
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      width: f.vw(485, 1280);
+      margin-top: f.vw(-55, 1280);
+      margin-left: auto;
+      padding-left: f.vw(30, 1280);
+    }
+  }
+
+  &__button {
+    flex-basis: f.vw(148, 375);
+    @include m.responsive(md) {
+      flex-basis: f.vw(200, 1280);
+    }
+
+    &:not(:first-of-type) {
+      margin-left: f.rem(10);
+      @include m.responsive(md) {
+        margin-left: f.vw(16, 1280);
+      }
+    }
+  }
+}

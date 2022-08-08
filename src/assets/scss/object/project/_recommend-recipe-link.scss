@@ -1,0 +1,259 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* recommend-recipe-link */
+.recommend-recipe-link {
+  $this: &;
+  position: relative;
+  border-top-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+  background-color: v.$COLOR_BEIGE;
+  font-weight: 600;
+  @include m.responsive(md) {
+    border-top-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    @include m.flex();
+  }
+
+  &__inner {
+    padding: f.rem(36) f.rem(25) f.rem(40);
+    @include m.responsive(md) {
+      padding: f.rem(80) percentage(math.div(88, 1088)) f.rem(80) percentage(math.div(92, 1088));
+    }
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__grid {
+    @include m.responsive(md) {
+      display: grid;
+      grid-template:
+        "heading image" auto
+        "button image" auto / percentage(math.div(273, 908)) percentage(math.div(578, 908));
+      gap: f.rem(38) percentage(math.div(57, 908));
+    }
+  }
+
+  &__text {
+    flex-basis: percentage(math.div(332, 912));
+    @include m.font(
+      $color: v.$COLOR_WHITE
+    );
+    @include m.responsive(md) {
+      grid-area: heading;
+      justify-self: start;
+    }
+  }
+
+  &__sub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 f.rem(16);
+    margin-top: f.rem(30);
+    @include m.responsive(md) {
+      grid-area: image;
+      gap: 0 f.rem(32);
+      margin-top: 0;
+    }
+  }
+
+  &__head {
+    @include m.flex(
+      $direction: column,
+      $align-items: center
+    );
+    @include m.responsive(md) {
+      align-items: flex-start;
+    }
+  }
+
+  &__sub {
+    width: fit-content;
+    padding: f.rem(6) f.rem(8);
+    background-color: v.$COLOR_GREEN;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    @include m.font(
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(10) f.rem(14);
+      border-top-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+  }
+
+  &__main {
+    margin-top: f.rem(13);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 28,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+      @include m.font(
+        $font-size: 32,
+        $line-height: 40
+      );
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(20);
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(28);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    border: solid 2px v.$COLOR_GREEN;
+    text-align: center;
+    background-color: v.$COLOR_WHITE;
+    font-weight: 700;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      grid-area: button;
+      padding: f.rem(18);
+      border-radius: 28px;
+      transition-property: background-color, color;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    @include m.hover() {
+      background-color: v.$COLOR_YELLOW_GREEN;
+      color: v.$COLOR_WHITE;
+      #{$this}__arrow {
+        path {
+          fill: #fff
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: f.rem(20);
+    transform: translateY(-50%);
+    width: f.rem(8);
+    height: f.rem(12);
+
+    path {
+      @include m.responsive(md) {
+        transition: fill .3s ease-in-out;
+      }
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      bottom: f.vw(14, 375);
+      left: f.vw(-88, 375);
+      z-index: 1;
+      width: f.vw(115, 375);
+      height: f.vw(115, 375);
+      @include m.responsive(md) {
+        bottom: f.rem(31);
+        left: f.rem(-61);
+        width: f.rem(112);
+        height: f.rem(112);
+      }
+
+      path {
+        stroke-width: 1px;
+        @include m.responsive(md) {
+          stroke-width: 2px;
+        }
+      }
+    }
+
+    &--02 {
+      bottom: f.vw(-37, 375);
+      left: f.vw(-65, 375);
+      width: f.vw(120, 375);
+      height: f.vw(111, 375);
+      @include m.responsive(md) {
+        bottom: f.rem(-31);
+        left: f.rem(-10);
+        width: f.rem(120);
+        height: f.rem(110);
+      }
+    }
+
+    &--03 {
+      top: f.vw(-50, 375);
+      right: f.vw(-12, 375);
+      width: f.vw(107, 375);
+      height: f.vw(97, 375);
+      @include m.responsive(md) {
+        top: f.rem(-54);
+        right: f.rem(-14);
+        width: f.rem(214);
+        height: f.rem(194);
+      }
+    }
+
+    &--04 {
+      top: f.vw(16, 375);
+      right: f.vw(-55, 375);
+      width: f.vw(104.5, 375);
+      height: f.vw(95.5, 375);
+      @include m.responsive(md) {
+        top: f.rem(94);
+        right: f.rem(-54);
+        width: f.rem(206);
+        height: f.rem(188);
+      }
+
+      path {
+        stroke-width: 2px;
+        @include m.responsive(md) {
+          stroke-width: 2px;
+        }
+      }
+    }
+  }
+}

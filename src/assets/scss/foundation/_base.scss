@@ -1,0 +1,100 @@
+/**
+* Foundation
+* ========================== */
+@use "sass:math";
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variables" as v;
+
+/* base */
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  &.is-loading,
+  &.is-drawer-open {
+    overflow: hidden;
+  }
+}
+
+body {
+  color: v.$COLOR_BROWN;
+  font-feature-settings: 'palt';
+  font-family:
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Helvetica Neue",
+    Arial,
+    Meiryo,
+    sans-serif;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+body.preload * {
+  transition: none !important;
+}
+
+a {
+  color: v.$COLOR_BROWN;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+}
+
+sup {
+  @include m.font(
+    $font-size: 13
+  );
+  @include m.responsive(md) {
+    @include m.font($font-size: 16);
+  }
+}
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+}
+
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+button {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  text-align: left;
+}

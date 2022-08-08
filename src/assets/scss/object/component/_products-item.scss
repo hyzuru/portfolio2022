@@ -1,0 +1,133 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* products-item */
+.c-products-item {
+  $this: &;
+
+  &__link {
+    @include m.hover() {
+      #{$this}__name {
+        @include m.font(
+          $color: v.$COLOR_GREEN
+        );
+      }
+
+      #{$this}__name::after {
+        transform: translateX(4px);
+      }
+
+      #{$this}__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__image {
+    transform: translateZ(0);
+    border: 2px solid v.$COLOR_GRAY_5;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      border-radius: 12px;
+      @include m.responsive(md) {
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &__name {
+    position: relative;
+    margin-top: f.rem(10);
+    padding-right: 1em;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+      transition: color .3s ease-out;
+      @include m.font(
+        $font-size: 16
+      );
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: f.rem(8);
+      height: f.rem(12);
+      margin-left: f.rem(5);
+      background-image: url('#{v.$root}assets/images/icon_arrow_right.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      vertical-align: baseline;
+      @include m.responsive(md) {
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: f.rem(6);
+    @include m.responsive(md) {
+      margin-top: f.rem(6);
+    }
+
+    span {
+      &:nth-child(1) {
+        font-family: 'Heebo', sans-serif;
+        font-weight: 500;
+        @include m.font(
+          $font-size: 14,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 16,
+            $letter-spacing: 40
+          );
+        }
+      }
+
+      &:nth-child(2) {
+        margin-left: f.rem(3);
+        @include m.font(
+          $font-size: 12,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 15
+          );
+        }
+      }
+
+      &:nth-child(3) {
+        margin-left: f.rem(1);
+        @include m.font(
+          $font-size: 11,
+          $letter-spacing: 40
+        );
+        @include m.responsive(md) {
+          @include m.font(
+            $font-size: 13
+          );
+        }
+      }
+    }
+  }
+}

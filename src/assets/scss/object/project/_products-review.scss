@@ -1,0 +1,152 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* products-review */
+.products-review {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: f.rem(64);
+  padding-bottom: f.rem(88);
+  background-color: v.$COLOR_GRAY_5;
+  @include m.responsive(md) {
+    padding-top: f.rem(80);
+    padding-bottom: f.rem(80);
+  }
+
+  &__inner {
+    @include m.inner();
+  }
+
+  &__head {
+    margin-top: f.rem(32);
+    @include m.responsive(md) {
+      margin-top: f.rem(36);
+      padding-left: f.rem(6);
+      @include m.flex(
+        $align-items: center
+      );
+    }
+  }
+
+  &__score {
+    @include m.flex(
+      $justify-content: center
+    );
+  }
+
+  &__average {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 21
+      );
+    }
+  }
+
+  &__icon {
+    margin-top: f.rem(-2);
+    margin-left: f.rem(12);
+    @include m.responsive(md) {
+      margin-left: f.rem(16);
+    }
+
+    span {
+      display: inline-block;
+      width: f.rem(17.5);
+      height: f.rem(16.5);
+      @include m.responsive(md) {
+        width: f.rem(21);
+        height: f.rem(20);
+      }
+      &:not(:first-of-type) {
+        margin-left: f.rem(-4);
+        @include m.responsive(md) {
+          margin-left: f.rem(-2);
+        }
+      }
+    }
+  }
+
+  &__total {
+    margin-top: f.rem(10);
+    text-align: center;
+    @include m.font(
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: 0;
+      margin-left: f.rem(32);
+    }
+
+    span {
+      font-family: 'Heebo', sans-serif;
+      font-weight: 600;
+      @include m.font(
+        $font-size: 14,
+        $letter-spacing: 40
+      );
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 15
+        );
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: f.rem(14) 0;
+    margin-top: f.rem(18);
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(40);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(64);
+    }
+  }
+
+  &__buttons {
+    @include m.responsive(md) {
+      @include m.flex(
+        $justify-content: center
+      );
+    }
+  }
+
+  &__button {
+    width: f.rem(256);
+    @include m.responsive(md) {
+      width: f.rem(280);
+    }
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(18);
+      @include m.responsive(md) {
+        margin-top: 0;
+        margin-left: f.rem(24);
+      }
+    }
+  }
+}

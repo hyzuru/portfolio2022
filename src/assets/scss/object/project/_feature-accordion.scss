@@ -1,0 +1,161 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* feature-accordion */
+.feature-accordion {
+  $this: &;
+
+  &__head {
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__trigger {
+    position: relative;
+    z-index: 1;
+    width: f.rem(256);
+    padding: f.rem(21);
+    border-style: solid;
+    border-width: 2px;
+    border-color: v.$COLOR_YELLOW_GREEN;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: v.$COLOR_WHITE;
+    color: v.$COLOR_YELLOW_GREEN;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      width: f.rem(280);
+      padding: f.rem(18.5);
+      border-radius: 28px;
+      transition-property: border-color, color;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+      @include m.font(
+        $font-size: 15
+      );
+    }
+
+    &[aria-expanded='true'] {
+      #{$this}__tabicon::after {
+        opacity: 0;
+        transform: rotate(0);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      background: v.$COLOR_YELLOW_GREEN;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      padding-top: 100%;
+      border-radius: 100%;
+      transform-origin: center left;
+      @include m.responsive(md) {
+        transition: transform .4s ease-in-out;
+      }
+    }
+
+    &--wide {
+      width: f.rem(309);
+      @include m.responsive(md) {
+        width: f.rem(328);
+      }
+    }
+
+    @include m.hover() {
+      #{$this}__text {
+        position: relative;
+        @include m.font(
+          $color: v.$COLOR_WHITE
+        );
+      }
+
+      #{$this}__tabicon {
+        &::before, &::after {
+          background-color: v.$COLOR_WHITE;
+        }
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+  }
+
+  &__tabicon {
+    position: absolute;
+    top: 50%;
+    right: f.rem(22);
+    transform: translateY(-50%);
+    width: f.rem(12);
+    height: f.rem(12);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: v.$COLOR_YELLOW_GREEN;
+      inset: 0;
+      width: 100%;
+      height: 2px;
+      margin: auto;
+    }
+
+    &::before {
+      @include m.responsive(md) {
+        transition: background-color .3s ease-in-out;
+      }
+    }
+
+    &::after {
+      opacity: 1;
+      transform: rotate(90deg);
+      @include m.responsive(md) {
+        transition: opacity .5s ease-in-out, transform .5s ease-in-out, background-color .3s ease-in-out;
+      }
+    }
+  }
+
+  &__tab-panel {
+    &--01 {
+      @include m.responsive(md) {
+        width: 184.605%;
+      }
+    }
+
+    &--02 {
+      @include m.responsive(md) {
+        width: 184.605%;
+      }
+    }
+
+    &--03 {
+      @include m.responsive(md) {
+        width: 185.946%;
+        margin-left: -85.9%;
+      }
+    }
+  }
+}

@@ -1,0 +1,763 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* products-index */
+.products-index {
+  $this: &;
+
+  &__header {
+    position: relative;
+    padding-top: f.rem(104);
+    padding-bottom: f.rem(40);
+    overflow: hidden;
+    background-color: v.$COLOR_YELLOW_GREEN;
+    @include m.responsive(md) {
+      padding-top: f.rem(140);
+      padding-bottom: f.rem(48);
+    }
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      top: f.vw(-32, 375);
+      left: f.vw(-36, 375);
+      z-index: 1;
+      width: f.vw(150, 375);
+      height: f.vw(137.5, 375);
+      @include m.responsive(md) {
+        top: f.rem(-105);
+        left: f.rem(-71);
+        width: f.rem(300);
+        height: f.rem(275);
+      }
+    }
+
+    &--02 {
+      top: f.vw(77, 375);
+      left: f.vw(-21, 375);
+      width: f.vw(60, 375);
+      height: f.vw(55, 375);
+      @include m.responsive(md) {
+        top: f.rem(113);
+        left: f.rem(-42);
+        width: f.rem(120);
+        height: f.rem(110);
+      }
+    }
+
+    &--03 {
+      right: f.vw(-52, 375);
+      bottom: f.vw(-73, 375);
+      width: f.vw(150, 375);
+      height: f.vw(140.5, 375);
+      @include m.responsive(md) {
+        right: f.rem(-111);
+        bottom: f.rem(-112);
+        width: f.rem(300);
+        height: f.rem(281);
+      }
+    }
+  }
+
+  &__list {
+    margin-top: f.rem(9);
+    margin-left: f.rem(-17);
+    @include m.flex(
+      $wrap: wrap,
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(8);
+      margin-left: f.rem(-32);
+    }
+  }
+
+  &__item {
+    flex-basis: 154px;
+    margin-top: f.rem(17);
+    margin-left: f.rem(17);
+    @include m.responsive(md) {
+      flex-basis: 200px;
+      margin-top: f.rem(32);
+      margin-left: f.rem(32);
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    padding: f.rem(12.5);
+    border: 2px solid v.$COLOR_WHITE;
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 15,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(18);
+      border-top-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      transition-property: border, background-color;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+      @include m.font(
+        $font-size: 18
+      );
+    }
+
+    &--current {
+      border: 2px solid v.$COLOR_GREEN;
+      background-color: v.$COLOR_GREEN;
+    }
+
+    @include m.hover() {
+      border: 2px solid v.$COLOR_GREEN;
+      background-color: v.$COLOR_GREEN;
+    }
+
+    sup {
+      top: -0.25em;
+      @include m.responsive(md) {
+
+      }
+    }
+  }
+
+  &__body {
+    padding-top: f.rem(52);
+    padding-bottom: f.rem(90);
+    @include m.responsive(md) {
+      padding-top: f.rem(88);
+      padding-bottom: f.rem(160);
+    }
+  }
+
+  &__block {
+    @include m.responsive(md) {
+      position: relative;
+      @include m.inner;
+    }
+  }
+
+  &__image {
+    width: percentage(math.div(350, 375));
+    @include m.responsive(md) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    position: relative;
+    width: percentage(math.div(350, 375));
+    margin-top: f.rem(-60);
+    margin-left: auto;
+    @include m.responsive(md) {
+      position: absolute;
+      right: -5px;
+      bottom: 0;
+      width: percentage(math.div(440, 1168));
+    }
+  }
+
+  &__text-head {
+    position: relative;
+    width: fit-content;
+    padding: f.rem(10) f.rem(16) f.rem(8) f.rem(24);
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: v.$COLOR_GREEN;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 22,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(22) f.rem(35) f.rem(16);
+      border-top-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      @include m.font(
+        $font-size: 27
+      );
+    }
+
+    sup {
+      @include m.responsive(md) {
+        top: -0.75em;
+      }
+    }
+  }
+
+  &__text-body {
+    margin-top: f.rem(-8);
+    padding: f.rem(20) f.rem(24) f.rem(20);
+    border-bottom-left-radius: 20px;
+    background-color: v.$COLOR_BEIGE;
+    @include m.responsive(md) {
+      margin-top: f.rem(-30);
+      padding: f.rem(48) f.rem(40) f.rem(34);
+      border-bottom-right-radius: 40px;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__lead {
+    font-weight: 600;
+    @include m.font(
+      $font-size: 20,
+      $line-height: 28,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 26,
+        $line-height: 34
+      );
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(5);
+    @include m.font(
+      $font-size: 15,
+      $line-height: 24,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+      @include m.font(
+        $font-size: 16,
+        $line-height: 28,
+        $letter-spacing: 60
+      );
+    }
+  }
+
+  &__inner {
+    @include m.inner();
+  }
+
+  &__regular {
+    margin-top: f.rem(52);
+    @include m.responsive(md) {
+      margin-top: f.rem(64);
+    }
+  }
+
+  &__sub-heading {
+    @include m.flex(
+      $direction: column,
+      $align-items: center
+    );
+
+    &--regular {
+      #{$this}__sub-heading-sub {
+        background-color: #c26c2f;
+
+        &::before {
+          left: 106px;
+          background-color: #c26c2f;
+        }
+      }
+
+      #{$this}__sub-heading-main {
+        color: #87481b
+      }
+    }
+
+    &--single {
+      #{$this}__sub-heading-sub {
+        background-color: v.$COLOR_YELLOW_GREEN;
+
+        &::before {
+          left: 76px;
+          background-color: v.$COLOR_YELLOW_GREEN;
+        }
+      }
+
+      #{$this}__sub-heading-main {
+        color: v.$COLOR_GREEN;
+      }
+    }
+  }
+
+  &__sub-heading-sub {
+    position: relative;
+    padding: f.rem(4) f.rem(6);
+    border-radius: 3px;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 12,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      padding: f.rem(7) f.rem(14);
+      border-radius: 6px;
+      @include m.font(
+        $font-size: 14
+      );
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      width: f.rem(10);
+      height: f.rem(10);
+      clip-path: polygon(0 0, 100% 0%, 100% 70%);
+      @include m.responsive(md) {
+        left: 74px;
+        bottom: -14px;
+        width: f.rem(15);
+        height: f.rem(15);
+        clip-path: polygon(0 0, 100% 0%, 100% 70%);
+      }
+    }
+  }
+
+  &__sub-heading-main {
+    margin-top: f.rem(13);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 28,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+      @include m.font(
+        $font-size: 32
+      );
+    }
+  }
+
+  &__dot-wrapper {
+    margin-top: f.rem(7);
+    @include m.responsive(md) {
+      margin-top: f.rem(12);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: f.rem(28) f.rem(23);
+    margin-top: f.rem(29);
+    @include m.responsive(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: f.rem(56) percentage(math.div(40, 1088));
+      margin-top: f.rem(36);
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    @include m.hover() {
+      #{$this}__name {
+        @include m.font(
+          $color: v.$COLOR_GREEN
+        );
+      }
+
+      #{$this}__name::after {
+        transform: translateX(4px);
+      }
+
+      #{$this}__thumbnail {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__thumbnail {
+    border: solid 2px v.$COLOR_GRAY_1;
+    border-radius: 9px;
+    overflow: hidden;
+
+    img {
+      @include m.responsive(md) {
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: f.rem(94);
+    padding: f.rem(6.5) f.rem(6);
+    border-top-left-radius: 9px;
+    border-bottom-right-radius: 14px;
+    text-align: center;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 11,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      width: f.rem(124);
+      padding: f.rem(10);
+      @include m.font(
+        $font-size: 13
+      );
+    }
+
+    &--first {
+      background-color: v.$COLOR_GREEN;
+    }
+
+    &--regular {
+      background-color: #87481b;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: f.rem(52);
+    height: f.rem(52);
+    padding: f.rem(10) f.rem(7) f.rem(10) f.rem(9);
+    border: 2px solid v.$COLOR_RED;
+    border-radius: 50%;
+    background-color: v.$COLOR_WHITE;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    @include m.font(
+      $color: v.$COLOR_RED
+    );
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(224, 492));
+      top: -18px;
+      right: -18px;
+      width: f.rem(80);
+      height: f.rem(80);
+      padding: f.rem(18) f.rem(9);
+    }
+  }
+
+  &__discount-number {
+    font-weight: 500;
+    @include m.font(
+      $font-size: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 24
+      );
+    }
+  }
+
+  &__discount-percentage {
+    margin-left: f.rem(-4);
+    font-weight: 500;
+    @include m.font(
+      $font-size: 11
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__discount-off {
+    display: block;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 11,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(2);
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__name {
+    margin-top: f.rem(10);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(18);
+      transition: color .3s ease-out;
+      @include m.font(
+        $font-size: 16
+      );
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: f.rem(8);
+      height: f.rem(12);
+      margin-left: f.rem(5);
+      background-image: url('#{v.$root}assets/images/icon_arrow_right.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: f.rem(4);
+    @include m.responsive(md) {
+      margin-top: f.rem(6);
+    }
+  }
+
+  &__price-after {
+    margin-right: f.rem(8);
+    @include m.font(
+      $color: v.$COLOR_RED
+    );
+    @include m.responsive(md) {
+      margin-right: 0;
+    }
+  }
+
+  &__price-after-number {
+    font-family: 'Heebo',sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__price-after-yen {
+    margin-left: f.rem(-5);
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 15
+      );
+    }
+  }
+
+  &__price-after-tax {
+    margin-left: f.rem(-5);
+    @include m.font(
+      $font-size: 11,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__price-after-postage {
+    @include m.font(
+      $font-size: 11,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      display: block;
+      margin-top: f.rem(4);
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__price-before {
+    display: inline-block;
+    background-image: linear-gradient(v.$COLOR_GRAY_7, v.$COLOR_GRAY_7);
+    background-position: 0 50%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+    @include m.font(
+      $color: v.$COLOR_GRAY_7
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+    }
+  }
+
+  &__price-before-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__price-before-yen {
+    margin-left: f.rem(-6);
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      margin-left: f.rem(-4);
+      @include m.font(
+        $font-size: 15
+      );
+    }
+  }
+
+  &__notes {
+    padding-left: 1em;
+    text-indent: -1em;
+    @include m.font(
+      $font-size: 12,
+      $line-height: 17,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 13,
+        $line-height: 18
+      );
+    }
+
+    &--normal {
+      margin-top: f.rem(28);
+      @include m.responsive(md) {
+        margin-top: f.rem(36);
+        text-align: center;
+      }
+    }
+
+    &--highlight {
+      margin-top: f.rem(6);
+      @include m.font(
+        $color: v.$COLOR_RED
+      );
+    }
+
+    &::before {
+      content: "※";
+    }
+  }
+
+  &__single {
+    margin-top: f.rem(62);
+    padding-top: f.rem(52);
+    border-top: 2px solid v.$COLOR_GRAY_1;
+    @include m.responsive(md) {
+      margin-top: f.rem(76);
+      padding-top: f.rem(64);
+    }
+  }
+
+  &__price-inner {
+    display: block;
+    @include m.flex();
+  }
+
+  &__price-number {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    @include m.font(
+      $font-size: 14,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 16
+      );
+    }
+  }
+
+  &__price-yen {
+    margin-left: f.rem(1);
+    @include m.font(
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 15
+      );
+    }
+  }
+
+  &__price-tax {
+    margin-left: f.rem(1);
+    @include m.font(
+      $font-size: 11,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__price-bracket {
+    display: inline-block;
+    margin-top: f.rem(2);
+    @include m.font(
+      $font-size: 11,
+      $line-height: 16,
+      $letter-spacing: 40
+    );
+
+    @include m.responsive(md) {
+      margin-top: f.rem(4);
+      @include m.font(
+        $font-size: 13
+      );
+    }
+  }
+
+  &__recipe-link-wrapper {
+    margin-top: f.rem(64);
+    @include m.responsive(md) {
+      margin-top: f.rem(128);
+    }
+  }
+}

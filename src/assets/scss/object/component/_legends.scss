@@ -1,0 +1,135 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* legends */
+.c-legends {
+  &__list {
+    margin-top: f.rem(20);
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+      @include m.flex($justify-content: center);
+    }
+  }
+
+  &__item {
+    @include m.flex($justify-content: center,
+      $align-items: center);
+
+    &:not(:first-of-type) {
+      margin-top: f.rem(10);
+      @include m.responsive(md) {
+        margin-top: 0;
+        margin-left: f.rem(24);
+      }
+    }
+  }
+
+  &__legends {
+    position: relative;
+    width: 63%;
+    @include m.flex($align-items: center);
+    @include m.responsive(md) {
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: f.vw(10, 375);
+      height: f.vw(10, 375);
+      background-color: v.$COLOR_GRAY_3;
+      @include m.responsive(md) {
+        width: f.rem(10);
+        height: f.rem(10);
+      }
+    }
+
+    &--logo {
+      &::before {
+        background-color: v.$COLOR_GREEN;
+      }
+    }
+
+    &--pig {
+      &::before {
+        background-color: v.$COLOR_GRAY_3;
+      }
+    }
+
+    &--cow {
+      &::before {
+        background-color: v.$COLOR_GRAY_4;
+      }
+    }
+  }
+
+  &__icon {
+    width: f.rem(28);
+    margin-left: f.rem(12);
+
+    &--logo {
+      @include m.responsive(md) {
+        width: f.rem(22);
+      }
+    }
+
+    &--pig {
+      @include m.responsive(md) {
+        width: f.rem(24);
+      }
+    }
+
+    &--cow {
+      @include m.responsive(md) {
+        width: f.rem(26);
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    flex: 1;
+    padding-left: f.vw(12, 375);
+    @include m.font($font-size: 15,
+      $line-height: 24,
+      $letter-spacing: 40);
+    font-size: f.vw(15, 375);
+    @include m.responsive(md) {
+      margin-left: f.rem(8);
+      padding-left: 0;
+      @include m.font(
+        $font-size: 13
+      );
+    }
+
+    &--en {
+      font-family: 'Heebo', sans-serif;
+      font-size: f.vw(17, 375);
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 14
+        );
+      }
+    }
+
+    sup {
+      top: -0.25em;
+      @include m.font(
+        $font-size: 14
+      );
+      @include m.responsive(md) {
+        top: 0;
+      }
+    }
+  }
+}

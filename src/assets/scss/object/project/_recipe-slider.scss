@@ -1,0 +1,332 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* cart */
+.recipe-slider {
+  position: relative;
+  padding: f.rem(12) f.rem(9) f.rem(36);
+  border-top-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  background-color: v.$COLOR_WHITE;
+  @include m.responsive(md) {
+    margin-top: f.rem(40);
+    padding: f.rem(27) percentage(math.div(50, 1088)) f.rem(48);
+    border-top-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+  }
+
+  .swiper-slide {
+    padding-right: f.rem(16);
+    padding-left: f.rem(16);
+    @include m.responsive(md) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 21%;
+    width: f.rem(36);
+    height: f.rem(36);
+    border: solid 2px v.$COLOR_BROWN;
+    background-color: v.$COLOR_WHITE;
+    border-radius: 50%;
+    @include m.responsive(md) {
+      top: 50%;
+      width: f.rem(56);
+      height: f.rem(56);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+      background-color: v.$COLOR_BROWN;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 100%;
+      transform-origin: center center;
+      @include m.responsive(md) {
+        transition: transform .3s ease-in-out;
+      }
+    }
+
+    &::after {
+      content: '';
+    }
+
+    svg {
+      overflow: visible;
+      width: f.rem(8);
+      @include m.responsive(md) {
+        width: f.rem(9);
+      }
+    }
+
+    path {
+      stroke: v.$COLOR_BROWN;
+      @include m.responsive(md) {
+        transition: stroke .4s ease-in-out;
+      }
+    }
+
+    @include m.hover() {
+      &::before {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      path {
+        stroke: v.$COLOR_WHITE;
+      }
+    }
+  }
+
+  .swiper-button-prev.swiper-button-disabled,
+  .swiper-button-next.swiper-button-disabled {
+    opacity: 1;
+    border-color: v.$COLOR_GRAY_7;
+    background-color: v.$COLOR_GRAY_1;
+
+    path {
+      stroke: v.$COLOR_GRAY_7;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+    @include m.responsive(md) {
+      left: -27px;
+    }
+
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+
+  .swiper-button-next {
+    right: 10px;
+    @include m.responsive(md) {
+      right: -27px;
+    }
+  }
+
+  &__label {
+    padding-right: f.rem(25);
+    text-align: right;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    @include m.flex(
+      $justify-content: flex-end,
+      $align-items: center
+    );
+    @include m.font(
+      $color: v.$COLOR_YELLOW_GREEN,
+      $font-size: 12,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-right: f.rem(-24);
+      padding-right: f.rem(4);
+      @include m.font(
+        $font-size: 18
+      );
+    }
+  }
+
+  &__dot-wrapper {
+    display: inline-flex;
+    margin-top: f.rem(-1);
+    margin-right: f.rem(14);
+    @include m.responsive(md) {
+      margin-top: f.rem(-4);
+      margin-right: f.rem(25);
+    }
+  }
+
+  &__column {
+    margin-top: f.rem(12);
+    @include m.flex(
+      $direction: column
+    );
+    @include m.responsive(md) {
+      flex-direction: row;
+      align-items: center;
+      margin-top: f.rem(18);
+    }
+  }
+
+  &__text {
+    padding-top: f.rem(16);
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(495, 988));
+      padding-top: f.rem(4);
+      padding-left: percentage(math.div(48, 988));
+    }
+  }
+
+  &__time {
+    display: inline-block;
+    padding: f.rem(6);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: v.$COLOR_GREEN;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 12
+    );
+    @include m.responsive(md) {
+      padding: f.rem(8) f.rem(10) f.rem(8) f.rem(12);
+      border-top-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      @include m.font(
+        $font-size: 13
+      );
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: f.rem(12);
+      height: f.rem(12);
+      margin-right: f.rem(4);
+      background-image: url('#{v.$root}assets/images/icon_time_white.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      vertical-align: bottom;
+      @include m.responsive(md) {
+        width: f.rem(17);
+        height: f.rem(17);
+        margin-right: f.rem(6);
+        vertical-align: sub;
+      }
+    }
+  }
+
+  &__name {
+    margin-top: f.rem(6);
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 20
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+      @include m.font(
+        $font-size: 30
+      );
+    }
+  }
+
+  &__lead {
+    margin-top: f.rem(6);
+    font-weight: 600;
+    @include m.font(
+      $font-size: 14,
+      $line-height: 20,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(14);
+      @include m.font(
+        $font-size: 15,
+        $line-height: 23,
+        $letter-spacing: 60
+      );
+    }
+
+    sup {
+      top: 0;
+    }
+  }
+
+  &__head {
+    margin-top: f.rem(12);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(18);
+      @include m.font(
+        $font-size: 14
+      );
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(6);
+  }
+
+  &__item {
+    width: f.rem(82);
+    @include m.responsive(md) {
+      width: f.rem(95);
+    }
+
+    &:not(:first-of-type) {
+      @include m.responsive(md) {
+        margin-left: f.rem(16);
+      }
+    }
+  }
+
+  &__image {
+    order: -1;
+    border-radius: 9px;
+    overflow: hidden;
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(493, 988));
+      border-radius: 12px;
+    }
+  }
+
+  &__sub-image {
+    border-width: 1px;
+    border-style: solid;
+    border-color: v.$COLOR_GRAY_1;
+    border-radius: 6px;
+    @include m.responsive(md) {
+      border-width: 2px;
+    }
+  }
+
+  &__sub-name {
+    margin-top: f.rem(6);
+    @include m.font(
+      $font-size: 12,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(10);
+      @include m.font(
+        $font-size: 12
+      );
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(26);
+    @include m.flex(
+      $justify-content: center
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(32);
+    }
+  }
+}

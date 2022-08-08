@@ -1,0 +1,95 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* recipe-item */
+.c-recipe-item {
+  $this: &;
+
+  &__link {
+    @include m.hover() {
+      #{$this}__name {
+        @include m.font(
+          $color: v.$COLOR_GREEN
+        );
+      }
+
+      #{$this}__name::after {
+        transform: translateX(4px);
+      }
+
+      #{$this}__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__image {
+    transform: translateZ(0);
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      @include m.responsive(md) {
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    position: relative;
+    margin-top: f.rem(10);
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_BROWN,
+      $font-size: 13,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(16);
+      transition: color .3s ease-out;
+      @include m.font(
+        $font-size: 16
+      );
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: f.rem(7.5);
+      height: f.rem(12);
+      margin-left: f.rem(5);
+      background-image: url('#{v.$root}assets/images/icon_arrow_right.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include m.responsive(md) {
+        width: f.rem(8);
+        margin-left: f.rem(8);
+        transition: transform .3s ease-out;
+      }
+    }
+  }
+
+  &--relation {
+    #{$this}__name {
+      margin-top: f.rem(15);
+      @include m.font(
+        $font-size: 15
+      );
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 16
+        );
+      }
+    }
+  }
+}

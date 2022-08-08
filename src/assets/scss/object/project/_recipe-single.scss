@@ -1,0 +1,118 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* recipe-single */
+.recipe-single {
+  padding-top: f.rem(128);
+  padding-bottom: f.rem(90);
+  @include m.responsive(md) {
+    padding-top: f.rem(185);
+    padding-bottom: f.rem(180);
+  }
+
+  &__inner {
+    @include m.inner;
+  }
+
+  &__recipe-info-wrapper {
+    margin-top: f.rem(62);
+    @include m.responsive(md) {
+      margin-top: f.rem(80);
+    }
+  }
+
+  &__recipe-use-wrapper {
+    margin-top: f.rem(64);
+    @include m.responsive(md) {
+      margin-top: f.rem(104);
+    }
+  }
+
+  &__review-wrapper {
+    margin-top: f.rem(90);
+    @include m.responsive(md) {
+      margin-top: f.rem(128);
+    }
+  }
+
+  &__recipe-relation-wrapper {
+    margin-top: f.rem(52);
+    @include m.responsive(md) {
+      margin-top: f.rem(104);
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: f.rem(64);
+    @include m.flex(
+      $justify-content: center
+    );
+
+    @include m.responsive(md) {
+      margin-top: f.rem(80);
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    will-change: transform;
+
+    img {
+      width: 100%;
+    }
+
+    &--01 {
+      top: f.vw(-29, 375);
+      left: f.vw(-49, 375);
+      width: f.vw(150, 375);
+      height: f.vw(140.5, 375);
+
+      @include m.responsive(md) {
+        top: f.rem(-117);
+        left: f.rem(-44);
+        width: f.rem(300);
+        height: f.rem(375);
+      }
+
+      path {
+        stroke-width: 2px;
+      }
+    }
+
+    &--02 {
+      top: f.vw(-18, 375);
+      right: f.vw(60, 375);
+      width: f.vw(60, 375);
+      height: f.vw(55, 375);
+
+      @include m.responsive(md) {
+        top: f.rem(-36);
+        right: f.rem(109);
+        width: f.rem(120);
+        height: f.rem(110);
+      }
+    }
+
+    &--03 {
+      top: f.vw(-31, 375);
+      right: f.vw(-58, 375);
+      width: f.vw(150, 375);
+      height: f.vw(137.5, 375);
+
+      @include m.responsive(md) {
+        top: f.rem(-62);
+        right: f.rem(-126);
+        width: f.rem(300);
+        height: f.rem(281);
+      }
+    }
+  }
+}

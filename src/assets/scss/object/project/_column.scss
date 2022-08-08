@@ -1,0 +1,239 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* column */
+.column {
+  border: solid 2px v.$COLOR_GRAY_1;
+  border-radius: 9px;
+  background-color: v.$COLOR_WHITE;
+  @include m.responsive(md) {
+    border-radius: 12px;
+  }
+
+  &__inner {
+    padding: f.rem(38) percentage(math.div(24, 325)) f.rem(38);
+    @include m.responsive(md) {
+      padding: f.rem(46) percentage(math.div(50, 1084)) f.rem(52);
+    }
+  }
+
+  &__block {
+    @include m.responsive(md) {
+      @include m.flex(
+        $align-items: center
+      );
+    }
+  }
+
+  &__heading {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding: f.rem(12) f.rem(18);
+    border-radius: 22px;
+    background-color: v.$COLOR_YELLOW_GREEN;
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 20,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      flex-basis: 191px;
+      padding: f.rem(13.5) f.rem(22);
+      border-radius: 24px;
+      @include m.font(
+        $font-size: 21
+      );
+    }
+  }
+
+  &__description {
+    margin-top: f.rem(22);
+    @include m.font(
+      $font-size: 15,
+      $line-height: 24,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(26);
+      text-align: center;
+      @include m.font(
+        $font-size: 15,
+        $line-height: 27
+      );
+    }
+  }
+
+  &__notes {
+    margin-top: f.rem(8);
+    padding-left: 1em;
+    text-indent: -1em;
+    @include m.font(
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(6);
+      text-align: center;
+      @include m.font(
+        $font-size: 13,
+        $line-height: 18
+      );
+    }
+
+    &::before {
+      content: "※";
+    }
+  }
+
+  &__process-list {
+    margin-top: f.rem(30);
+    padding: f.rem(38) f.rem(26) f.rem(48);
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background-color: v.$COLOR_GRAY_1;
+    @include m.responsive(md) {
+      display: flex;
+      margin-top: f.rem(34);
+      padding: f.rem(42) f.rem(35) f.rem(45);
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+  }
+
+  &__process-contents {
+    @include m.responsive(md) {
+      flex-basis: calc(100% / 4);
+      margin-top: 0;
+      @include m.flex(
+        $direction: column
+      );
+    }
+
+    &:not(:first-of-type) {
+      position: relative;
+      margin-top: f.rem(68);
+      @include m.responsive(md) {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: f.rem(26);
+        height: f.rem(20);
+        background-image: url('#{v.$root}assets/images/icon_arrow_bottom.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include m.responsive(md) {
+          top: 8.2vw;
+          left: -10px;
+          transform: rotate(270deg);
+          width: f.rem(25);
+        }
+      }
+    }
+  }
+
+  &__head {
+    text-align: center;
+    font-weight: 600;
+    @include m.font(
+      $color: v.$COLOR_GREEN,
+      $font-size: 20,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      @include m.font(
+        $color: v.$COLOR_GREEN,
+        $font-size: 21
+      );
+    }
+
+    sup {
+      top: -0.3em;
+      @include m.font(
+        $font-size: 14
+      );
+      @include m.responsive(md) {
+        @include m.font(
+          $font-size: 16
+        );
+      }
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(5);
+    @include m.flex(
+      $align-items: center
+    );
+    @include m.font(
+      $font-size: 13,
+      $line-height: 21
+    );
+    @include m.responsive(md) {
+      flex-direction: column;
+      margin-top: f.rem(10);
+      padding-right: f.rem(23);
+      padding-left: f.rem(23);
+      @include m.font(
+        $font-size: 15,
+        $line-height: 23
+      );
+    }
+  }
+
+  &__process-image {
+    flex-basis: percentage(math.div(100, 233));
+    @include m.responsive(md) {
+      padding-right: f.rem(7);
+      padding-left: f.rem(7);
+    }
+  }
+
+  &__process-description {
+    flex-basis: percentage(math.div(133, 233));
+    padding-left: percentage(math.div(16, 233));
+    @include m.font(
+      $font-size: 13,
+      $line-height: 18,
+      $letter-spacing: 60
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(15);
+      @include m.font(
+        $font-size: 13,
+        $line-height: 20
+      );
+    }
+  }
+
+  &__graph {
+    @include m.responsive(md) {
+      flex-basis: percentage(math.div(520, 984));
+      padding-right: percentage(math.div(23, 960))
+    }
+  }
+
+  &__greenhouse-gas-image {
+    height: f.rem(286);
+    @include m.responsive(md) {
+      height: f.rem(288);
+    }
+  }
+}

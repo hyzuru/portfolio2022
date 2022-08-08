@@ -1,0 +1,55 @@
+/**
+* Foundation
+* ========================== */
+
+/* variables */
+
+// ---------------------------------------------
+// ルート
+// ---------------------------------------------
+$root: '/';
+
+// ---------------------------------------------
+// カラー
+// ---------------------------------------------
+$COLOR_WHITE: #fff;
+$COLOR_GRAY_1: #e6e6e6;
+$COLOR_GRAY_2: #999999;
+$COLOR_GRAY_3: #e3e8e5;
+$COLOR_GRAY_4: #dcdedc;
+$COLOR_GRAY_5: #f0f0f0;
+$COLOR_GRAY_6: #ccc;
+$COLOR_GRAY_7: #9a9a9a;
+$COLOR_BROWN: #2a2220;
+$COLOR_YELLOW_GREEN: #8ec22f;
+$COLOR_YELLOW_GREEN_2: #c8db16;
+$COLOR_GREEN: #0a7c24;
+$COLOR_GREEN_2: #85be92;
+$COLOR_RED: #e60012;
+$COLOR_BEIGE: #fff6cc;
+$COLOR_YELLOW: #ffed66;
+$COLOR_BROWN_2: #87481b;
+// ---------------------------------------------
+// ブレークポイント
+// ---------------------------------------------
+$breakpoints: (
+  "sm": (
+    min-width: 34em,
+  ),
+  //576px
+  "md":
+    (
+      min-width: 48em,
+    ),
+  //768px
+  "lg":
+    (
+      min-width: 62em,
+    ),
+  //992px
+  "xl":
+    (
+      min-width: 75em,
+    )
+    //1200px,,,,,,,,,,,,,,,,,,,,,,,,,
+) !default;

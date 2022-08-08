@@ -1,0 +1,33 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* recipe-info */
+.recipe-info {
+  &__column {
+    @include m.responsive(md) {
+      @include m.flex();
+    }
+  }
+
+  &__recipe-make-wrapper {
+    margin-top: f.rem(52);
+    @include m.responsive(md) {
+      flex: 1;
+      margin-top: 0;
+      padding-left: percentage(math.div(48, 1088));
+    }
+  }
+
+  &__recipe-material-wrapper {
+    flex-basis: f.rem(300);
+    flex-shrink: 0;
+  }
+}

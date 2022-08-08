@@ -1,0 +1,115 @@
+@use "sass:math";
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Project ------------ */
+
+/* use */
+.use {
+  padding: f.rem(46) f.rem(24) f.rem(58);
+  border-radius: 9px;
+  background: v.$COLOR_GREEN;
+  @include m.responsive(md) {
+    padding: f.rem(48) f.rem(24) f.rem(54);
+  }
+
+  &__head {
+    width: 86%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-weight: 600;
+    @include m.flex(
+      $justify-content: center,
+      $align-items: center
+    );
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 22,
+      $line-height: 31,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      width: 66%;
+      @include m.flex(
+        $justify-content: center,
+        $align-items: center
+      );
+      @include m.font(
+        $color: v.$COLOR_WHITE,
+        $font-size: 26,
+        $line-height: 45
+      );
+    }
+
+    span {
+      flex: 1;
+      margin-right: f.rem(18);
+      margin-left: f.rem(18);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+    }
+
+    &::before {
+      transform: rotate(-30deg);
+      width: f.rem(13);
+      height: f.rem(53);
+      background-image: url('#{v.$root}assets/images/icon_fork.svg');
+      @include m.responsive(md) {
+        left: 15px;
+        width: f.rem(11);
+        height: f.rem(46);
+      }
+    }
+
+    &::after {
+      transform: rotate(30deg);
+      width: f.rem(11);
+      height: f.rem(53);
+      background-image: url('#{v.$root}assets/images/icon_knife.svg');
+      @include m.responsive(md) {
+        right: 16px;
+        width: f.rem(9);
+        height: f.rem(46);
+      }
+    }
+  }
+
+  &__body {
+    margin-top: f.rem(23);
+    @include m.font(
+      $color: v.$COLOR_WHITE,
+      $font-size: 16,
+      $line-height: 22.4,
+      $letter-spacing: 40
+    );
+    @include m.responsive(md) {
+      margin-top: f.rem(18);
+      text-align: center;
+      @include m.font(
+        $font-size: 19,
+        $line-height: 24
+      );
+    }
+  }
+
+  &__button-wrapper {
+    max-width: f.rem(214);
+    margin-top: f.rem(36);
+    margin-right: auto;
+    margin-left: auto;
+    @include m.responsive(md) {
+      max-width: f.rem(224);
+      margin-top: f.rem(38);
+    }
+  }
+}

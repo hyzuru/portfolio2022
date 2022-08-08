@@ -1,0 +1,25 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+/**
+ * Object
+ * ========================== */
+
+/* Component ------------ */
+
+/* heading-tertiary */
+.c-heading-tertiary {
+  text-align: center;
+  font-weight: 600;
+  @include m.font(
+    $font-size: 30,
+    $line-height: 42,
+    $letter-spacing: 40
+  );
+  @include m.responsive(md) {
+    @include m.font(
+      $font-size: 30
+    );
+  }
+}
