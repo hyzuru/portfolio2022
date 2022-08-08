@@ -1,0 +1,32 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use 'sass:math';
+
+.c-text-1 {
+    font-weight: 400;
+    font-size: 18px;
+    // line-height: 24px;
+    line-height: math.div(27,16);
+    letter-spacing: 0.06em;
+
+    .c-hdg1 + & {
+        margin-top: 24px;
+    }
+
+    & + & {
+        margin-top: 24px;
+    }
+}
+
+.c-text-2 {
+    font-weight: 400;
+    font-size: 16px;
+    // line-height: 24px;
+    line-height: math.div(27,16);
+    letter-spacing: 0.06em;
+
+    .c-hdg1 + & {
+        margin-top: 24px;
+    }
+}

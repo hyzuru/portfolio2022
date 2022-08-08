@@ -7,8 +7,10 @@
 
 /* wrapper */
 .l-wrapper {
-  min-height: 100vh;
-  @include m.flex(
-    $direction: column
-  );
+  // min-height: 100vh;
+  // @include m.flex(
+  //   $direction: column
+  // );
+
+  // padding-top: 110px;
 }

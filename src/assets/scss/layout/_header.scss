@@ -8,33 +8,26 @@
 /* header */
 .l-header {
   position: fixed;
-  top: 16px;
-  left: 13px;
+  top: 0;
+  left: 0;
   z-index: 100;
-  width: calc(100% - 26px);
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  // width: calc(100% - 26px);
+
   @include m.responsive(xl) {
-    top: 24px;
-    left: 50px;
-    width: calc(100% - 100px);
-    height: 80px;
-    padding-top: min(1.172vw, 15px);
-    padding-bottom: min(1.172vw, 15px);
-    border-radius: 40px;
+    top: 0;
+    left: 24px;
+    width: calc(100% - 48px);
+    left: 100px;
+    width: calc(100% - 200px);
+    padding-top: 32px;
+
+    // @include m.inner;
   }
 
-  &__inner {
-    padding-right: f.rem(9);
-    padding-left: f.rem(9);
-    @include m.responsive(xl) {
-      height: 100%;
-      padding-right: f.rem(16);
-      padding-left: f.rem(16);
-    }
-  }
-
+  // .l-header__block
   &__block {
+    text-transform: uppercase;
     @include m.flex(
       $justify-content: space-between,
       $align-items: center
@@ -43,40 +36,50 @@
       height: 100%;
     }
   }
+  // .l-header__brand
+  &__brand {
+    color: v.$COLOR_WHITE;
+    font-weight: 200;
+    font-size: 64px;
+    font-size: 20px;
+    line-height: 76px;
+    letter-spacing: 0.2em;
+  }
 
-  &__logo {
-    width: f.rem(160);
-    margin-top: f.rem(-4);
-    @include m.responsive(xl) {
-      width: f.rem(238);
-      margin-top: 0;
+  // .l-header__nav
+  &__nav {
+    font-size: 18px;
+    line-height: 36px;
+    border-bottom: 1px solid v.$COLOR_TEAL;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  // .l-header__link
+  &__link {
+    color: v.$COLOR_WHITE;
+    font-weight: 400;
+    transition: color .3s ease;
+    &:not(:first-child) {
+      margin-left: 48px;
     }
-  }
 
-  &__button {
-    width: f.rem(60);
-    height: f.rem(60);
-    @include m.responsive(xl) {
-      display: none;
+    // l-header__link--active
+    &--active {
+      color: #1CA79E;
+      font-weight: 700;
     }
+
+    // @media (hover: hover) {
+    @media (hover) {
+      &:hover {
+        color: #1CA79E;
+        color: v.$COLOR_TEAL;
+      }
+    }
+  
   }
 
-  &__menu {
-    position: absolute;
-    top: 20px;
-    left: 8px;
-    font-family: 'Heebo', sans-serif;
-    font-weight: 700;
-    @include m.font(
-      $color: v.$COLOR_BROWN,
-      $font-size: 10,
-      $letter-spacing: 180
-    )
-  }
 
-  &__dot-wrapper {
-    position: absolute;
-    top: 39px;
-    left: 24px;
-  }
+
+  
 }

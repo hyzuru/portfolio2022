@@ -13,23 +13,25 @@ import "./../scss/style.scss"
 
 // class
 // import { Drawer } from "./modules/class/drawer";
-// import { SmoothScroll } from "./modules/class/smoothScroll";
+import { SmoothScroll } from "./modules/class/smoothScroll";
 // import { Tab } from "./modules/class/tab";
 
 // function
 // import { accordion } from "./modules/function/accordion";
-// import { loadingAnimation } from "./modules/function/loadingAnimation";
+import { loadingAnimation } from "./modules/function/loadingAnimation";
 // import { map } from "./modules/function/map";
-// import { modal } from "./modules/function/modal";
 // import { productsSlider } from "./modules/function/productsSlider";
 // import { shapeAnimation } from "./modules/function/shapeAnimation";
-// import { swiper } from "./modules/function/swiper";
-// import { textCircleAnimation } from "./modules/function/textCircleAnimation";
+
+import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
+
+
+import { fadeInFooter } from "./modules/function/footerAnimation";
 
 // util
-// import { BODY } from "./modules/util/root";
+import { BODY } from "./modules/util/root";
 
-// (() => {
+(() => {
 //   // drawer
 //   const openButton = document.querySelector(".js-openButton");
 //   const closeButton = document.querySelector(".js-closeButton");
@@ -90,45 +92,42 @@ import "./../scss/style.scss"
 //     }, false);
 //   }
 
-//   // smoothscroll
-//   const smoothScroll = new SmoothScroll({ duration: 1000 });
+  // smoothscroll
+  const smoothScroll = new SmoothScroll({ duration: 1000 });
 
-//   document.querySelectorAll("a[href^='#']").forEach((element) => {
-//     element.addEventListener("click", (event) => {
-//       event.preventDefault();
-//       const targetId = event.target.getAttribute("href");
-//       let targetY;
+  document.querySelectorAll("a[href^='#']").forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetId = event.target.getAttribute("href");
+      let targetY;
 
-//       if (targetId.includes("#makeshop-common-order-url")) return;
+      if (targetId === "#") {
+        targetY = 0;
+      } else {
+        const targetElement = document.querySelector(targetId);
+        const documentHeight = document.body.clientHeight;
 
-//       if (targetId === "#") {
-//         targetY = 0;
-//       } else {
-//         const targetElement = document.querySelector(targetId);
-//         const documentHeight = document.body.clientHeight;
-
-//         if (targetElement.getBoundingClientRect().top + window.pageYOffset + window.innerHeight > documentHeight) {
-//           targetY = documentHeight - window.innerHeight;
-//         } else {
-//           targetY = targetElement.getBoundingClientRect().top + window.pageYOffset;
-//         }
-//       }
-//       smoothScroll.exeScroll({ target: { y: targetY } });
-//     });
-//   });
-// })();
+        if (targetElement.getBoundingClientRect().top + window.pageYOffset + window.innerHeight > documentHeight) {
+          targetY = documentHeight - window.innerHeight;
+        } else {
+          targetY = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        }
+      }
+      smoothScroll.exeScroll({ target: { y: targetY } });
+    });
+  });
+})();
 
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   if (BODY.classList.contains("home")) {
-//     loadingAnimation();
-//   }
+window.addEventListener("DOMContentLoaded", () => {
+  if (BODY.classList.contains("home")) {
+    loadingAnimation();
+  }
 
 //   accordion();
 //   map();
-//   modal();
 //   productsSlider();
-//   shapeAnimation();
-//   swiper();
-//   textCircleAnimation();
-// });
+  // shapeAnimation();
+  swiper();
+  fadeInFooter();
+});

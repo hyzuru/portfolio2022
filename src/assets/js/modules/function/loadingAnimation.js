@@ -1,6 +1,8 @@
 import gsap from "gsap";
 
 export function loadingAnimation() {
+
+  console.log(" loadingAnimation js loaded ")
   const root = document.documentElement;
   const loadingAnimation = gsap.timeline({
     defaults: { ease: "power1.inOut" }

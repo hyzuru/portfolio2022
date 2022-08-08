@@ -1,0 +1,22 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use 'sass:math';
+
+.c-hdg1 {
+    font-weight: 500;
+    font-size: 28px;
+    // line-height: 49px;
+    line-height: math.div(49, 28);
+    letter-spacing: 0.08em;
+
+    &__link {
+        color: v.$COLOR_TEAL;
+        transition: all .3s ease;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom: 1px solid v.$COLOR_TEAL;
+        }
+    }
+}

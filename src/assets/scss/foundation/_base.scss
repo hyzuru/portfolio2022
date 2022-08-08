@@ -10,8 +10,10 @@
 
 ::selection {
   background-color: #b3d4fc;
+  background-color: v.$COLOR_TEAL;
   color: #000;
   text-shadow: none;
+  -webkit-text-fill-color: #000;
 }
 
 * {
@@ -26,15 +28,10 @@ html {
 }
 
 body {
-  color: v.$COLOR_BROWN;
+  background-color: #000;
+  color: v.$COLOR_WHITE;
   font-feature-settings: 'palt';
-  font-family:
-    "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN",
-    "Helvetica Neue",
-    Arial,
-    Meiryo,
-    sans-serif;
+  font-family: 'Montserrat', "Helvetica Neue", Arial, Meiryo, sans-serif;
   letter-spacing: 0.06em;
   line-height: 1;
   overflow-x: hidden;
@@ -45,9 +42,14 @@ body.preload * {
 }
 
 a {
-  color: v.$COLOR_BROWN;
+  color: v.$COLOR_TEAL;
   cursor: pointer;
   text-decoration: none;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 img {

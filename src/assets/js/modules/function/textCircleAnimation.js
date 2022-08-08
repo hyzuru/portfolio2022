@@ -1,10 +1,18 @@
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function textCircleAnimation() {
-  gsap.to(".c-text-circle", {
-    rotation: 360,
-    duration: 70,
-    ease: "none",
-    repeat: -1
+  gsap.to(".l-footer", {
+    ScrollTrigger: {
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      markers: "true",
+      trigger: ".l-footer",
+    },
+    opacity: 1,
+    duration: 2,
   })
 }

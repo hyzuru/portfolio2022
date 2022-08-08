@@ -2,72 +2,406 @@
 @use "../../foundation/mixin" as m;
 @use "../../foundation/variables" as v;
 
-/**
- * Object
- * ========================== */
 
-/* Project ------------ */
-
-/* about */
-.about {
-  position: relative;
-  padding-top: f.rem(62);
-  padding-bottom: f.rem(90);
-  @include m.responsive(md) {
-    padding-top: f.rem(116);
-    padding-bottom: f.rem(160);
-  }
-
-  &__inner {
-    @include m.inner;
-  }
-
-  &__feature-wrapper {
-    margin-top: f.rem(35);
-    @include m.responsive(md) {
-      margin-top: f.rem(48);
+@keyframes scrollLine {
+    0% {
+        transform: translateX(-100%);
     }
-  }
-
-  &__shape {
-    position: absolute;
-    will-change: transform;
-
-    img {
-      width: 100%;
+    4% {
+        transform: translateX(-100%);
     }
-
-    &--01 {
-      top: f.vw(315, 375);
-      left: f.vw(-38, 375);
-      width: f.vw(60, 375);
-      height: f.vw(55, 375);
-      @include m.responsive(md) {
-        top: f.vw(312, 1280);
-        left: f.vw(-25, 1280);
-        width: f.vw(120, 1280);
-        height: f.vw(110, 1280);
-      }
+    74% {
+        transform: translateX(100%);
     }
+    100% {
+        transform: translateX(100%);
+    }
+}
 
-    &--02 {
-      top: f.vw(198, 375);
-      left: f.vw(-90, 375);
-      width: f.vw(150, 375);
-      height: f.vw(137.5, 375);
-      @include m.responsive(md) {
-        top: f.vw(77, 1280);
-        left: f.vw(-105, 1280);
-        width: f.vw(300, 1280);
-        height: f.vw(281, 1280);
-      }
 
-      path {
-        stroke-width: 4px;
-        @include m.responsive(md) {
-          stroke-width: 2px;
+.top {
+    padding-bottom: 200px;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    background-color: v.$COLOR_TEAL;
+    opacity: 0;
+    pointer-events: none;
+}
+.hover-text-note {
+    position: relative;
+    &:hover {
+        &::after {
+            content: "";
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            color: v.$COLOR_SAND;
+            position: absolute;
+            bottom: -28px;
+            // left: 0;
+            right: 0;
+            margin: auto;
+            text-decoration: none;
+            font-family: 'Patrick Hand SC', cursive;
         }
-      }
+        &.link-evoworx {
+            &::after {
+                content: "Site only in Japanese!";
+            }
+        }
     }
-  }
+}
+.plans-ruined-from-covid {
+    text-decoration: line-through;
+    color: v.$COLOR_TEAL;
+    position: relative;
+
+    &:hover {
+        &::after {
+            content: "On-hold thanks to covid :(";
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            color: v.$COLOR_SAND;
+            position: absolute;
+            bottom: -28px;
+            // left: 0;
+            right: 0;
+            margin: auto;
+            text-decoration: none;
+            font-family: 'Patrick Hand SC', cursive;
+        }
+
+    }
+}
+
+.mv {
+    // @include m.inner;
+    margin: 0 0 0 400px;
+    margin: 0;
+    height: calc(100vh - 110px);
+    height: 100vh;
+    padding-top: 110px;
+    padding-right: 28px;
+    display: flex;
+    justify-content: flex-start;
+    // justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    position: relative;
+
+    // .mv__inner
+    &__inner {
+        // padding: 20px 0 20px 100px;
+        // border-left: 1px solid v.$COLOR_TEAL;
+    }
+
+    .isolate {
+        isolation: isolate;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+    .mv-decoration {
+        // position: absolute;
+        position: relative;
+        // top: 50vh;
+        left: 20px;
+        text-transform: uppercase;
+        line-height: 0.73;
+        font-size: 144px;
+        letter-spacing: -0.08em;
+        width: 100%;
+        background: linear-gradient(90deg, #fff 2.56%, v.$COLOR_TEAL 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        span {
+            // line-height: 0.35;
+            display: block;
+            font-size: 88px;
+            position: relative;
+
+            background: linear-gradient(90deg, #fff 2.56%, v.$COLOR_TEAL 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        @keyframes shimmer {
+            from {
+              filter: contrast(190%) brightness(500%);
+            }
+          
+            to {
+              filter: contrast(190%) brightness(130%);
+            }
+          }
+          
+          .noise {
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+            background: linear-gradient(24deg, rgba(50 0 255/10%), CornflowerBlue), url("data:image/svg+xml,%3Csvg viewBox='0 0 400 310' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-clip: text;
+            -webkit-background-clip: text;
+              color: transparent;
+            animation-duration: 2s;
+            animation-name: shimmer;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
+    }
+
+    &__ttl {
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.2em;
+        font-weight: 500;
+    }
+    &__copy {
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.24em;
+        margin-top: 24px;
+        font-weight: 400;
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 48px;
+        margin-top: 40px;
+    }
+    &__item {
+        display: block;
+        svg {
+            width: 100%;
+            * {
+                transition: fill .3s ease;
+            }
+        }
+        @media (hover) {
+          &:hover {
+            svg * {
+                fill: v.$COLOR_TEAL;
+            }
+          }
+        }
+    }
+
+
+    &__scroll {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: rotate(90deg) translate(50%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transform-origin: top right;
+    }
+    &__scroll-text {
+        display: block;
+        color: v.$COLOR_GREY_1;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    
+    &__scroll-line {
+        display: block;
+        margin-left: 20px;
+        width: 80px;
+        height: 1px;
+        background-color: transparent;
+        position: relative;
+        overflow: hidden;
+        
+        &::after {
+            content: "";
+            display: block;
+            background-color: v.$COLOR_GREY_1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scrollLine 2s ease infinite;
+
+        }
+
+    }
+
+    // .mv__imgbox
+    &__imgbox {
+        height: 100vh;
+        width: 50vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+
+    }
+        
+}
+
+.about {
+    // @include m.inner;
+    
+    &__block {
+        margin: 200px 100px;
+        width: 660px;
+    }
+
+    // .about__divider
+    &__divider {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+}
+
+.blog {
+    
+    // @include m.inner;
+    margin: 220px+80px 100px 0;
+    width: 1120px;
+
+
+    &__head {
+        width: 980px;
+    }
+
+    // .blog__list
+    &__list {
+        margin-top: 100px;
+        
+    }
+    
+    &__item {
+        display: flex;
+        padding: 44px 40px;
+        border-bottom: 1px solid v.$COLOR_GREY_1;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        transition: all .3s ease;
+        &:first-child {
+            border-top: 1px solid v.$COLOR_GREY_1;
+        }
+        &:hover {
+            // transform: translate(-4px,-4px);
+            border-color: v.$COLOR_TEAL;
+            border: 1px solid v.$COLOR_TEAL;
+            box-shadow: 12px 12px 30px 1px rgba(v.$COLOR_TEAL, .8);
+            box-shadow: 0 0 70px 5px rgba(v.$COLOR_TEAL, .6);
+            .blog__thumb {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+
+        }
+    }
+
+    // .blog__date
+    &__date {
+        border-right: 1px solid v.$COLOR_TEAL;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 70px;
+        padding-right: 20px;
+        
+        > span {
+            display: block;
+            color:  v.$COLOR_TEAL;
+            font-size: 18px;
+            line-height: 36px;
+            letter-spacing: .06em;
+            width: min-contents;
+        }
+    }
+
+    &__item-inner {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+
+    // .blog__tags 
+    &__tags {
+        color:  v.$COLOR_TEAL;
+        font-size: 10px;
+        line-height: 12px;
+        border-bottom: 1px solid v.$COLOR_TEAL;
+        padding-bottom: 1px;
+        
+        & + & {
+            margin-left: 12px;
+        }
+    }
+
+    // .blog__hdg
+    &__hdg {
+        margin-top: 16px;
+        color:  v.$COLOR_WHITE;
+    }
+    &__subhdg {
+        margin-top: 8px;
+        color:  v.$COLOR_GREY_1;
+    }
+    &__desc {
+        margin-top: 8px;
+        letter-spacing: 0.06em;
+        color:  v.$COLOR_GREY_1;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+    }
+
+    &__thumb {
+        background-color: v.$COLOR_GREY_1;
+        width: auto;
+        height: 180px; 
+        aspect-ratio: 3/2;
+        overflow: hidden;
+        flex: 0 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+            transition: transform .3s ease;
+        }
+    }
 }

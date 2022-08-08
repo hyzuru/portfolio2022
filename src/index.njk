@@ -2,1218 +2,156 @@
 layout: layout/base.njk
 bodyModifier: home
 ---
-
 <div class="top">
-  {% include 'layout/loading.njk' %}
-  <div class="mainvisual">
-    <div class="mainvisual__inner">
-      <div class="mainvisual__block">
-        <div class="mainvisual__text">
-          <p class="mainvisual__copy">
-            <picture>
-              <source srcset="{{ site.root}}assets/images/mainvisual_copy_pc.png" media="(min-width: 48em)">
-              <img src="{{ site.root }}assets/images/mainvisual_copy_sp.png" width="1369" height="292" alt="植物から作った新時代のお肉 Green Meat&trade;">
-            </picture>
-          </p>
-        </div>
-        <div class="mainvisual__image-main">
-          <picture>
-            <source srcset="{{ site.root}}assets/images/mainvisual_img_main_pc.webp" type="image/webp" media="(min-width: 48em)">
-            <source srcset="{{ site.root}}assets/images/mainvisual_img_main_pc.jpg" media="(min-width: 48em)">
-            <source srcset="{{ site.root}}assets/images/mainvisual_img_main_sp.webp" type="image/webp">
-            <img src="{{ site.root }}assets/images/mainvisual_img_main_sp.jpg" width="1296" height="1280" alt="写真:Green Meatの植物肉を使用した合挽き肉">
-          </picture>
-        </div>
-        <div class="mainvisual__image-sub">
-          <picture>
-            <source srcset="{{ site.root}}assets/images/mainvisual_img_sub.webp" type="image/webp">
-            <img src="{{ site.root }}assets/images/mainvisual_img_sub.jpg" width="440" height="240" alt="">
-          </picture>
-        </div>
-      </div>
-      <div class="mainvisual__product-wrapper">
-        <div class="product">
-          <div class="product__block">
-            <div class="product__column">
-              <div class="product__image">
-                <picture>
-                  <source srcset="{{ site.root}}assets/images/product_img.webp" type="image/webp">
-                  <img src="{{ site.root }}assets/images/product_img.png" width="368" height="348" alt="">
-                </picture>
-              </div>
-              <div class="product__text">
-                <p class="product__sub">試食者の95%が美味しいと絶賛！</p>
-                <p class="product__main">大豆特有の<span>匂</span><span>い</span><span>な</span><span>し</span>! <br class="u-sp">味付けは<span>自</span><span>由</span><span>自</span><span>在</span>。</p>
-              </div>
-            </div>
-            <ul class="product__buttons">
-              <li class="product__button">
-                <a href="{{ site.root }}products/" class="c-button-primary c-button-primary--product">
-                  <span class="c-button-primary__text">商品を見る</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.07 11.31" width="8" height="12" class="c-button-primary__arrow"><g fill="#0a7c24" fill-rule="evenodd"><path d="m0 9.9 5.66-5.66 1.41 1.41-5.66 5.66L0 9.9Z"/><path d="M5.66 7.07 0 1.41 1.41 0l5.66 5.65-1.41 1.41Z"/></g></svg>
-                </a>
-              </li>
-              <li class="product__button">
-                <a href="{{ site.root }}recipe/" class="c-button-primary c-button-primary--product">
-                  <span class="c-button-primary__text">レシピを見る</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.07 11.31" width="8" height="12" class="c-button-primary__arrow"><g fill="#0a7c24" fill-rule="evenodd"><path d="m0 9.9 5.66-5.66 1.41 1.41-5.66 5.66L0 9.9Z"/><path d="M5.66 7.07 0 1.41 1.41 0l5.66 5.65-1.41 1.41Z"/></g></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div><!-- .product -->
-      </div>
-    </div>
-    <div class="mainvisual__shape mainvisual__shape--01 js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 283"><defs><linearGradient id="mainvisual-shape-01" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(218,223,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(183,210,0)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#mainvisual-shape-01)" d="M4.662,101.741 C26.39,34.982 120.734,-16.944 194.830,5.181 C249.659,21.554 303.837,90.577 299.782,158.251 C295.285,233.310 216.764,286.776 145.21,281.708 C53.857,275.268 -19.528,177.287 4.662,101.741 Z"/></svg>
-    </div>
-    <div class="mainvisual__shape mainvisual__shape--02 js-shape--02">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114"><circle cx="57" cy="57" r="55" fill="none" stroke="#8ec22f" stroke-width="2"/></svg>
-    </div>
-    <div class="c-text-circle c-text-circle--mainvisual">
-      <img src="{{ site.root }}assets/images/bg_text-circle.svg" width="256" height="256" alt="">
-    </div>
-  </div><!-- .mainvisual -->
-
-  <section id="about" class="about">
-    <div class="about__inner">
-      <h2 class="c-heading-primary">
-        <span class="c-heading-primary__main">
-          <span class="c-heading-primary__en">Green Meat</span>
-          <sup>&trade;</sup>
-          <span class="c-heading-primary__ja">の魅力</span>
-        </span>
-      </h2>
-      <div class="about__feature-wrapper">
-        <div id="feature" class="feature">
-          <div class="feature-anchorlink">
-            <div class="feature-anchorlink__inner">
-              <div class="feature-anchorlink__contents">
-                <nav class="feature-anchorlink__nav">
-                  <ul class="feature-anchorlink__list">
-                    <li class="feature-anchorlink__item">
-                      <a href="#deliciousness" class="feature-anchorlink__link">
-                        <div class="feature-anchorlink__reason">
-                          <h3 class="c-sub-heading c-sub-heading--feature">
-                            <span class="c-sub-heading__head">
-                              <span class="c-sub-heading__point">Point</span>
-                              <span class="c-sub-heading__number">1</span>
-                            </span>
-                            <span class="c-sub-heading__body">おいしさ</span>
-                          </h3>
-                          <p class="feature-anchorlink__description">植物性原料で<br class="u-sp">実現</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="feature-anchorlink__item">
-                        <a href="#use" class="feature-anchorlink__link">
-                          <div class="feature-anchorlink__reason">
-                            <h3 class="c-sub-heading c-sub-heading--feature">
-                              <span class="c-sub-heading__head">
-                                <span class="c-sub-heading__point">Point</span>
-                                <span class="c-sub-heading__number">2</span>
-                              </span>
-                              <span class="c-sub-heading__body">かんたん調理</span>
-                            </h3>
-                            <p class="feature-anchorlink__description">使いたいときに<br class="u-sp">解凍するだけ</p>
-                          </div>
-                        </a>
-                      </li>
-                    <li class="feature-anchorlink__item">
-                      <a href="#health" class="feature-anchorlink__link">
-                        <div class="feature-anchorlink__reason">
-                          <h3 class="c-sub-heading c-sub-heading--feature">
-                            <span class="c-sub-heading__head">
-                              <span class="c-sub-heading__point">Point</span>
-                              <span class="c-sub-heading__number">3</span>
-                            </span>
-                            <span class="c-sub-heading__body">健康的</span>
-                          </h3>
-                          <p class="feature-anchorlink__description">高たんぱく・<br class="u-sp">低カロリー</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="feature-anchorlink__item">
-                      <a href="#environment" class="feature-anchorlink__link">
-                        <div class="feature-anchorlink__reason">
-                          <h3 class="c-sub-heading c-sub-heading--feature">
-                            <span class="c-sub-heading__head">
-                              <span class="c-sub-heading__point">Point</span>
-                              <span class="c-sub-heading__number">4</span>
-                            </span>
-                            <span class="c-sub-heading__body">環境にやさしい</span>
-                          </h3>
-                          <p class="feature-anchorlink__description">少ない環境負荷で<br class="u-sp">生産</p>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div class="feature__inner">
-            <div class="feature__block feature__block--reverse">
-              <div class="feature__text">
-                <h3 id="deliciousness" class="c-sub-heading">
-                  <span class="c-sub-heading__head">
-                    <span class="c-sub-heading__point">Point</span>
-                    <span class="c-sub-heading__number">1</span>
-                  </span>
-                  <span class="c-sub-heading__body">おいしさ</span>
-                </h3>
-                <ul class="feature__list">
-                  <li class="feature__item">よりお肉のような満足感</li>
-                  <li class="feature__item">食のプロが集まる試食会で<br class="u-pc">95%の方が「美味しい!」と評価</li>
-                  <li class="feature__item">大豆特有の匂いがないので、<br class="u-pc">和食・洋食・中華どんなメニューもOK♪</li>
-                </ul>
-                <div class="feature__accordion-wrapper">
-                  <div class="c-accordion feature-accordion js-accordion">
-                    <div class="feature-accordion__head">
-                      <button class="c-accordion__trigger feature-accordion__trigger js-accordion__trigger" type="button" aria-controls="deliciousness-contents" aria-expanded="false">
-                        <span class="c-accordion__text feature-accordion__text">おいしさの秘訣はこちら</span>
-                        <span class="c-accordion__tabicon feature-accordion__tabicon"></span>
-                      </button>
-                    </div>
-                    <div class="c-accordion__tab-panel feature-accordion__tab-panel feature-accordion__tab-panel--01 js-accordion__tab-panel" id="deliciousness-contents" aria-hidden="true">
-                      <div class="feature__column-wrapper">
-                        <div class="column">
-                          <div class="column__inner">
-                            <h3 class="column__heading">おいしさの秘訣</h3>
-                            <p class="column__description">大豆を脱脂してつくる従来の大豆ミートとはちがい、<br class="u-pc">大豆やエンドウの植物性たんぱくを原料とすることで、よりお肉のようなおいしさや満足感を感じていただけます。<br class="u-pc">お肉の解析データをもとに試作を繰り返すことで、お肉のおいしさを再現しました。</p>
-                            <dl class="column__process-list">
-                              <div class="column__process-contents">
-                                <dt class="column__head">動物のお肉</dt>
-                                <dd class="column__body">
-                                  <div class="column__process-image">
-                                    <picture>
-                                      <source srcset="{{ site.root }}assets/images/column_img01.webp" type="image/webp">
-                                      <img src="{{ site.root }}assets/images/column_img01.png" width="336" height="336" alt="">
-                                    </picture>
-                                  </div>
-                                  <p class="column__process-description">牛、豚、鶏などの何種類もの動物のお肉から、その特性をデータ化。</p>
-                                </dd>
-                              </div>
-                              <div class="column__process-contents">
-                                <dt class="column__head">解析</dt>
-                                <dd class="column__body">
-                                  <div class="column__process-image">
-                                    <picture>
-                                      <source srcset="{{ site.root }}assets/images/column_img02.webp" type="image/webp">
-                                      <img src="{{ site.root }}assets/images/column_img02.png" width="336" height="336" alt="">
-                                    </picture>
-                                  </div>
-                                  <p class="column__process-description">お肉の持つ旨味や食感などの特徴を食品の科学者が解析してデータを蓄積。</p>
-                                </dd>
-                              </div>
-                              <div class="column__process-contents">
-                                <dt class="column__head">再構築</dt>
-                                <dd class="column__body">
-                                  <div class="column__process-image">
-                                    <picture>
-                                      <source srcset="{{ site.root }}assets/images/column_img03.webp" type="image/webp">
-                                      <img src="{{ site.root }}assets/images/column_img03.png" width="336" height="336" alt="">
-                                    </picture>
-                                  </div>
-                                  <p class="column__process-description">解析データを比較検討し、お肉が持つ食感や風味を植物性の原材料で再現。</p>
-                                </dd>
-                              </div>
-                              <div class="column__process-contents">
-                                <dt class="column__head">Green Meat<sup>&trade;</sup></dt>
-                                <dd class="column__body">
-                                  <div class="column__process-image">
-                                    <picture>
-                                      <source srcset="{{ site.root }}assets/images/column_img04.webp" type="image/webp">
-                                      <img src="{{ site.root }}assets/images/column_img04.png" width="336" height="336" alt="">
-                                    </picture>
-                                  </div>
-                                  <p class="column__process-description">味はお肉に近く、ヘルシーな「新時代のお肉」が完成！</p>
-                                </dd>
-                              </div>
-                            </dl>
-                          </div>
-                        </div><!-- .column -->
-                      </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="feature__image">
-                <picture>
-                  <source srcset="{{ site.root }}assets/images/feature_img01.webp" type="image/webp">
-                  <img src="{{ site.root }}assets/images/feature_img01.png" width="752" height="704" alt="写真：Green Meatの植物肉を使用したハンバーガー">
-                </picture>
-                <div class="feature__shape feature__shape--01 js-shape--01">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 281"><defs><linearGradient id="feature-shape-01" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(255,246,204)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(255,239,115)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#feature-shape-01)" d="M0.109,141.712 C3.438,72.83 80.910,-2.151 157.676,0.51 C214.480,1.681 284.206,54.57 297.728,120.112 C312.726,193.374 251.164,264.930 181.45,278.508 C91.943,295.764 -3.658,220.506 0.109,141.712 Z"/></svg>
-                </div>
-              </div>
-            </div>
-            <div class="feature__block">
-              <div class="feature__text">
-                <h3 id="use" class="c-sub-heading">
-                  <span class="c-sub-heading__head">
-                    <span class="c-sub-heading__point">Point</span>
-                    <span class="c-sub-heading__number">2</span>
-                  </span>
-                  <span class="c-sub-heading__body">かんたん調理</span>
-                </h3>
-                <ul class="feature__list">
-                  <li class="feature__item">ひき肉をGreenMeat<sup>&trade;</sup>に置き換えるだけ</li>
-                  <li class="feature__item">使いたいときに解凍するだけ</li>
-                  <li class="feature__item">動物性のひき肉より<br class="u-pc">成形も片付けもラクラク♪</li>
-                </ul>
-                <div class="feature__button-wrapper">
-                  <a href="{{ site.root }}recipe/" class="c-button-primary c-button-primary--top-recipe">
-                    <span class="c-button-primary__text">簡単料理のレシピはこちら</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="feature__image">
-                <picture>
-                  <source srcset="{{ site.root }}assets/images/feature_img02.webp" type="image/webp">
-                  <img src="{{ site.root }}assets/images/feature_img02.png" width="752" height="691" alt="">
-                </picture>
-                <div class="feature__shape feature__shape--02 js-shape--01">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.969 277"><path d="M13.862 194.06c-31.76-58.18-2.981-144.26 66.757-180.94 51.605-27.14 134.439-6.61 185.429 40.89 55.631 51.83 40.481 146.69-15.184 193.77-70.728 59.82-198.795 16.26-237.002-53.72z" fill="none" stroke="#ffed66" stroke-width="2"/></svg>
-                </div>
-              </div>
-              <div class="feature__shape feature__shape--03 js-shape--02">
-                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="272"><linearGradient id="feature-shape-02" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="#DADF00"/><stop offset="100%" stop-color="#B7D200"/></linearGradient><path fill-rule="evenodd" fill="url(#feature-shape-02)" d="M79.16 14.94c65.431-32.596 167.478-11.204 206.078 57.788 28.563 51.051 15.554 120.552-37.83 165.971-59.206 50.653-156.438 40.815-211.298-11.18C-32.32 162.871 4.808 51.828 79.16 14.94Z"/></svg>
-              </div>
-            </div>
-            <div class="feature__block feature__block--reverse">
-              <div class="feature__text">
-                <h3 id="health" class="c-sub-heading">
-                  <span class="c-sub-heading__head">
-                    <span class="c-sub-heading__point">Point</span>
-                    <span class="c-sub-heading__number">3</span>
-                  </span>
-                  <span class="c-sub-heading__body">健康的</span>
-                </h3>
-                <ul class="feature__list">
-                  <li class="feature__item">大豆やエンドウの栄養たっぷり</li>
-                  <li class="feature__item">高たんぱく・低カロリー</li>
-                  <li class="feature__item">コレステロールフリー</li>
-                  <li class="feature__item">食物繊維が豊富（ごぼう約1.5本分）</li>
-                </ul>
-                <p class="feature__notes feature__notes--above">グリーンミート1パック/220gあたり</p>
-                <div class="feature__accordion-wrapper">
-                  <div class="c-accordion feature-accordion js-accordion">
-                    <div class="feature-accordion__head">
-                      <button class="c-accordion__trigger feature-accordion__trigger js-accordion__trigger" type="button" aria-controls="health-contents" aria-expanded="false">
-                        <span class="c-accordion__text feature-accordion__text">栄養成分比較表はこちら</span>
-                        <span class="c-accordion__tabicon feature-accordion__tabicon"></span>
-                      </button>
-                    </div>
-                    <div class="c-accordion__tab-panel feature-accordion__tab-panel feature-accordion__tab-panel--02 js-accordion__tab-panel" id="health-contents" aria-hidden="true">
-                      <div class="feature__column-wrapper">
-                        <div class="column">
-                          <div class="column__inner">
-                            <div class="nutrition">
-                              <div class="nutrition__text">
-                                <h3 class="column__heading">栄養成分比較表</h3>
-                                <p class="column__description">牛肉や豚肉と比べてカロリーや脂質が低いので、<br class="u-pc">タンパク質を摂りたい方にもヘルシーに召し上がっていただけます。</p>
-                                <p class="column__notes">現在、筑波大学と連携し、植物肉の健康における効果について実証実験を行っており、<br class="u-pc">グリーンミートを更に進化させる事に努めています。</p>
-                              </div>
-                              <div class="nutrition__column">
-                                <div class="nutrition__graph">
-                                  <div class="nutrition__inner">
-                                    <p class="nutrition__head">食物繊維</p>
-                                    <div class="nutrition__body">
-                                      <div class="nutrition__image">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/nutrition_graph01_pc.jpg" media="(min-width: 48em)">
-                                          <img src="{{ site.root}}assets/images/nutrition_graph01_sp.jpg" width="856" height="448" alt="">
-                                        </picture>
-                                      </div>
-                                    </div>
-                                    <ul class="nutrition__notes-list">
-                                      <li class="nutrition__notes-item">※ハンバーグ1個（牛肉使用とグリーンミート使用の比較）の食物繊維量(g)</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="nutrition__graph">
-                                  <div class="nutrition__inner">
-                                    <p class="nutrition__head">1パックの栄養素</p>
-                                    <div class="nutrition__body">
-                                      <div class="nutrition__image">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/nutrition_graph02_pc.jpg" media="(min-width: 48em)">
-                                          <img src="{{ site.root}}assets/images/nutrition_graph02_sp.jpg" width="664" height="448" alt="">
-                                        </picture>
-                                      </div>
-                                    </div>
-                                    <ul class="nutrition__notes-list">
-                                      <li class="nutrition__notes-item">※グリーンミート1パック(220g)あたり</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="nutrition__graph">
-                                <div class="nutrition__inner">
-                                  <ul class="nutrition__graph-list">
-                                    <li class="nutrition__graph-item">
-                                      <p class="nutrition__head">カロリー<span>(kcal)</span></p>
-                                      <div class="nutrition__body">
-                                        <div class="nutrition__image">
-                                          <picture>
-                                            <source srcset="{{ site.root}}assets/images/nutrition_graph03_pc.png" media="(min-width: 48em)">
-                                            <img src="{{ site.root}}assets/images/nutrition_graph03_sp.png" width="552" height="496" alt="">
-                                          </picture>
-                                        </div>
-                                      </div>
-                                    </li>
-                                    <li class="nutrition__graph-item">
-                                      <p class="nutrition__head">脂質<span>(g)</span></p>
-                                      <div class="nutrition__body">
-                                        <div class="nutrition__image">
-                                          <picture>
-                                            <source srcset="{{ site.root}}assets/images/nutrition_graph04_pc.png" media="(min-width: 48em)">
-                                            <img src="{{ site.root}}assets/images/nutrition_graph04_sp.png" width="552" height="498" alt="">
-                                          </picture>
-                                        </div>
-                                      </div>
-                                    </li>
-                                    <li class="nutrition__graph-item">
-                                      <p class="nutrition__head">タンパク質<span>(g)</span></p>
-                                      <div class="nutrition__body">
-                                        <div class="nutrition__image">
-                                          <picture>
-                                            <source srcset="{{ site.root}}assets/images/nutrition_graph05_pc.png" media="(min-width: 48em)">
-                                            <img src="{{ site.root}}assets/images/nutrition_graph05_sp.png" width="552" height="498" alt="">
-                                          </picture>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                  <ul class="nutrition__notes-list">
-                                    <li class="nutrition__notes-item">※それぞれ100gあたり</li>
-                                    <li class="nutrition__notes-item">※牛肉、豚肉：「日本食品標準成分表2020年版（八訂）」、Green Meat<sup>&trade;</sup>：弊社試算に基づく</li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="c-legends">
-                                <ul class="c-legends__list">
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--logo">
-                                      <div class="c-legends__icon c-legends__icon--logo">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_logo.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_logo.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name c-legends__name--en">Green Meat<sup>&trade;</sup></p>
-                                    </div>
-                                  </li>
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--pig">
-                                      <div class="c-legends__icon c-legends__icon--pig">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_pig.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_pig.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name">豚（ロース）</p>
-                                    </div>
-                                  </li>
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--cow">
-                                      <div class="c-legends__icon c-legends__icon--cow">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_cow.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_cow.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name">牛肉（カルビ）</p>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div><!-- .column -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="feature__image">
-                <picture>
-                  <source srcset="{{ site.root }}assets/images/feature_img03.webp" type="image/webp">
-                  <img src="{{ site.root }}assets/images/feature_img03.png" width="752" height="690" alt="写真：Green Meatの植物肉を使用した合挽き肉">
-                </picture>
-                <div class="feature__shape feature__shape--04 js-shape--01">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 272"><defs><linearGradient id="feature-shape-03" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(218,223,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(183,210,0)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#feature-shape-03)" d="M79.16,14.939 C144.591,-17.657 246.638,3.735 285.238,72.727 C313.801,123.778 300.792,193.27 247.408,238.697 C188.202,289.351 90.970,279.512 36.11,227.518 C-32.320,162.870 4.808,51.826 79.16,14.939 Z"/></svg>
-                </div>
-              </div>
-              <div class="feature__shape feature__shape--05 js-shape--02">
-                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="281"><linearGradient id="feature-shape-04" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="#FFF6CC"/><stop offset="100%" stop-color="#FFEF73"/></linearGradient><path fill-rule="evenodd" fill="url(#feature-shape-04)" d="M.109 141.713C3.438 72.83 80.91-2.15 157.676.51c56.804 1.172 126.53 54.07 140.052 119.602 14.998 73.263-46.564 144.818-116.278 158.397C91.943 295.765-3.658 220.507.109 141.713Z"/></svg>
-              </div>
-            </div>
-            <div class="feature__block">
-              <div class="feature__text">
-                <h3 id="environment" class="c-sub-heading">
-                  <span class="c-sub-heading__head">
-                    <span class="c-sub-heading__point">Point</span>
-                    <span class="c-sub-heading__number">4</span>
-                  </span>
-                  <span class="c-sub-heading__body">環境にやさしい</span>
-                </h3>
-                <ul class="feature__list">
-                  <li class="feature__item">
-                    少ない資源で効率的に生産(牛肉の20分の1以下の温室効果ガス排出量)
-                    <p class="feature__notes feature__notes--below">牛肉1kgを生産するのに水2万リットルが必要になるなど、畜産は環境に大きな負荷を与えています。</p>
-                  </li>
-                  <li class="feature__item">普段の食事を週1回プラントベースフードに変えるだけで地球にやさしい</li>
-                </ul>
-                <div class="feature__accordion-wrapper">
-                  <div class="c-accordion feature-accordion js-accordion">
-                    <div class="feature-accordion__head">
-                      <button class="c-accordion__trigger feature-accordion__trigger feature-accordion__trigger--wide js-accordion__trigger" type="button" aria-controls="environment-contents" aria-expanded="false">
-                        <span class="c-accordion__text feature-accordion__text">温室効果ガス排出量比較表はこちら</span>
-                        <span class="c-accordion__tabicon feature-accordion__tabicon"></span>
-                      </button>
-                    </div>
-                    <div class="c-accordion__tab-panel feature-accordion__tab-panel feature-accordion__tab-panel--03 js-accordion__tab-panel" id="environment-contents" aria-hidden="true">
-                      <div class="feature__column-wrapper">
-                        <div class="column">
-                          <div class="column__inner">
-                            <div class="environment">
-                              <h3 class="column__heading">温室効果ガス排出量比較</h3>
-                              <div class="environment__contents">
-                                <div class="environment__graph">
-                                  <div class="environment__block">
-                                    <p class="environment__title">温室効果ガス排出量<span>CO2換算<span>(kg)</span></span></p>
-                                    <div class="environment__image">
-                                      <picture>
-                                        <source srcset="{{ site.root}}assets/images/environment_graph_pc.webp" type="image/webp" media="(min-width: 48em)">
-                                        <source srcset="{{ site.root}}assets/images/environment_graph_pc.jpg" media="(min-width: 48em)">
-                                        <source srcset="{{ site.root}}assets/images/environment_graph_sp.webp" type="image/webp">
-                                        <img src="images/environment_graph_sp.jpg" width="520" height="370" alt="食品ごとの温室効果ガス排出量のグラフです。Green Meat&trade;・豚（ロース）・牛肉（カルビ）の中で、Green Meat&trade;が4.8と最も温室効果ガス排出量が少なく、牛肉（カルビ）が99.48と最も温室効果ガス排出量が多いです。">
-                                      </picture>
-                                    </div>
-                                    <ul class="environment__notes-list">
-                                      <li class="environment__notes-item">※それぞれ1kg生産時の排出量</li>
-                                      <li class="environment__notes-item">※牛肉、豚肉：Poore, J., & Nemecek, T. (2018). Reducing food’s environmental impacts through producers and consumers. Science、Green Meat<sup>&trade;</sup>：弊社試算に基づく</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="c-legends">
-                                <ul class="c-legends__list">
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--logo">
-                                      <div class="c-legends__icon c-legends__icon--logo">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_logo.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_logo.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name c-legends__name--en">Green Meat<sup>&trade;</sup></p>
-                                    </div>
-                                  </li>
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--pig">
-                                      <div class="c-legends__icon c-legends__icon--pig">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_pig.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_pig.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name">豚（ロース）</p>
-                                    </div>
-                                  </li>
-                                  <li class="c-legends__item">
-                                    <div class="c-legends__legends c-legends__legends--cow">
-                                      <div class="c-legends__icon c-legends__icon--cow">
-                                        <picture>
-                                          <source srcset="{{ site.root}}assets/images/icon_cow.webp" type="image/webp">
-                                          <img src="{{ site.root }}assets/images/icon_cow.png" width="72" height="60" alt="">
-                                        </picture>
-                                      </div>
-                                      <p class="c-legends__name">牛肉（カルビ）</p>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div><!-- .column -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="feature__image">
-                <picture>
-                  <source srcset="{{ site.root}}assets/images/feature_img04.webp" type="image/webp">
-                  <img src="images/feature_img04.png" width="752" height="691" alt="">
-                </picture>
-                <div class="feature__shape feature__shape--06 js-shape--01">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.969 277"><path d="M13.862 194.06c-31.76-58.18-2.981-144.26 66.757-180.94 51.605-27.14 134.439-6.61 185.429 40.89 55.631 51.83 40.481 146.69-15.184 193.77-70.728 59.82-198.795 16.26-237.002-53.72z" fill="none" stroke="#ffed66" stroke-width="2"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- .feature -->
-      </div>
-    </div>
-    <div class="about__shape about__shape--01 js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 111"><defs><linearGradient id="about-shape-01" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(218,223,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(183,210,0)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#about-shape-01)" d="M5.147,77.224 C-7.557,53.953 3.955,19.522 31.852,4.848 C52.496,-6.8 85.632,2.206 106.30,21.205 C128.285,41.936 122.222,79.882 99.956,98.713 C71.662,122.644 20.430,105.217 5.147,77.224 Z"/></svg>
-    </div>
-    <div class="about__shape about__shape--02 js-shape--02">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.969 277"><path d="M13.862 194.06c-31.76-58.18-2.981-144.26 66.757-180.94 51.61-27.14 134.44-6.61 185.43 40.89 55.63 51.83 40.48 146.69-15.18 193.77-70.73 59.82-198.8 16.26-237.007-53.72z" fill="none" stroke="#ffed66" stroke-width="2"/></svg>
-    </div>
-  </section><!-- .about -->
-
-  <section id="lineup" class="lineup">
-    <div class="lineup__inner">
-      <h2 class="c-heading-primary c-heading-primary--lineup">
-        <span class="c-heading-primary__sub">ラインナップ</span>
-        <span class="c-heading-primary__main">Lineup</span>
-      </h2>
-      <div class="lineup__main">
-        <div class="lineup__text">
-          <p class="lineup__copy">解凍するだけで手軽に使える！</p>
-          <div class="lineup__column">
-            <p class="lineup__name">Green Meat<sup>&trade;</sup></p>
-            <p class="lineup__gram">1パック220g</p>
-          </div>
-          <p class="lineup__description">大豆たんぱくを原料とした動物性不使用のミンチタイプの植物肉</p>
-          <p class="lineup__nutrition">
-            <span class="lineup__nutrition-text">
-              <span class="lineup__nutrition-name">タンパク質</span>
-              <span class="lineup__nutrition-number">31.6</span>
-              <span class="lineup__nutrition-gram">g</span>
-            </span>
-            <span class="lineup__slash">/</span>
-            <span class="lineup__nutrition-text">
-              <span class="lineup__nutrition-name">食物繊維</span>
-              <span class="lineup__nutrition-number">11.4</span>
-              <span class="lineup__nutrition-gram">g</span>
-            </span>
-          </p>
-          <ul class="lineup__tags">
-            <li class="lineup__tag"><span>MSGフリー</span></li>
-            <li class="lineup__tag"><span>コレステロールフリー</span></li>
-            <li class="lineup__tag"><span>グルテンフリー</span></li>
-            <li class="lineup__tag"><span>動物性原材料不使用</span></li>
-          </ul>
-          <div class="lineup__menu">
-            <p class="lineup__menu-head">グリーンミート１パック(220g)でこんなメニューがつくれます!</p>
-            <p class="lineup__menu-body">ハンバーグ約2～3人前、ミートソースパスタ約4～5人前</p>
-          </div>
-        </div>
-        <div class="lineup__movie">
-          <img src="{{ site.root }}assets/images/lineup_img.png" width="1040" height="694" alt="">
-        </div>
-      </div>
-      <div class="lineup__sub">
-        <div class="regular">
-          <p class="regular__head">定期購入</p>
-          <div class="regular__body">
-            <div class="regular__main">
-              <div class="regular__column">
-                <div class="regular__image">
-                  <img src="{{ site.root }}assets/images/lineup_2pack_img.jpg" width="737" height="401" alt="">
-                </div>
-                <div class="regular__text">
-                  <p class="regular__label">初回のみ購入可</p>
-                  <p class="regular__name">2パックセット（モニターセット）</p>
-                  <p class="regular__price">
-                    <span class="regular__price-before">
-                      <span class="regular__price-before-number">2,450</span>
-                      <span class="regular__price-before-yen">円</span>
-                    </span>
-                    <span class="regular__price-after">
-                      <span class="regular__price-after-number">735</span>
-                      <span class="regular__price-after-yen">円</span>
-                      <span class="regular__price-tax">（税込）</span>
-                      <span class="regular__price-postage">送料無料</span>
-                    </span>
-                  <p class="regular__quantity">
-                    <span class="regular__quantity-gram">220g</span>
-                    <span class="regular__quantity-multiply">×</span>
-                    <span class="regular__quantity-number">2</span>
-                  </p>
-                  <div class="regular__buttons">
-                    <div class="regular__button">
-                      <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                        <span class="c-button-primary__text">カートに入れる</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                      </a>
-                    </div>
-                    <div class="regular__button">
-                      <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                        <span class="c-button-primary__text">詳しく見る</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="regular__discount">
-                <span class="regular__discount-number">70</span>
-                <span class="regular__discount-percentage">%</span>
-                <span class="regular__discount-off">OFF!</span>
-              </p>
-            </div>
-            <div class="regular__sub">
-              <div class="regular__sub-item">
-                <div class="regular__sub-column">
-                  <div class="regular__sub-image">
-                    <img src="{{ site.root }}assets/images/products_4pack_img.png" width="960" height="960" alt="">
-                    <p class="regular__sub-discount">
-                      <span class="regular__sub-discount-number">24</span>
-                      <span class="regular__sub-discount-percentage">%</span>
-                      <span class="regular__sub-discount-off">OFF!</span>
-                    </p>
-                  </div>
-                  <div class="regular__sub-text">
-                    <p class="regular__sub-label">定期便</p>
-                    <p class="regular__sub-name">4パックセット</p>
-                    <p class="regular__sub-price">
-                      <span class="regular__sub-price-before">
-                        <span class="regular__sub-price-before-number">4,020</span>
-                        <span class="regular__sub-price-before-yen">円</span>
-                      </span>
-                      <span class="regular__sub-price-after">
-                        <span class="regular__sub-price-after-number">2,998</span>
-                        <span class="regular__sub-price-after-yen">円</span>
-                        <span class="regular__sub-price-tax">（税込）</span>
-                        <span class="regular__sub-price-postage">送料無料</span>
-                      </span>
-                    <p class="regular__sub-quantity">
-                      <span class="regular__sub-quantity-gram">220g</span>
-                      <span class="regular__sub-quantity-multiply">×</span>
-                      <span class="regular__sub-quantity-number">4</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="regular__sub-buttons">
-                  <div class="regular__sub-button">
-                    <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                      <span class="c-button-primary__text">カートに入れる</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                  <div class="regular__sub-button">
-                    <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                      <span class="c-button-primary__text">詳しく見る</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="regular__sub-item">
-                <div class="regular__sub-column">
-                  <div class="regular__sub-image">
-                    <img src="{{ site.root }}assets/images/products_8pack_img.png" width="960" height="960" alt="">
-                    <p class="regular__sub-discount">
-                      <span class="regular__sub-discount-number">30</span>
-                      <span class="regular__sub-discount-percentage">%</span>
-                      <span class="regular__sub-discount-off">OFF!</span>
-                    </p>
-                  </div>
-                  <div class="regular__sub-text">
-                    <p class="regular__sub-label">定期便</p>
-                    <p class="regular__sub-name">8パックセット</p>
-                    <p class="regular__sub-price">
-                      <span class="regular__sub-price-before">
-                        <span class="regular__sub-price-before-number">7,160</span>
-                        <span class="regular__sub-price-before-yen">円</span>
-                      </span>
-                      <span class="regular__sub-price-after">
-                        <span class="regular__sub-price-after-number">5,000</span>
-                        <span class="regular__sub-price-after-yen">円</span>
-                        <span class="regular__sub-price-tax">（税込）</span>
-                        <span class="regular__sub-price-postage">送料無料</span>
-                      </span>
-                    <p class="regular__sub-quantity">
-                      <span class="regular__sub-quantity-gram">220g</span>
-                      <span class="regular__sub-quantity-multiply">×</span>
-                      <span class="regular__sub-quantity-number">8</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="regular__sub-buttons">
-                  <div class="regular__sub-button">
-                    <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                      <span class="c-button-primary__text">カートに入れる</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                  <div class="regular__sub-button">
-                    <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                      <span class="c-button-primary__text">詳しく見る</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lineup__single-wrapper">
-          <div class="single">
-            <p class="single__head">通常購入</p>
-            <div class="single__body">
-              <div class="single__grid">
-                <div class="c-lineup-item">
-                  <div class="c-lineup-item__image">
-                    <img src="{{ site.root }}assets/images/products_2pack_img.png" width="960" height="960" alt="">
-                  </div>
-                  <p class="c-lineup-item__name">2パックセット</p>
-                  <p class="c-lineup-item__price">
-                    <span>2,450</span>
-                    <span>円</span>
-                    <span>(税込)</span>
-                    <span>(本体価格1,570円＋送料880円)</span>
-                  </p>
-                  <p class="c-lineup-item__quantity">
-                    <span class="c-lineup-item__gram">220g × 2</span>
-                  </p>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                      <span class="c-button-primary__text">カートに入れる</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                      <span class="c-button-primary__text">詳しく見る</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="c-lineup-item">
-                  <div class="c-lineup-item__image">
-                    <img src="{{ site.root }}assets/images/products_4pack_img.png" width="960" height="960" alt="">
-                  </div>
-                  <p class="c-lineup-item__name">4パックセット</p>
-                  <p class="c-lineup-item__price">
-                    <span>4,020</span>
-                    <span>円</span>
-                    <span>(税込)</span>
-                    <span>(本体価格3,140円＋送料880円)</span>
-                  </p>
-                  <p class="c-lineup-item__quantity">
-                    <span class="c-lineup-item__gram">220g × 4</span>
-                  </p>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                      <span class="c-button-primary__text">カートに入れる</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                      <span class="c-button-primary__text">詳しく見る</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="c-lineup-item">
-                  <div class="c-lineup-item__image">
-                    <img src="{{ site.root }}assets/images/products_8pack_img.png" width="960" height="960" alt="">
-                  </div>
-                  <p class="c-lineup-item__name">8パックセット</p>
-                  <p class="c-lineup-item__price">
-                    <span>7,160</span>
-                    <span>円</span>
-                    <span>(税込)</span>
-                    <span>(本体価格6,280円＋送料880円)</span>
-                  </p>
-                  <p class="c-lineup-item__quantity">
-                    <span class="c-lineup-item__gram">220g × 8</span>
-                  </p>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}cart/" class="c-button-primary c-button-primary--top-cart">
-                      <span class="c-button-primary__text">カートに入れる</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#ffffff" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#ffffff" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                  <div class="c-lineup-item__button-wrapper">
-                    <a href="{{ site.root }}products/single.html" class="c-button-primary c-button-primary--lineup-more">
-                      <span class="c-button-primary__text">詳しく見る</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="lineup__use-wrapper">
-        <div class="use">
-          <p class="use__head"><span>たくさんのお店でグリーンミートが使われています</span></p>
-          <p class="use__body">味坊 / AIN SOPH. Journey / planmeet / パレスホテル東京グランドキッチン .etc</p>
-          <div class="use__button-wrapper">
-            <a href="{{ site.root }}corporate/#stores" class="c-button-primary c-button-primary--use">
-              <span class="c-button-primary__text">詳しく見る</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="lineup__shape js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 281"><defs><linearGradient id="lineup-shape" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="#FFF6CC"/><stop offset="100%" stop-color="#FFEF73"/></linearGradient></defs><path fill-rule="evenodd" fill="url(#lineup-shape)" d="M.109 141.714C3.438 72.85 80.91-2.149 157.676.52c56.804 1.163 126.53 54.07 140.052 119.594 14.998 73.263-46.564 144.818-116.278 158.396C91.943 295.766-3.658 220.508.109 141.714Z"/></svg>
-    </div>
-  </section><!-- .lineup -->
-
-  <section id="story" class="story">
-    <div class="story__inner">
-      <h2 class="c-heading-primary c-heading-primary--story">
-        <span lang="en" class="c-heading-primary__sub u-uppercase">story</span>
-        <span class="c-heading-primary__main">
-          <span class="c-heading-primary__en">Green Meat</span>
-          <sup class="c-heading-primary__sup">&trade;</sup>
-          <span class="c-heading-primary__ja">に<br class="u-sp">込めた想い</span>
-        </span>
-      </h2>
-      <div class="story__column">
-        <div class="story__block">
-          <div class="story__text">
-            <h3 class="story__heading">地球と健康とずっと。</h3>
-            <p class="story__description">プラントベース食品の提供を通して、人々の健康と緑豊かな地球がずっと続いていく未来を創ること。それが私たちのミッションです。</p>
-            <p class="story__description"><span>畜産にかかる環境負荷や肉食による健康課題はいまや見過ごせない状況</span>となり、今後の人口増加により食肉の供給自体も追いつかなくなると言われています。</p>
-            <p class="story__description">植物の可能性を引き出した植物肉GreenMeat(TM)のおいしさで<span>『新しい時代の食』</span>の確立を目指していきます。</p>
-          </div>
-          <div class="story__image">
-            <picture>
-              <source srcset="{{ site.root}}assets/images/story_img01.webp" type="image/webp">
-              <img src="{{ site.root }}assets/images/story_img01.png" width="840" height="786" alt="">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="c-text-circle c-text-circle--story">
-      <img src="{{ site.root }}assets/images/bg_text-circle.svg" width="256" height="256" alt="">
-    </div>
-  </section><!-- .story -->
-
-  <section id="guide" class="top-guide">
-    <div class="top-guide__contents">
-      <div class="top-guide__inner">
-        <h2 class="top-guide__heading">
-          <span lang="en" class="top-guide__sub u-uppercase">guide</span>
-          <span class="top-guide__main">ご利用ガイド</span>
-        </h2>
-        <div class="top-guide__tab-ui-wrapper">
-          <div class="c-tab-ui guide-tab-ui js-tab-ui">
-            <ul class="c-tab-ui__list guide-tab-ui__list" role="tablist">
-              <li class="c-tab-ui__item guide-tab-ui__item" role="presentation">
-                <button class="c-tab-ui__tab guide-tab-ui__tab js-tab" type="button" role="tab" aria-controls="panel-order" aria-selected="true" tabindex="0" id="order">ご注文について</button>
-              </li>
-              <li class="c-tab-ui__item guide-tab-ui__item" role="presentation">
-                <button class="c-tab-ui__tab guide-tab-ui__tab js-tab" type="button" role="tab" aria-controls="panel-item" aria-selected="false" tabindex="0" id="item">商品について</button>
-              </li>
-            </ul>
-            <div class="c-tab-ui__body guide-tab-ui__body">
-              <div class="c-tab-ui__tabpanel guide-tab-ui__tabpanel js-tabpanel" id="panel-order" role="tabpanel" aria-hidden="false" tabindex="0">
-                <dl class="c-accordion top-guide-accordion js-accordion">
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="order-answer-01" aria-expanded="false">
-                        どんな支払い方法がありますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="order-answer-01" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        クレジットカード（VISA, Mastercard）、銀行振り込みが使用可能です。<br>
-                        定期購入の場合クレジットカードでのお支払いのみ承ります。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="order-answer-02" aria-expanded="false">
-                        送料はいくらでしょうか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="order-answer-02" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        通常商品は全国一律880円（税込み）、定期購入及び送料込み商品は送料発生しません。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="order-answer-03" aria-expanded="false">
-                        定期便の日付はどのように指定できますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="order-answer-03" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        以下の三種類からご指定頂けます：<br>
-                        ・間隔で設定（最短15日、最大60日）<br>
-                        ・毎月の日付で指定（例：毎月の5日）<br>
-                        ・毎月の第●指定曜日で指定（例：毎月第一月曜日）
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="order-answer-04" aria-expanded="false">
-                        定期便の解約はどのようにすればいいでしょうか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="order-answer-04" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        配達希望日の一週間前であればいつでも解約が可能です（配達希望日の一週間前以内であれば来月からの解約になります）、「マイページ」の「定期購入の設定変更」から解約の手続きをお願いいたします。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="order-answer-05" aria-expanded="false">
-                        定期便を一時スキップすることはできますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="order-answer-05" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        はい、 配達希望日の一週間前であればいつでもスキップが可能です、スキップする場合は「マイページ」の「定期購入の設定変更」、「サイクル変更」で次回お届け日をご変更ください。
-                      </div>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-              <div class="c-tab-ui__tabpanel guide-tab-ui__tabpanel js-tabpanel" id="panel-item" role="tabpanel" aria-hidden="true" tabindex="0">
-                <dl class="c-accordion top-guide-accordion js-accordion">
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="item-answer-01" aria-expanded="false">
-                        動物性の原材料は入っていますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="item-answer-01" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        使用していません（卵、牛乳も不使用です）。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="item-answer-02" aria-expanded="false">
-                        アレルギー物質は含まれていますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="item-answer-02" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        大豆を含んでいます（特定原材料7品目および特定原材料に準ずるもの21品目のうち）。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="item-answer-03" aria-expanded="false">
-                        同一ラインで製造されている製品は何ですか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="item-answer-03" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        細心の注意を払っておりますが、エビ・カニ・卵・乳・小麦を含む製品と同じラインで製造しております。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="item-answer-04" aria-expanded="false">
-                        製造国はどこですか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="item-answer-04" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        日本国内です。
-                      </div>
-                    </dd>
-                  </div>
-                  <div class="c-accordion__block top-guide-accordion__block">
-                    <dt class="c-accordion__tab top-guide-accordion__tab">
-                      <button class="c-accordion__trigger top-guide-accordion__trigger js-accordion__trigger" type="button" aria-controls="item-answer-05" aria-expanded="false">
-                        どこで食べられますか？
-                        <span class="c-accordion__tabicon top-guide-accordion__tabicon"></span>
-                      </button>
-                    </dt>
-                    <dd class="c-accordion__tab-panel top-guide-accordion__tab-panel js-accordion__tab-panel" id="item-answer-05" aria-hidden="true">
-                      <div class="top-guide-accordion__body">
-                        当サイト内<a href="{{ site.root }}corporate/#stores" class="top-guide-accordion__link">導入店舗</a>をご覧ください。
-                      </div>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- .top-guide -->
-
-  <section class="contact">
-    <div class="contact__inner">
-      <div class="contact__contents">
-        <h2 class="contact__heading u-uppercase">contact</h2>
-        <div class="contact__column">
-          <div class="contact__block">
-            <p class="contact__head">メールでお問い合わせ</p>
-            <div class="contact__button-wrapper">
-              <a href="https://greenculture.co.jp/contact/" target="_blank" rel="noopener noreferrer" class="c-button-primary c-button-primary--contact">
-                <span class="c-button-primary__text">お問い合わせフォーム</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-              </a>
-            </div>
-          </div>
-          <div class="contact__block">
-            <p class="contact__head">電話でお問い合わせ</p>
-            <p class="contact__tel">048-960-0426</p>
-            <p class="contact__reception">受付時間:平日9時半～5時</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact__shape js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 282"><defs><linearGradient id="contact-shape-01" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(218,223,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(183,210,0)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#contact-shape-01)" d="M4.662,101.741 C26.39,34.983 120.734,-16.942 194.830,5.183 C249.659,21.556 303.837,90.577 299.782,158.253 C295.285,233.311 216.764,286.777 145.21,281.709 C53.857,275.270 -19.528,177.287 4.662,101.741 Z"/></svg>
-    </div>
-  </section>
-
-  <section id="news" class="news">
-    <div class="news__inner">
-      <div class="news__grid">
-        <h2 lang="en" class="news__heading u-uppercase">news</h2>
-        <ul class="news__list">
-          <li class="c-news-item c-news-item--top">
-            <a href="{{ site.root }}news/single.html" class="c-news-item__link">
-              <time datetime="2022-05-25" class="c-news-item__time">2022.05.25</time>
-              <p class="c-news-item__text">新製品「Green Meat焼売」発売のお知らせ</p>
-            </a>
-          </li>
-          <li class="c-news-item c-news-item--top">
-            <a href="{{ site.root }}news/single.html" class="c-news-item__link">
-              <time datetime="2022-05-25" class="c-news-item__time">2022.05.25</time>
-              <p class="c-news-item__text">テキストテキストテキストテキストテキストテキスト</p>
-            </a>
-          </li>
-          <li class="c-news-item c-news-item--top">
-            <a href="{{ site.root }}news/single.html" class="c-news-item__link">
-              <time datetime="2022-05-25" class="c-news-item__time">2022.05.25</time>
-              <p class="c-news-item__text">テキストテキストテキストテキストテキストテキスト</p>
-            </a>
-          </li>
-          <li class="c-news-item c-news-item--top">
-            <a href="{{ site.root }}news/single.html" class="c-news-item__link">
-              <time datetime="2022-05-25" class="c-news-item__time">2022.05.25</time>
-              <p class="c-news-item__text">テキストテキストテキストテキストテキストテキスト</p>
-            </a>
-          </li>
-        </ul>
-        <div class="news__button-wrapper">
-          <a href="{{ site.root }}news/" class="c-button-primary c-button-primary--news">
-            <span class="c-button-primary__text">もっと見る</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" class="c-button-primary__arrow"><path fill-rule="evenodd" fill="#0A7C24" d="m.586 10.242 5.656-5.656 1.414 1.413L2 11.656.586 10.242Z"/><path fill-rule="evenodd" fill="#0A7C24" d="M6.242 7.414.585 1.756 1.999.343l5.657 5.656-1.414 1.415Z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="news__shape news__shape--01 js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 111"><defs><linearGradient id="news-shape-01" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="rgb(218,223,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(183,210,0)" stop-opacity="1" /></linearGradient></defs><path fill-rule="evenodd"  fill="url(#news-shape-01)" d="M5.147,77.224 C-7.557,53.953 3.955,19.522 31.852,4.848 C52.496,-6.8 85.632,2.206 106.30,21.205 C128.285,41.936 122.222,79.882 99.956,98.713 C71.662,122.644 20.430,105.217 5.147,77.224 Z"/></svg>
-    </div>
-    <div class="news__shape news__shape--02 js-shape--02">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.969 277"><path d="M13.862 194.06c-31.76-58.18-2.981-144.26 66.757-180.94 51.61-27.14 134.44-6.61 185.43 40.89 55.63 51.83 40.48 146.69-15.18 193.77-70.73 59.82-198.8 16.26-237.007-53.72z" fill="none" stroke="#ffed66" stroke-width="2"/></svg>
-    </div>
-    <div class="news__shape news__shape--03 js-shape--01">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 281"><defs><linearGradient id="news-shape-02" x1="70.711%" x2="0%" y1="70.711%" y2="0%"><stop offset="0%" stop-color="#FFF6CC"/><stop offset="100%" stop-color="#FFEF73"/></linearGradient></defs><path fill-rule="evenodd" fill="url(#news-shape-02)" d="M.109 141.714C3.438 72.85 80.91-2.149 157.676.52c56.804 1.163 126.53 54.07 140.052 119.594 14.998 73.263-46.564 144.818-116.278 158.396C91.943 295.766-3.658 220.508.109 141.714Z"/></svg>
-    </div>
-  </section><!-- .news -->
-
-  <div class="wave-text">
-    <img src="{{ site.root }}assets/images/wavetext.svg" width="300" height="37" alt="GREEN MEAT! GREEN MEAT! GREEN MEAT!">
-  </div><!-- .wave-text -->
-
-  <div class="c-links">
-    <div class="c-links__inner">
-      <ul class="c-links__list">
-        <li class="c-links__item">
-          <a href="https://greenculture.co.jp/" target="_blank" rel="noopener noreferrer" class="c-links__link">
-            <div class="c-links__image">
-              <picture>
-                <source srcset="{{ site.root }}assets/images/links_img01.webp" type="image/webp">
-                <img src="{{ site.root }}assets/images/links_img01.png" width="664" height="374" alt="Green Culture 健康と地球とずっと。">
-              </picture>
-            </div>
-            <div class="c-links__text">
-              <p class="c-links__name"><span>販売会社</span></p>
-            </div>
-          </a>
-        </li>
-        <li class="c-links__item">
-          <a href="https://greens-vegetarian.com/" target="_blank" rel="noopener noreferrer" class="c-links__link">
-            <div class="c-links__image c-links__image">
-              <picture>
-                <source srcset="{{ site.root }}assets/images/links_img02.webp" type="image/webp">
-                <img src="{{ site.root }}assets/images/links_img02.png" width="300" height="37" alt="GREEN COLUMN">
-              </picture>
-            </div>
-            <div class="c-links__text">
-              <p class="c-links__name"><span>グリーンズベジタリアン</span><span>(プラントベース専門通販サイト)</span></p>
-            </div>
-          </a>
-        </li>
-        <li class="c-links__item">
-          <a href="https://greenculture.co.jp/column/knowledge01/" target="_blank" rel="noopener noreferrer" class="c-links__link">
-            <div class="c-links__image">
-              <picture>
-                <source srcset="{{ site.root }}assets/images/links_img03.webp" type="image/webp">
-                <img src="{{ site.root }}assets/images/links_img03.png" width="664" height="374" alt="EAT VEG">
-              </picture>
-            </div>
-            <div class="c-links__text">
-              <p class="c-links__name"><span>プラントベースフードとは？</span></p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
+  {# {% include 'layout/loading.njk' %} #}
+  
+  <div class="mv">
+    <div class="mv__inner">
+      <div class="isolate">
+      <h2 class="c-hdg1 mv-decoration noise">
+        {# <span>an endless pursuit of</span> #}
+        an endless pursuit of
+         expression <br>
+        {# <span>live a life of continuous</span> #}
+        live a life of continuous
+  experimentation</h2>
   </div>
+      {# <div class="mv__text">
+        <h1 class="mv__ttl">Jackie Yeung</h1>
+        <p class="mv__copy">Creative Front End Developer<br>
+          based in Tokyo, Japan.</p>
+      </div>
+
+      <div class="mv__links">
+        <a href="" target="_blank" rel="noopener noreferrer" class="mv__item mv__item--linkedin">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40.625 0.156494H3.02734C1.36719 0.156494 0 1.62134 0 3.37915V40.7815C0 42.5393 1.36719 43.9065 3.02734 43.9065H40.625C42.2852 43.9065 43.75 42.5393 43.75 40.7815V3.37915C43.75 1.62134 42.2852 0.156494 40.625 0.156494ZM13.1836 37.6565H6.73828V16.8557H13.1836V37.6565ZM9.96094 13.926C7.8125 13.926 6.15234 12.2659 6.15234 10.2151C6.15234 8.16431 7.8125 6.40649 9.96094 6.40649C12.0117 6.40649 13.6719 8.16431 13.6719 10.2151C13.6719 12.2659 12.0117 13.926 9.96094 13.926ZM37.5 37.6565H30.957V27.5002C30.957 25.1565 30.957 22.0315 27.6367 22.0315C24.2188 22.0315 23.7305 24.6682 23.7305 27.4026V37.6565H17.2852V16.8557H23.4375V19.6877H23.5352C24.4141 18.0276 26.5625 16.2698 29.6875 16.2698C36.2305 16.2698 37.5 20.6643 37.5 26.2307V37.6565Z" fill="#FFFFFD"/>
+          </svg>
+        </a>
+        <a href="https://github.com/hyzuru" target="_blank" rel="noopener noreferrer" class="mv__item mv__item--github">
+          <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.1133 38.8987C16.1133 39.094 15.918 39.1917 15.625 39.1917C15.332 39.2893 15.1367 39.094 15.1367 38.8987C15.1367 38.7034 15.332 38.5081 15.625 38.5081C15.918 38.5081 16.1133 38.7034 16.1133 38.8987ZM13.0859 38.4104C13.0859 38.6057 13.2812 38.8987 13.5742 38.8987C13.7695 38.9963 14.0625 38.8987 14.1602 38.7034C14.1602 38.5081 14.0625 38.3127 13.7695 38.2151C13.4766 38.1174 13.1836 38.2151 13.0859 38.4104ZM17.4805 38.3127C17.1875 38.3127 16.9922 38.5081 16.9922 38.801C16.9922 38.9963 17.2852 39.094 17.5781 38.9963C17.8711 38.8987 18.0664 38.801 17.9688 38.6057C17.9688 38.4104 17.6758 38.2151 17.4805 38.3127ZM23.8281 0.812744C10.3516 0.812744 0 11.1643 0 24.6409C0 35.4807 6.73828 44.7581 16.5039 48.0784C17.7734 48.2737 18.1641 47.4924 18.1641 46.9065C18.1641 46.2229 18.1641 42.9026 18.1641 40.8518C18.1641 40.8518 11.3281 42.3167 9.86328 37.9221C9.86328 37.9221 8.78906 35.0901 7.22656 34.4065C7.22656 34.4065 4.98047 32.844 7.32422 32.844C7.32422 32.844 9.76562 33.0393 11.1328 35.3831C13.2812 39.1917 16.7969 38.1174 18.2617 37.4338C18.457 35.8713 19.043 34.7971 19.8242 34.1135C14.3555 33.5276 8.78906 32.7463 8.78906 23.3713C8.78906 20.637 9.57031 19.3674 11.1328 17.6096C10.8398 16.926 10.0586 14.387 11.4258 10.969C13.3789 10.3831 18.1641 13.6057 18.1641 13.6057C20.1172 13.0198 22.168 12.8245 24.2188 12.8245C26.3672 12.8245 28.418 13.0198 30.3711 13.6057C30.3711 13.6057 35.0586 10.2854 37.1094 10.969C38.4766 14.387 37.5977 16.926 37.4023 17.6096C38.9648 19.3674 39.9414 20.637 39.9414 23.3713C39.9414 32.7463 34.1797 33.5276 28.7109 34.1135C29.5898 34.8948 30.3711 36.3596 30.3711 38.7034C30.3711 41.926 30.2734 46.0276 30.2734 46.8088C30.2734 47.4924 30.7617 48.2737 32.0312 47.9807C41.7969 44.7581 48.4375 35.4807 48.4375 24.6409C48.4375 11.1643 37.4023 0.812744 23.8281 0.812744ZM9.47266 34.5042C9.27734 34.6018 9.375 34.8948 9.47266 35.0901C9.66797 35.1877 9.86328 35.2854 10.0586 35.1877C10.1562 35.0901 10.1562 34.7971 9.96094 34.6018C9.76562 34.5042 9.57031 34.4065 9.47266 34.5042ZM8.39844 33.7229C8.30078 33.9182 8.39844 34.0159 8.59375 34.1135C8.78906 34.2112 8.98438 34.2112 9.08203 34.0159C9.08203 33.9182 8.98438 33.8206 8.78906 33.7229C8.59375 33.6252 8.49609 33.6252 8.39844 33.7229ZM11.5234 37.2385C11.4258 37.3362 11.4258 37.6292 11.7188 37.8245C11.9141 38.0198 12.207 38.1174 12.3047 37.9221C12.4023 37.8245 12.4023 37.5315 12.207 37.3362C12.0117 37.1409 11.7188 37.0432 11.5234 37.2385ZM10.4492 35.7737C10.2539 35.8713 10.2539 36.1643 10.4492 36.3596C10.6445 36.5549 10.8398 36.6526 11.0352 36.5549C11.1328 36.4573 11.1328 36.1643 11.0352 35.969C10.8398 35.7737 10.6445 35.676 10.4492 35.7737Z" fill="#FFFFFD"/>
+          </svg>
+        </a>
+        <a href="https://codepen.io/hyzuru" target="_blank" rel="noopener noreferrer" class="mv__item mv__item--codepen">
+          <svg width="50" height="52" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M49.0234 16.6565L26.1719 1.42212C25.3906 0.933838 24.5117 0.933838 23.7305 1.42212L0.878906 16.6565C0.292969 17.0471 0 17.7307 0 18.4143V33.6487C0 34.4299 0.292969 35.1135 0.878906 35.5042L23.7305 50.7385C24.5117 51.2268 25.3906 51.2268 26.1719 50.7385L49.0234 35.5042C49.6094 35.1135 50 34.4299 50 33.6487V18.4143C50 17.7307 49.6094 17.0471 49.0234 16.6565ZM27.1484 7.28149L43.9453 18.4143L36.4258 23.4924L27.1484 17.2424V7.28149ZM22.8516 7.28149V17.2424L13.4766 23.4924L5.95703 18.4143L22.8516 7.28149ZM4.29688 22.5159L9.66797 26.0315L4.29688 29.6448V22.5159ZM22.8516 44.8792L5.95703 33.6487L13.4766 28.6682L22.8516 34.9182V44.8792ZM25 31.1096L17.3828 26.0315L25 20.9534L32.5195 26.0315L25 31.1096ZM27.1484 44.8792V34.9182L36.4258 28.6682L43.9453 33.6487L27.1484 44.8792ZM45.7031 29.6448L40.2344 26.0315L45.7031 22.5159V29.6448Z" fill="#FFFFFD"/>
+          </svg>
+        </a>
+      </div> #}
+
+
+      <div class="mv__scroll">
+        <span class="mv__scroll-text">scroll down</span>
+        <span class="mv__scroll-line"></span>
+      </div>
+
+
+    </div>
+    {# <div class="mv__imgbox">
+      <img src="{{ site.root }}assets/images/IMG_5606.jpg" alt="" class="mv__img">
+    </div> #}
+    
+  </div>
+
+  <div id="about" class="about">
+      <div class="about__block">
+        <h2 class="c-hdg1">
+            For the past 2 years I have been working as a frontend engineer at a web design agency, EVOWORX.
+        </h2>
+        <p class="c-text-1">
+          My name is Jackie.<br>
+          I’m a creative front-end developer currently based in Tokyo, Japan.<br>
+          I’m really into CSS, animation, and admiring beautiful and intuitive designs.<br>
+          Outside of coding, I like progressive metal and post-hardcore rock, photographing moody streets, <span class="plans-ruined-from-covid">planning my next getaway</span> and google searching useless trivia.<br><br>
+        </p>
+        <p class="c-text-1">
+
+
+          {# Recent Experience
+
+          At Evoworx, I built and maintained websites for various clients, including airlines, manufacturers, large-scale retailers, internet services, and financial industries.
+          My daily responsibilities included translating PSD and Figma mockups into of pixel-perfect, interactive web delivarables, with a focus on resuable and maintanable code, scalable CSS, user experience, performance and accessibility.
+          I also enhanced interactivity and user-experience through mico-animations with CSS animations and GSAP, While making sure client needs are met on time and in full.
+
+          Visit my company's work listings to see some of the projects I've worked on.
+
+          I am devoted to writing better code, improving performance, accessibility, and picking up new technologies on the way. #}
+
+
+          At work, I build outstanding landing pages (among other things) for clients like WACOAL, AVIOT and more. Check out the sites I've built here. I also have done freelance projects. To see some of my projects I've had my hand in creating, <a href="https://www.evoworx.co.jp/people/jacqueline-yeung/" class="c-hdg1__link hover-text-note link-evoworx" target="_blank" rel="noopener noreferrer">visit the Evoworx website here.</a>
+          
+        </p>
+      </div>
+
+    {# <div class="about__divider">
+      <img src="{{ site.root }}assets/images/IMG_5627.jpg" alt="">
+    </div> #}
+
+      <div class="about__block about__block--2">
+        <h2 class="c-hdg1">
+            Sometimes, we all need to make that leap of faith. My leap got me from New Zealand to Japan.
+        </h2>
+        <p class="c-text-1">
+          I made the jump to becoming a coder by graduating from the Japan Electronics College with a Diploma Degree in Web Design in 2020. Being able to visit the live music events of my favorite J-Rock bands is a plus!
+        </p>
+        <p class="c-text-1">
+          I’m proficient in HTML/CSS using gulp.js, nunjucks and SASS/SCSS, using Git version control (GitLab, GitHub, SourceTree) and responsive web development. I also have experience in JAMstack website using MicroCMS (headless CMS), Vue/Nuxt, and netlify.
+        </p>
+      </div>
+  </div>
+
+  <div class="blog">
+    <div class="blog__head">
+      <h2 class="c-hdg1">Feel free to <a href="/blog/" class="c-hdg1__link">check out my blog</a></h2>
+      <p class="c-text-1">
+        You can find me dumping my brain out here in my blog, mostly musings about web development and things I've learnt on my coding journey, but also about cool places for eating and traveling, rambling about random Japan stuff.
+      </p>
+    </div>
+    <div class="blog__list">
+      <div class="blog__item">
+        <div class="blog__date">
+          <span class="blog__dateyear">2022</span>
+          <span class="blog__datemonth">FEB</span>
+          <span class="blog__dateday">28</span>
+        </div>
+        <div class="blog__item-inner">
+
+          <div class="blog__taglist">
+            <span class="blog__tags">JavaScript</span>
+            <span class="blog__tags">CSS</span>
+            <span class="blog__tags">Scroll</span>
+          </div>
+
+
+          <div class="blog__content">
+            <h3 class="blog__hdg c-hdg2">TITLE OF AMAZING BLOG</h3>
+            <p class="blog__subhdg c-subhdg">SUBTITLES ARE VERY COOL TOO</p>
+            <p class="blog__desc c-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+
+        <div class="blog__thumb">
+          <img src="{{ site.root }}assets/images/IMG_5627.jpg" alt="">
+        </div>
+
+        
+
+        
+      </div>
+    </div>
+
+
+  </div>
+
+
+  {# <div class="c-text-circle c-text-circle--story">
+    <img src="{{ site.root }}assets/images/icon01.png" width="100" height="100" alt="">
+  </div> #}
+
+
+
+
+
 </div>
 
-{# <!DOCTYPE html>
-<html lang="ja">
-<head>
-  ...
-</head>
-<body>
-  <p>hello from 11ty</p>
-
-  
-  <main>
-
-
-  </main>
-  {% if build.env === "production" %}
-  <p>production</p>
-  <img src="/img/img01.png" alt="">
-  <script type="module" src="./main.js"></script>
-  {% viteScriptTag "src/assets/js/main.js" %}
-
-  {% else %}
-  <p>not prod</p>
-  <img src="/img/img01.png" alt="">
-  <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-  {% endif %}
-
-</body>
-</html> #}

@@ -12,23 +12,24 @@ $root: '/';
 // ---------------------------------------------
 // カラー
 // ---------------------------------------------
-$COLOR_WHITE: #fff;
-$COLOR_GRAY_1: #e6e6e6;
-$COLOR_GRAY_2: #999999;
-$COLOR_GRAY_3: #e3e8e5;
-$COLOR_GRAY_4: #dcdedc;
-$COLOR_GRAY_5: #f0f0f0;
-$COLOR_GRAY_6: #ccc;
-$COLOR_GRAY_7: #9a9a9a;
-$COLOR_BROWN: #2a2220;
-$COLOR_YELLOW_GREEN: #8ec22f;
-$COLOR_YELLOW_GREEN_2: #c8db16;
-$COLOR_GREEN: #0a7c24;
-$COLOR_GREEN_2: #85be92;
-$COLOR_RED: #e60012;
-$COLOR_BEIGE: #fff6cc;
-$COLOR_YELLOW: #ffed66;
-$COLOR_BROWN_2: #87481b;
+// dark mode
+$COLOR_BLACK: #000000;
+$COLOR_DARKGREY: #01070A;
+$COLOR_WHITE: #FFFFFD;
+$COLOR_OFFWHITE_1: #DEDDD8;
+$COLOR_GREY_1: #B7B6B2;
+$COLOR_TEAL: #1F9991;
+$COLOR_SAND: #D1AF6D;
+
+// light mode 
+$COLOR_WHITE_2: #FDFDFB;
+$COLOR_OFFWHITE_2: #FDFDFB;
+$COLOR_GREY2: #040909;
+$COLOR_GREY3: #0F2122;
+$COLOR_GREY4: #585C58;
+$COLOR_DARKTEAL: #066879;
+$COLOR_DARKSAND: #8D6414;
+
 // ---------------------------------------------
 // ブレークポイント
 // ---------------------------------------------

@@ -1,0 +1,33 @@
+// @use "../../foundation/function" as f;
+// @use "../../foundation/mixin" as m;
+// @use "../../foundation/variables" as v;
+
+// /**
+//  * Object
+//  * ========================== */
+
+// /* Component ------------ */
+
+// /* tab */
+// .c-tab-ui {
+//   &__body {
+//     position: relative;
+//   }
+
+//   &__tabpanel {
+//     transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+
+//     &[aria-hidden="false"] {
+//       opacity: 1;
+//       visibility: visible;
+//       z-index: 1;
+//     }
+
+//     &[aria-hidden="true"] {
+//       opacity: 0;
+//       visibility: hidden;
+//       position: absolute;
+//       z-index: -1;
+//     }
+//   }
+// }
