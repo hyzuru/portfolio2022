@@ -1,0 +1,57 @@
+---
+layout: layout/base.njk
+bodyModifier: page-blog
+---
+<div class="blog-index">
+  
+    {# {{ posts | dump }} #}
+
+  
+  <div class="blog">
+    <div class="blog__head ">
+    
+      <h2 class="c-hdg1">Feel free to <a href="/blog/" class="c-hdg1__link">check out my blog</a></h2>
+      <p class="c-text-1">
+        You can find me dumping my brain out here in my blog, mostly musings about web development and things I've learnt on my coding journey, but also about cool places for eating and traveling, rambling about random Japan stuff.
+      </p>
+    </div>
+      
+    <div class="blog__list">
+     {% for post in posts %}
+      <article class="blog__item">
+      <a href="/blog/posts/{{ post.fields.title | slug }}">
+        <div class="blog__date">
+          <span class="blog__dateyear">{{ published | date('YYYY') }}</span>
+          <span class="blog__datemonth">{{ published | date('MMM') }}</span>
+          <span class="blog__dateday">{{ published | date('D') }}</span>
+        </div>
+        <div class="blog__item-inner">
+          <div class="blog__taglist">
+            {% set tags = post.metadata.tags %}
+            {% for tag in tags %}
+            <span class="blog__tags">{{ tag.sys.id }}</span>
+            {% endfor %}
+          </div>
+          <div class="blog__content">
+            <h3 class="blog__hdg c-hdg2">{{ post.fields.title }}</h3>
+            <p class="blog__subhdg c-subhdg">{{ post.fields.subtitle }}</p>
+            <p class="blog__desc c-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        {% if post.fields.featuredImage.fields.file.url.length > 0 %}
+          <div class="blog__thumb">
+            <img src="{{ post.fields.featuredImage.fields.file.url }}" alt=""/>
+            {# <img src="{{ site.root }}assets/images/IMG_5dummy627.jpg" alt=""/> #}
+          </div>
+        {% else %}
+        {% endif %}
+      </a>
+      </article>
+      {% endfor %}
+    </div>
+
+
+  </div>
+
+</div>
+

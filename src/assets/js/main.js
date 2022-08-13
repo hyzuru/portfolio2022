@@ -19,7 +19,7 @@ import { SmoothScroll } from "./modules/class/smoothScroll";
 // function
 // import { accordion } from "./modules/function/accordion";
 import { loadingAnimation } from "./modules/function/loadingAnimation";
-// import { map } from "./modules/function/map";
+// import { posts } from "./modules/function/posts";
 // import { productsSlider } from "./modules/function/productsSlider";
 // import { shapeAnimation } from "./modules/function/shapeAnimation";
 
@@ -125,9 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
 //   accordion();
-//   map();
 //   productsSlider();
-  // shapeAnimation();
-  swiper();
+// shapeAnimation();
   fadeInFooter();
+  // posts();
+  swiper();
 });

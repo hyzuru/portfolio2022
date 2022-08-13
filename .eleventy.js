@@ -1,5 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
+const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
+const dateFilter = require("nunjucks-date-filter");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/images');
@@ -9,6 +11,16 @@ module.exports = function (eleventyConfig) {
     "viteLinkStylesheetTags",
     viteLinkStylesheetTags
   );
+
+  eleventyConfig.addFilter("renderRichTextAsHtml", (value) =>
+    documentToHtmlString(value)
+  );
+  eleventyConfig.addNunjucksFilter("date", dateFilter);
+
+  
+
+
+
 
   async function viteScriptTag(entryFilename) {
     const entryChunk = await getChunkInformationFor(entryFilename);
@@ -71,3 +83,4 @@ module.exports = function (eleventyConfig) {
   }
 }
   
+

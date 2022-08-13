@@ -1,0 +1,26 @@
+---
+layout: layout/base.njk
+bodyModifier: page-blog
+pagination:
+    data: posts
+    size: 1
+    alias: post
+permalink:  "blog/posts/{{ post.fields.title | slug }}/index.html"
+eleventyComputed: 
+    title: "{{ post.fields.title }}"
+---  
+<main>
+  <h1 class="c-hdg1">{{ post.fields.title }}</h1>
+  <br><br><br><br><br><br><br><br>
+
+
+  {% set tags = post.metadata.tags %}
+  {% for tag in tags %}
+    <span class="c-text-1">{{ tag.sys.id }}</span>
+  {% endfor %}
+
+  <p class="c-text-1">Published on: <time>{{ post.fields.publishedDate }}</time></p>
+  <p class="c-text-1">Published {{ published | date('MMM D, YYYY') }}</time></p>
+  <img src="{{ post.fields.featuredImage.fields.file.url }}?w=400" />
+  <div class="c-text-1">{{ post.fields.body | renderRichTextAsHtml | safe }}</div>
+</main>

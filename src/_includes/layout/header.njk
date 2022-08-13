@@ -5,10 +5,15 @@
       {% if bodyModifier === "home" %}
       <a href="/#about" class="l-header__link l-header__link--active">About</a>
       {% else %}
-      <a href="{{ site.root }}/#about" class="l-header__link l-header__link--active">About</a>
+      <a href="{{ site.root }}" class="l-header__link">About</a>
       {% endif %}
-      <a href="/work/" class="l-header__link ">Work</a>
-      <a href="/blog/" class="l-header__link">Blog</a>
+      {# <a href="/work/" class="l-header__link ">Work</a>
+      <a href="/photo/" class="l-header__link ">Photo</a> #}
+      {% if bodyModifier === "page-blog" %}
+      <a href="{{ site.root }}blog/" class="l-header__link l-header__link--active">Blog</a>
+      {% else %}
+      <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
+      {% endif %}
     </div>
   </div>
 </header>

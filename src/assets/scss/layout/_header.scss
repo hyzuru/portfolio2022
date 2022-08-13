@@ -28,6 +28,7 @@
   // .l-header__block
   &__block {
     text-transform: uppercase;
+    border-bottom: 1px solid #1F9991;
     @include m.flex(
       $justify-content: space-between,
       $align-items: center
@@ -41,7 +42,8 @@
     color: v.$COLOR_WHITE;
     font-weight: 200;
     font-size: 64px;
-    font-size: 20px;
+    font-size: 32px;
+    // font-size: 20px;
     line-height: 76px;
     letter-spacing: 0.2em;
   }
@@ -50,7 +52,7 @@
   &__nav {
     font-size: 18px;
     line-height: 36px;
-    border-bottom: 1px solid v.$COLOR_TEAL;
+    // border-bottom: 1px solid v.$COLOR_TEAL;
     padding-top: 20px;
     padding-bottom: 20px;
   }

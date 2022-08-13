@@ -30,3 +30,37 @@
         margin-top: 24px;
     }
 }
+
+.c-text-list {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: math.div(27,16);
+    letter-spacing: 0.06em;
+
+    .c-hdg1 + & {
+        margin-top: 24px;
+    }
+    li {
+
+        padding-left: 2em;
+        text-indent: -1em;
+        position: relative;
+        &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            background-color: v.$COLOR_TEAL;
+            width: 4px;
+            height: 4px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+
+        }
+
+        & + & {
+            margin-top: 0;
+        }
+    }
+}
