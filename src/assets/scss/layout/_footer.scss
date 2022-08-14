@@ -13,6 +13,9 @@
   // background: darken(v.$COLOR_DARKSAND, 60%);
 
 
+  @at-root .page-post & {
+    border-top: 1px solid v.$COLOR_GREY_1;
+  }
 
   height: 100vh;
   position: relative;
@@ -62,8 +65,11 @@
     transition: opacity .3s ease;
     svg {
       width: 100%;
-      * {
-        fill: #000;
+
+      @at-root .home & {
+        * {
+          fill: #000;
+        }
       }
     }
     @media (hover) {

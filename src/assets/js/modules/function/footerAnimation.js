@@ -6,16 +6,16 @@ export function fadeInFooter() {
 
   console.log("read in fade in trigger")
 
-  document.addEventListener('keydown', (e) => {
-    if (e.shiftKey && e.key.toLowerCase() === 'd') {
-      e.preventDefault();
-      e.stopPropagation();
+  // document.addEventListener('keydown', (e) => {
+  //   if (e.shiftKey && e.key.toLowerCase() === 'd') {
+  //     e.preventDefault();
+  //     e.stopPropagation();
       
-      // Do some stuff...
-      console.log("d has been pressed")
-      // add darkmode
-    }
-  }, false);
+  //     // Do some stuff...
+  //     console.log("d has been pressed")
+  //     // add darkmode
+  //   }
+  // }, false);
 
 
   // check if element exists
@@ -86,39 +86,40 @@ export function fadeInFooter() {
 
 
 
-  const headings = document.querySelectorAll('.js-section');
-  const numOfTransitions = headings.length
-  const singleDuration = 1000;
-  const totalDuration = singleDuration * numOfTransitions;
+  // const headings = document.querySelectorAll('.js-section');
+  // const numOfTransitions = headings.length
+  // const singleDuration = 1000;
+  // const totalDuration = singleDuration * numOfTransitions;
   
-  gsap.to('.about', {
-    scrollTrigger: {
-      pin: '.about',
-      end: '+=' + `${totalDuration}s`,
-      pinSpacing: true,
-    },
-  });
+  // gsap.to('.about', {
+  //   scrollTrigger: {
+  //     pin: '.about',
+  //     end: '+=' + `${totalDuration}s`,
+  //     pinSpacing: true,
+  //   },
+  // });
   
-  headings.forEach((heading, i) => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heading,
-        toggleActions: 'play reverse play reverse',
-        start: '+=' + `${singleDuration * i}s`,
-        end: '+=' + `${singleDuration}s`,
-        // markers: true,
-        onEnter: () => { gsap.to(heading,{autoAlpha: 1, zIndex: 1})},
-        onLeave: () => {  gsap.to(heading,{autoAlpha: 0,  zIndex: 0})},
-        onEnterBack: () => {  gsap.to(heading,{autoAlpha: 1, zIndex: 1})},
-        onLeaveBack: () => {  
-          if(i === 0 ) return;
-          gsap.to(heading,{autoAlpha: 0, zIndex: 0})
-        }
-      }
-    });
-  });
-  
-    
+  // headings.forEach((heading, i) => {
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: heading,
+  //       toggleActions: 'play reverse play reverse',
+  //       start: '+=' + `${singleDuration * i}s`,
+  //       end: '+=' + `${singleDuration}s`,
+  //       // markers: true,
+  //       onEnter: () => { gsap.to(heading,{autoAlpha: 1, zIndex: 1})},
+  //       onLeave: () => {  gsap.to(heading,{autoAlpha: 0,  zIndex: 0})},
+  //       onEnterBack: () => {  gsap.to(heading,{autoAlpha: 1, zIndex: 1})},
+  //       onLeaveBack: () => {  
+  //         if(i === 0 ) return;
+  //         gsap.to(heading,{autoAlpha: 0, zIndex: 0})
+  //       }
+  //     }
+  //   });
+  // });
+
+
+
     // const colorAbout = document.querySelector('.about');
     // var color1 = colorAbout.getAttribute("data-color");
     
@@ -126,100 +127,44 @@ export function fadeInFooter() {
     //   trigger: colorAbout,
     //   start:'top 50%',
     //   end: '+=' + `${totalDuration}s`,
-    //   onEnter: () => {
-    //     gsap.to('.l-wrapper', {background: color1, color: 'black' })
-    //     gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-    //   },
-    //   onLeave: () => {
-    //     gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-    //     gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-    //   }, 
-    //   onLeaveBack: () => {
-    //     gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-    //     gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-    //   }, 
-    //   onEnterBack: () => {
-    //     gsap.to('.l-wrapper', {background: color1, color: 'black' })
-    //     gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-    //   },
-    //   pinSpacing: false,
-    //   // markers: true,
-    // });
 
-
-    // const colorFooter = document.querySelector('.l-footer');
-    // var color2 = colorFooter.getAttribute("data-color");
-    // ScrollTrigger.create({
-    //   trigger: colorFooter,
-    //   start:'top 50%',
-    //   end: 'bottom top',
-    //   onEnter: () => gsap.to('.l-wrapper', {background: color2 }), 
+    //   onEnter: () => gsap.to('.l-wrapper', {background: color1 }), 
     //   onLeave: () => gsap.to('.l-wrapper', {background:'black'}), 
     //   onLeaveBack: () => gsap.to('.l-wrapper', {background:'black'}), 
-    //   onEnterBack: () => gsap.to('.l-wrapper', {background:color2}), 
-    //   pinSpacing: false,
+    //   onEnterBack: () => gsap.to('.l-wrapper', {background:color1}), 
+    //   pinSpacing: true,
     //   // markers: true,
     // });
 
-
-
-    const colorAbout = document.querySelector('.about');
-    var color1 = colorAbout.getAttribute("data-color");
-    
-    ScrollTrigger.create({
-      trigger: colorAbout,
-      start:'top 50%',
-      end: '+=' + `${totalDuration}s`,
-      // onEnter: () => {
-      //   gsap.to('.l-wrapper', {background: color1, color: 'black' })
-      //   gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-      // },
-      // onLeave: () => {
-      //   gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-      //   gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-      // }, 
-      // onLeaveBack: () => {
-      //   gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-      //   gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-      // }, 
-      // onEnterBack: () => {
-      //   gsap.to('.l-wrapper', {background: color1, color: 'black' })
-      //   gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-      // },
-      onEnter: () => gsap.to('.l-wrapper', {background: color1 }), 
-      onLeave: () => gsap.to('.l-wrapper', {background:'black'}), 
-      onLeaveBack: () => gsap.to('.l-wrapper', {background:'black'}), 
-      onEnterBack: () => gsap.to('.l-wrapper', {background:color1}), 
-      pinSpacing: true,
-      // markers: true,
-    });
 
 
     const colorFooter = document.querySelector('.l-footer');
-    var color2 = colorFooter.getAttribute("data-color");
-    ScrollTrigger.create({
-      trigger: colorFooter,
-      start:'top 50%',
-      end: 'bottom top',
-      onEnter: () => {
-        gsap.to('.l-wrapper', {background: color2, color: 'black' })
-        gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-      },
-      onLeave: () => {
-        gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-        gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-      }, 
-      onLeaveBack: () => {
-        gsap.to('.l-wrapper', {background:'black',  color: 'white'})
-        gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
-      }, 
-      onEnterBack: () => {
-        gsap.to('.l-wrapper', {background: color2, color: 'black' })
-        gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
-      },
-      
-      pinSpacing: true,
-      // markers: true,
-    });
+    if (colorFooter.length) {
+      var color2 = colorFooter.getAttribute("data-color");
+      ScrollTrigger.create({
+        trigger: colorFooter,
+        start:'top 50%',
+        end: 'bottom top',
+        onEnter: () => {
+          gsap.to('.l-wrapper', {background: color2, color: 'black' })
+          gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
+        },
+        onLeave: () => {
+          gsap.to('.l-wrapper', {background:'black',  color: 'white'})
+          gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
+        }, 
+        onLeaveBack: () => {
+          gsap.to('.l-wrapper', {background:'black',  color: 'white'})
+          gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'white' })
+        }, 
+        onEnterBack: () => {
+          gsap.to('.l-wrapper', {background: color2, color: 'black' })
+          gsap.to('.l-header__link:not(.l-header__link--active), .l-header__brand', {color: 'black' })
+        },
+        
+        pinSpacing: true,
+        markers: true,
+      });
+    }
 
 }

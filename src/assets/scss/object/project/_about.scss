@@ -88,7 +88,7 @@
     margin: 0 0 0 400px;
     margin: 0;
     height: calc(100vh - 110px);
-    height: 120vh;
+    height: 100vh;
     padding-top: 110px;
     padding-bottom: 20vh;
     padding-right: 28px;
@@ -450,5 +450,245 @@
             transition: transform .3s ease;
             filter: grayscale(100%) brightness(103%);
         }
+    }
+}
+
+
+.post {
+    
+    .header {
+        margin: 190px math.div(200,1440)*100vw 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        // .header__info
+        &__info {
+            width: 100%;
+            max-width: 500px;
+            flex: 1;
+            text-align: center;
+            margin: auto;
+        }
+
+        &__tags {
+            // text-transform:capitalize;
+        }
+
+        // .header__title
+        &__title {
+            margin-top: 40px;
+            text-transform: uppercase;
+
+        }
+        &__subtitle {
+            margin-top: 40px;
+        }
+        
+        &__details {
+            position: relative;
+            padding-top: 40px;
+            margin-top: 40px;
+            font-size: 18px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 134px;
+                height: 1px;
+                background-color: v.$COLOR_TEAL;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+            }
+        }
+        &__description {
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 500;
+
+            & + .header__publishdate {
+                margin-top: 40px;
+            }
+        }
+        &__publishdate {
+            text-transform: uppercase;
+
+        }
+        
+        // .header__img
+        &__img {
+            width: 430px;
+            aspect-ratio: 1 / 1;
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+            }
+            // margin-right: 40px;
+        }
+    }
+    
+    main {
+        border-top: 1px solid rgba(v.$COLOR_WHITE, 0.5);
+        padding-top: 100px;
+        // border-bottom: 1px solid rgba(v.$COLOR_WHITE, 0.5);
+        // padding-bottom: 100px;
+        margin: 0 math.div(240,1440)*100vw 120px;
+    }
+    .content {
+        width: 600px;
+        margin-left: 100px;
+        // margin-left: 0;
+        
+        border-bottom: 1px solid rgba(v.$COLOR_WHITE, 0.5);
+        padding: 0 0 100px;
+
+        &::first-letter {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 200;
+            font-size: 64px;
+            line-height: 30px;
+            letter-spacing: 0em;
+            color: v.$COLOR_TEAL;
+            padding-left: 0.6em;
+            padding-right: 2px;
+        }
+        p {
+            font-size: 16px;
+        }
+        * + * {
+            margin-top: 36px;
+        }
+        * + hr {
+            margin-top: 80px;
+        }
+        * + h1, * + h2, * + h3  {
+            padding-top: 80px;
+            margin-top: 0;
+        }
+        img {
+            width: 90%;
+            margin: 80px auto;
+        }
+        // p + p {
+        //     margin-top: 36px;
+        // }
+        blockquote {
+            border-left: 3px solid v.$COLOR_TEAL;
+            // padding-left: 40px;
+            padding: 12px 120px 16px 40px;
+            margin-left: 0px;
+            font-style: italic;
+        }
+
+        h1, h2 {
+            font-size: 24px;
+            line-height: 42px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        ol, ul {
+            li {
+                margin-top: 0;
+                ol, ul {
+                    margin-top: 20px;
+                    margin-left: 40px;
+                }
+            }
+        }
+        ul {
+            li {
+                padding-left: 1.5em;
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    background-color: v.$COLOR_TEAL;
+                    position: absolute;
+                    left: 0;
+                    top: 12px;
+                }
+            }
+        }
+        ol {
+            list-style-type: none;
+            counter-reset: elementcounter;
+              
+            li {
+                padding-left: 1.5em;
+                position: relative;
+                &:before {
+                  content: counter(elementcounter) ". ";
+                  counter-increment: elementcounter;
+                  font-weight: bold;
+                  color: v.$COLOR_TEAL;
+                  display: block;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                }
+            }
+        }
+
+        code {
+            padding: 4px;
+            font-family: 'Roboto Mono', monospace;
+
+            display: inline;
+            font-size: 15px;
+            letter-spacing: 0.04em;
+        }
+        // until i can get contentful <pre> tag rendered
+        pre {
+            margin: 40px -80px;
+            code {
+                border-radius: 4px;
+                padding: 20px 80px;
+                
+                display: block;
+                white-space: pre;
+                
+                width: calc(760px);
+                margin: 0 auto;
+                
+                overflow: scroll;
+            }
+        } 
+        
+    }
+
+    .footer {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        padding-top: 80px;
+        margin: 0 100px;
+
+        &__back {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 42px;
+            a {
+                color: v.$COLOR_WHITE;
+
+                &:hover {
+                    color: v.$COLOR_TEAL;
+                }
+            }
+            // text-transform: uppercase;
+        }
+
     }
 }

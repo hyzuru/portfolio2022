@@ -1,6 +1,6 @@
 ---
 layout: layout/base.njk
-bodyModifier: page-blog
+bodyModifier: page-post
 pagination:
     data: posts
     size: 1
@@ -9,18 +9,40 @@ permalink:  "blog/posts/{{ post.fields.title | slug }}/index.html"
 eleventyComputed: 
     title: "{{ post.fields.title }}"
 ---  
-<main>
-  <h1 class="c-hdg1">{{ post.fields.title }}</h1>
-  <br><br><br><br><br><br><br><br>
+
+<div class="post">
+
+  <header class="header">
+
+  {% if post.fields.image.fields.file.url.length > 0 %}
+    <div class="header__img">
+      <img src="{{ post.fields.image.fields.file.url }}?w=430" alt=""/>
+    </div>
+    {% endif %}
+    <div class="header__info">
+      {% set tags = post.metadata.tags %}
+      {% for tag in tags %}
+        <span class="header__tags blog__tags">{{ tag.sys.id }}</span>
+      {% endfor %}
+      <h1 class="header__title c-hdg1">{{ post.fields.title }}</h1>
+      <h2 class="header__subtitle c-hdg1">{{ post.fields.subtitle }}</h2>
+      <div class="header__details">
+        <p class="header__description">{{ post.fields.description }}</p>
+        <p class="header__publishdate c-text-1">{{ post.fields.publishDate | date('D MMM, YYYY') }}</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <div class="c-text-1">{{ post.fields.body | renderRichTextAsHtml | safe }}</div>
+    </div>
+
+    <div class="footer">
+
+    <h2 class="footer__back"><a href="{{ site.root }}blog/">Back to blog index</a></h2>
+
+    </div>
+  </main>
+</div>
 
 
-  {% set tags = post.metadata.tags %}
-  {% for tag in tags %}
-    <span class="c-text-1">{{ tag.sys.id }}</span>
-  {% endfor %}
-
-  <p class="c-text-1">Published on: <time>{{ post.fields.publishedDate }}</time></p>
-  <p class="c-text-1">Published {{ published | date('MMM D, YYYY') }}</time></p>
-  <img src="{{ post.fields.featuredImage.fields.file.url }}?w=400" />
-  <div class="c-text-1">{{ post.fields.body | renderRichTextAsHtml | safe }}</div>
-</main>

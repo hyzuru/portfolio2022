@@ -3,6 +3,10 @@ const path = require("path");
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
 const dateFilter = require("nunjucks-date-filter");
 
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/images');
 
@@ -12,12 +16,49 @@ module.exports = function (eleventyConfig) {
     viteLinkStylesheetTags
   );
 
+
   eleventyConfig.addFilter("renderRichTextAsHtml", (value) =>
-    documentToHtmlString(value)
+  documentToHtmlString(value)
   );
   eleventyConfig.addNunjucksFilter("date", dateFilter);
-
   
+  eleventyConfig.addShortcode('documentToHtmlString', documentToHtmlString);
+  // eleventyConfig.addShortcode("contentBlock", function(contentBlock) {
+  //   return `
+  //     <section id="${contentBlock.fields.sectionLink}">
+  //       <div>
+  //         <h3>${contentBlock.fields.sectionTitle}</h3>
+  //         ${ documentToHtmlString(contentBlock.fields.content) }
+  //       </div>
+  //     </section>`;
+  // });
+
+
+  // eleventyConfig.addPlugin(syntaxHighlight);
+  // eleventyConfig.addPlugin(syntaxHighlight, {
+
+  //   // Change which Eleventy template formats use syntax highlighters
+  //   templateFormats: ["*"], // default
+
+  //   // Use only a subset of template types (11ty.js added in v4.0.0)
+  //   // templateFormats: ["liquid", "njk", "md", "11ty.js"],
+
+  //   // init callback lets you customize Prism
+  //   init: function({ Prism }) {
+  //     Prism.languages.myCustomLanguage = /* */;
+  //   },
+
+  //   // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+  //   preAttributes: {
+  //     tabindex: 0,
+
+  //     // Added in 4.1.0 you can use callback functions too
+  //     "data-language": function({ language, content, options }) {
+  //       return language;
+  //     }
+  //   },
+  //   codeAttributes: {},
+  // });
 
 
 

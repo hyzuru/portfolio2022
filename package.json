@@ -25,6 +25,7 @@
   "homepage": "https://github.com/hyzuru/portfolio2022#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "autoprefixer": "^10.4.8",
     "concurrently": "^7.3.0",
@@ -37,6 +38,8 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "highlight.js": "^11.6.0",
     "swiper": "^6.8.4"
   }
 }

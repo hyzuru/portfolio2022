@@ -1,32 +1,22 @@
-// function init() {
-//   const successNode = document.createElement('p')
-//   document.body.appendChild(successNode)
-//   successNode.innerText = 'hello from vite'
-// }
-// init()
-
 // -------------------------------------------------------------------- //
 //                               MAIN JS                               //
 // -------------------------------------------------------------------- //
 
 import "./../scss/style.scss"
 
+// SYNTAX HIGHLIGHTER
+import hljs from "highlight.js";
+import "highlight.js/styles/rainbow.css";
+
+
+
 // class
-// import { Drawer } from "./modules/class/drawer";
 import { SmoothScroll } from "./modules/class/smoothScroll";
-// import { Tab } from "./modules/class/tab";
+// import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
 
 // function
-// import { accordion } from "./modules/function/accordion";
-import { loadingAnimation } from "./modules/function/loadingAnimation";
-// import { posts } from "./modules/function/posts";
-// import { productsSlider } from "./modules/function/productsSlider";
-// import { shapeAnimation } from "./modules/function/shapeAnimation";
-
-import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
-
-
 import { fadeInFooter } from "./modules/function/footerAnimation";
+import { renderPost } from "./modules/function/renderPost";
 
 // util
 import { BODY } from "./modules/util/root";
@@ -123,11 +113,19 @@ window.addEventListener("DOMContentLoaded", () => {
   if (BODY.classList.contains("home")) {
     loadingAnimation();
   }
-
-//   accordion();
-//   productsSlider();
-// shapeAnimation();
+  if (BODY.querySelector("code")) {
+    document.querySelectorAll('code').forEach(el => {
+      // then highlight each
+      hljs.highlightElement(el);
+    });
+  }
   fadeInFooter();
+
+
+
+  // accordion();
+  // productsSlider();
+  renderPost();
   // posts();
-  swiper();
+  // swiper();
 });

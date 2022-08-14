@@ -6,7 +6,7 @@ module.exports = async () => {
 	// we can use the `order` property to sort them reverse-chronologically by their published date.
   const posts = await client.getEntries({
     content_type: 'blogPost',
-    order: '-fields.publishedDate',
+    order: '-fields.publishDate',
   });
   return posts.items;
 };

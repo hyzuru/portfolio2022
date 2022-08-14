@@ -9,7 +9,7 @@
       {% endif %}
       {# <a href="/work/" class="l-header__link ">Work</a>
       <a href="/photo/" class="l-header__link ">Photo</a> #}
-      {% if bodyModifier === "page-blog" %}
+      {% if (bodyModifier === "page-blog") or (bodyModifier === "page-post") %}
       <a href="{{ site.root }}blog/" class="l-header__link l-header__link--active">Blog</a>
       {% else %}
       <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
