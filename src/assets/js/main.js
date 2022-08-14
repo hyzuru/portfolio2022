@@ -111,7 +111,8 @@ import { BODY } from "./modules/util/root";
 
 window.addEventListener("DOMContentLoaded", () => {
   if (BODY.classList.contains("home")) {
-    loadingAnimation();
+    // loadingAnimation();
+    fadeInFooter();
   }
   if (BODY.querySelector("code")) {
     document.querySelectorAll('code').forEach(el => {
@@ -119,13 +120,12 @@ window.addEventListener("DOMContentLoaded", () => {
       hljs.highlightElement(el);
     });
   }
-  fadeInFooter();
+  renderPost();
 
 
 
   // accordion();
   // productsSlider();
-  renderPost();
   // posts();
   // swiper();
 });

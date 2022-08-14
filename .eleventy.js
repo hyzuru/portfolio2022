@@ -89,7 +89,7 @@ module.exports = function (eleventyConfig) {
     }
 
     const manifest = await fs.readFile(
-      path.resolve(process.cwd(), "dist", "manifest.json")
+      path.resolve(process.cwd(), "_site", "manifest.json")
     );
     const parsed = JSON.parse(manifest);
 
@@ -117,7 +117,7 @@ module.exports = function (eleventyConfig) {
     passthroughFileCopy: true,
     dir: {
       input: "src",
-      output: "dist",
+      output: "_site",
       includes: "_includes",
       data: "_data",
     },

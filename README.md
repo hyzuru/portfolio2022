@@ -1,5 +1,7 @@
 # Eleventy project starter
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f311cf5d-7125-4dcc-8e5b-4fccd3179261/deploy-status)](https://app.netlify.com/sites/stately-kangaroo-a5b026/deploys)
 ## Features
 - eleventy with vite
 - SCSS
