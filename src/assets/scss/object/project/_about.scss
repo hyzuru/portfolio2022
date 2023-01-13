@@ -341,7 +341,7 @@
     // .about__section == .js-section
     &__section {
         position: relative;
-        margin-top: 44px;
+        margin-top: 120px;
         @include m.responsive(xl) {
             opacity: 0;
             min-height: 100vh;
