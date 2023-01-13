@@ -5,10 +5,14 @@
 
 .c-text-1 {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     // line-height: 24px;
     line-height: math.div(27,16);
     letter-spacing: 0.06em;
+
+    @include m.responsive(xl) {
+        font-size: 18px;
+    }
 
     .c-hdg1 + & {
         margin-top: 24px;
@@ -42,8 +46,8 @@
     }
     li {
 
-        padding-left: 2em;
-        text-indent: -1em;
+        padding-left: 1em;
+        text-indent: 0em;
         position: relative;
         &::after {
             position: absolute;
@@ -52,8 +56,8 @@
             background-color: v.$COLOR_TEAL;
             width: 4px;
             height: 4px;
-            top: 0;
-            bottom: 0;
+            top: .7em;
+            // bottom: 0;
             left: 0;
             margin: auto;
 

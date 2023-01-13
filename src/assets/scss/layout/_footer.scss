@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../foundation/function" as f;
 @use "../foundation/mixin" as m;
 @use "../foundation/variables" as v;
@@ -46,29 +47,39 @@
   &__text {
     font-family: 'Montserrat', sans-serif;
     text-align: left;
-    font-size: 48px;
-    line-height: 58px;
+    font-size: 40px;
+    line-height: math.div(58,48);
     font-weight: 200;
+    @include m.responsive(xl) {
+      font-size: 48px;
+    }
   }
 
   &__links {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 48px;
-    margin-top: 80px;
+    gap: 40px;
+    margin-top: 40px;
+    @include m.responsive(xl) {
+      margin-top: 80px;
+      gap: 48px;
+    }
   }
   &__item {
-    // width: 44px;
+    width: 40px;
     display: block;
     opacity: 0.6;
     transition: opacity .3s ease;
+    @include m.responsive(xl) {
+      width: 44px;
+    }
     svg {
       width: 100%;
 
       @at-root .home & {
         * {
-          fill: #000;
+          fill: #fff;
         }
       }
     }
@@ -82,26 +93,27 @@
 
 
   &__copy {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    padding-bottom: f.rem(20);
-
     border-top: 1px solid darken(v.$COLOR_DARKSAND, 60%);
     text-align: right;
-    
-
     width: calc(100% - 48px);
-    width: calc(100% - 200px);
     padding-top: 32px;
+    padding-bottom: 32px;
+    
+    @include m.responsive(xl) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-
-    padding-top: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+      width: calc(100% - 200px);
+      position: absolute;
+      padding-top: 6px;
+      padding-bottom: f.rem(20);
+    }
   }
   // .l-footer__copytext
   &__copytext {
@@ -111,16 +123,6 @@
     font-weight: 400;
    
     display: inline-block;
-
-    // & + & {
-    //   &::before {
-
-    //     content: " / ";
-    //     margin-right: 7px;
-    //     display: inline-block;
-
-    //   }
-    // }
 
   }
 }

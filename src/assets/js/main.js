@@ -15,7 +15,7 @@ import { SmoothScroll } from "./modules/class/smoothScroll";
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
 
 // function
-import { fadeInFooter } from "./modules/function/footerAnimation";
+import { topSectionsFadein } from "./modules/function/topSectionsAnim";
 import { renderPost } from "./modules/function/renderPost";
 
 // util
@@ -112,7 +112,8 @@ import { BODY } from "./modules/util/root";
 window.addEventListener("DOMContentLoaded", () => {
   if (BODY.classList.contains("home")) {
     // loadingAnimation();
-    fadeInFooter();
+
+    topSectionsFadein();
   }
   if (BODY.querySelector("code")) {
     document.querySelectorAll('code').forEach(el => {
