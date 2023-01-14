@@ -119,6 +119,9 @@
         padding: 15px 25px 15px 15px;
         margin: 25px 0 25px 25px;
 
+        position: relative;
+        z-index: 1;
+
         @include m.responsive(xl) {
             padding: 20px 0 20px 90px;
             margin: 110px 0 40px 110px;
@@ -143,8 +146,6 @@
         // align-self: flex-start;
         opacity: 0.2;
         left: -25%;
-
-        z-index: -1;
 
         @include m.responsive(xl) {
             width: 68%;
@@ -349,7 +350,10 @@
     // .about__section == .js-section
     &__section {
         position: relative;
-        margin-top: 120px;
+        margin-top: 200px;
+        &:first-of-type {
+            margin-top: 0;
+        }
         @include m.responsive(xl) {
             opacity: 0;
             min-height: 100vh;
