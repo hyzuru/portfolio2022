@@ -148,7 +148,7 @@ bodyModifier: home
               <div class="blog__content">
                 <h3 class="blog__hdg c-hdg2">{{ post.fields.title }}</h3>
                 <p class="blog__subhdg c-subhdg">{{ post.fields.subtitle }}</p>
-                <p class="blog__desc c-text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p class="blog__desc c-text-2">{{ post.fields.description }}</p>
               </div>
             </div>
             {% if post.fields.image.fields.file.url.length > 0 %}
