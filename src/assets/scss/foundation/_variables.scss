@@ -1,0 +1,56 @@
+/**
+* Foundation
+* ========================== */
+
+/* variables */
+
+// ---------------------------------------------
+// ルート
+// ---------------------------------------------
+$root: '/';
+
+// ---------------------------------------------
+// カラー
+// ---------------------------------------------
+// dark mode
+$COLOR_BLACK: #000000;
+$COLOR_DARKGREY: #01070A;
+$COLOR_WHITE: #FFFFFD;
+$COLOR_OFFWHITE_1: #DEDDD8;
+$COLOR_GREY_1: #B7B6B2;
+$COLOR_TEAL: #1F9991;
+$COLOR_SAND: #D1AF6D;
+
+// light mode 
+$COLOR_WHITE_2: #FDFDFB;
+$COLOR_OFFWHITE_2: #FDFDFB;
+$COLOR_GREY2: #040909;
+$COLOR_GREY3: #0F2122;
+$COLOR_GREY4: #585C58;
+$COLOR_DARKTEAL: #066879;
+$COLOR_DARKSAND: #8D6414;
+
+// ---------------------------------------------
+// ブレークポイント
+// ---------------------------------------------
+$breakpoints: (
+  "sm": (
+    min-width: 34em,
+  ),
+  //576px
+  "md":
+    (
+      min-width: 48em,
+    ),
+  //768px
+  "lg":
+    (
+      min-width: 62em,
+    ),
+  //992px
+  "xl":
+    (
+      min-width: 75em,
+    )
+    //1200px,,,,,,,,,,,,,,,,,,,,,,,,,
+) !default;

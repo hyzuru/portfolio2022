@@ -1,0 +1,67 @@
+---
+title: Jackie Yeung Personal Site
+description: Portfolio and Blog by Jackie Yeung.
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="google-site-verification" content="to6zmo7OkWuOx2QZY0AA2wIdCEq_8vLns7bYzZkFGrY" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-209983324-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-209983324-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>{% if page.url !== site.root %}{{ title }} | {% endif %}{{ site.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="{{ description }}">
+    <meta property="og:type" content="{% if page.url == site.root %}website{% else %}article{% endif %}">
+    <meta property="og:title" content="{% if page.url == site.root %}{{ site.name }}{% else %}{{ title }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% else %}{{ site.og_image }}{% endif %}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:locale" content="ja">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="icon" href="{{ site.root }}assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {# <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="preload" as="style"> #}
+    {# <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"> #}
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300;400;500;600;700;800;900&family=Patrick+Hand+SC&family=Roboto+Mono&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+
+
+    <noscript>
+      {# <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"/> #}
+    </noscript>
+    {# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBELc_Nj3plBRUo_B4-oCW1mjWiIMMVR0o"></script> #}
+    {% if build.env == "production" %}
+      {% viteLinkStylesheetTags "src/assets/js/main.js" %}
+    {% endif %}
+  </head>
+  <body class="{{bodyModifier}}">
+    {% if bodyModifier === "home" %}
+    <div class="bg"></div>
+    {% endif %}
+    <div class="l-wrapper">
+      {% include 'layout/header.njk' %}
+      <main class="l-main">
+        {{ content | safe }}
+      </main>
+      {% include 'layout/footer.njk' %}
+    </div>
+    {% if build.env == "production" %}
+      {% viteScriptTag "src/assets/js/main.js" %}
+    {% else %}
+      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+    {% endif %}
+  </body>
+</html>

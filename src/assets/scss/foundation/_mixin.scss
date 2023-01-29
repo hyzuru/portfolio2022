@@ -1,0 +1,99 @@
+/**
+* Foundation
+* ========================== */
+@use "sass:math";
+@use "../foundation/function" as f;
+@use "../foundation/variables" as v;
+
+/* mixin */
+
+// =============================================
+// [responsive レスポンシブ(メディアクエリ)の指定]
+// $breakpoint {String} ブレークポイントの値
+// =============================================
+@mixin responsive($breakpoint) {
+  @media screen and #{inspect(map-get(v.$breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+// =============================================
+// [hover ホバーの指定]
+// =============================================
+@mixin hover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// =============================================
+// [flex フレックスの指定]
+// $direction       {String} flex-direction プロパティの値
+// $wrap            {String} flex-wrap プロパティの値
+// $justify-content {String} justify-content プロパティの値
+// $align-items     {String} align-items プロパティの値
+// =============================================
+@mixin flex($direction: null, $wrap: null, $justify-content: null, $align-items: null) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+
+  @if $align-items {
+    align-items: $align-items;
+  }
+}
+
+// =============================================
+// [font フォント周りの設定]
+// $color           {String} color プロパティの値
+// $font-size       {Number} font-size プロパティの値
+// $letter-spacing  {Number} letter-spacing プロパティの値
+// $line-height     {Number} line-height プロパティの値
+// =============================================
+@mixin font(
+  $color: null,
+  $font-size: null,
+  $letter-spacing: null,
+  $line-height: null
+) {
+  @if $color {
+    color: $color;
+  }
+
+  @if $font-size {
+    font-size: f.rem($font-size);
+  }
+
+  @if $letter-spacing {
+    letter-spacing: math.div($letter-spacing, 1000) * 1em;
+  }
+
+  @if $line-height and $font-size {
+    line-height: math.div($line-height, $font-size);
+  }
+}
+
+@mixin inner {
+  padding-right: percentage(math.div(25, 375));
+  padding-left: percentage(math.div(25, 375));
+  @include responsive(md) {
+    max-width: f.rem(1088);
+    box-sizing: content-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: percentage(math.div(40, 1280));
+    padding-left: percentage(math.div(40, 1280));
+  }
+}

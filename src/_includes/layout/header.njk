@@ -1,0 +1,19 @@
+<header class="l-header">
+  <div class="l-header__block">
+    <a href="{{ site.root }}" class="l-header__brand">Jackie Yeung</a>
+    <div class="l-header__nav">
+      {% if bodyModifier === "home" %}
+      <a href="/#about" class="l-header__link l-header__link--active">About</a>
+      {% else %}
+      <a href="{{ site.root }}" class="l-header__link">About</a>
+      {% endif %}
+      {# <a href="/work/" class="l-header__link ">Work</a>
+      <a href="/photo/" class="l-header__link ">Photo</a> #}
+      {% if (bodyModifier === "page-blog") or (bodyModifier === "page-post") %}
+      <a href="{{ site.root }}blog/" class="l-header__link l-header__link--active">Blog</a>
+      {% else %}
+      <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
+      {% endif %}
+    </div>
+  </div>
+</header>

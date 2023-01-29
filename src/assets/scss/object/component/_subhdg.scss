@@ -1,0 +1,13 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+
+.c-subhdg {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.06em;
+  color: v.$COLOR_GREY_1;
+}

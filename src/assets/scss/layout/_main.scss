@@ -1,0 +1,14 @@
+/**
+* Layout
+* ========================== */
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variables" as v;
+
+/* main */
+.l-main {
+  // flex: 1;
+  position: relative;
+  // overflow-x: hidden;
+  // padding-top: 110px;
+}
