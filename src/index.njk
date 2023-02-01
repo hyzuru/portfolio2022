@@ -129,7 +129,9 @@ bodyModifier: home
       </p>
     </div>
     <div class="blog__list">
+      {% set maxPostsShown = 3 %}
       {% for post in posts %}
+      {% if (loop.index <= maxPostsShown) %}
       <article  class="blog__item">
         <a href="/blog/posts/{{ post.fields.title | slug }}">
           <div class="blog__date">
@@ -161,7 +163,14 @@ bodyModifier: home
           </div>
         </a>
       </article>
+      {% endif %}
       {% endfor %}
+      {% if posts.length >= maxPostsShown %}
+      <a href="/blog/" class="blog__morebtn">
+        <span class="text">See more posts</span>
+        <span class="ico__arr"></span>
+      </a>
+      {% endif %}
     </div>
   </div>
 
