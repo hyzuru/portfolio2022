@@ -13,10 +13,15 @@
 - syntax highlighter for code from blog
 - JavaScript SDK for Contentful content embedding
 - Responsive/crossbrowser testing
-- deal with FOUC on blog page load
+- pagination on blog index page
+- next/prev post on blog detail page
+- hamburger menu on SP version
+- contentful body content, embeds, imgs, videos etc
+
 
 ## WANT TO DO'S
 - add three.js capability, throw in cool stuff
 - ~~swiper~~
 - smoothscroll js
 - barba.js page transitions
+- spotify now listening
