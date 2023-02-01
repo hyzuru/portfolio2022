@@ -13,13 +13,13 @@
       gtag('config', 'UA-209983324-1');
     </script>
     <meta charset="UTF-8">
-    <title>Building my personal blog | Jackie Yeung</title>
+    <title>Next.js Link Tag | Jackie Yeung</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Portfolio and Blog by Jackie Yeung.">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Building my personal blog">
-    <meta property="og:url" content="https://jackieyeung.dev/blog/posts/building-my-personal-blog/">
+    <meta property="og:title" content="Next.js Link Tag">
+    <meta property="og:url" content="https://jackieyeung.dev/blog/posts/next.js-link-tag/">
     <meta property="og:image" content="https://jackieyeung.dev/images/share.png">
     <meta property="og:description" content="Portfolio and Blog by Jackie Yeung.">
     <meta property="og:locale" content="ja">
@@ -69,28 +69,23 @@
     <div class="header__info">
       
       
-        <span class="header__tags blog__tags">blogging</span>
+        <span class="header__tags blog__tags">codeSnippets</span>
       
-        <span class="header__tags blog__tags">coding</span>
+        <span class="header__tags blog__tags">nextJS</span>
       
-        <span class="header__tags blog__tags">eleventy</span>
-      
-      <h1 class="header__title c-hdg1">Building my personal blog</h1>
-      <h2 class="header__subtitle c-hdg1"></h2>
+      <h1 class="header__title c-hdg1">Next.js Link Tag</h1>
+      <h2 class="header__subtitle c-hdg1">Useful Next.js code snippets</h2>
       <div class="header__details">
-        <p class="header__description"></p>
-        <p class="header__publishdate c-text-1">12 Aug, 2022</p>
+        <p class="header__description">Use &lt;Link&gt; instead of &lt;a&gt; tag for seamless navigation between pages</p>
+        <p class="header__publishdate c-text-1">30 Jan, 2023</p>
       </div>
     </div>
   </header>
   <main>
     <div class="content">
-      <div class="c-text-1"><p>Building your own site is one of those things that everyone tells you to do to showcase your skills and what not....
-After dragging my feet for a long time, I&#39;ve managed to put my foot down and start this personal dev blog. There&#39;s no shortage of tools out there for making your own blog, needless to say just picking which tools to use made me end up procrastinating. 
-At first I decided going with Gatsby.js, which has fairly good ratings for functionality and ease-of-use, and as it is a React-based framework, I thought it&#39;d be perfect for me as I started out on my React-learning journey.
-With a quick google search and sifting through some of the top search results, I got my project set up pretty easily
- My set up at work usually revolves around nunjucks for HTML and SASS for CSS. However,  Gatsby is more about JSX with the html-in-JS and css-in-JS stuff, there&#39;s only a learning curve but just plain changing the way I usually code a website meant more time and effort was requiring. I ended up procrastinating for 4 months as it was too much work to balance with long hours in my full time job (often 10 to 10).
-</p></div>
+      <div class="c-text-1"><p>Next.js allows us to use the <code>&lt;Link&gt;</code> tag instead of <code>&lt;a&gt;</code> to enable page navigation without sending a request to the server each time a link is clicked.</p><p>This allows the user to go to a different page instantly and without losing the data already stored in the current session.</p><p>First import Link to enable the functionality:</p><p><code>import Link from &#39;next/link&#39;;</code></p><p>Then use it as you would any <code>&lt;a&gt;</code> tag,  but replace the &quot;a&quot; with &quot;Link&quot;, keeping the href as you would to link to your destination.</p><p><code>&lt;Link href=&#39;/[destination-page]</code><code>/</code><code>&#39;&gt;
+  Text for the link to your destination
+&lt;/Link&gt;</code></p></div>
     </div>
 
     <div class="footer">
