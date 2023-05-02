@@ -8,7 +8,7 @@
 - gsap
 
 ## TO DO
-- to add blog api and test with blog entries
+- to add blog api and test with blog entriescontentful
 - clean up files/code, mixins, etc
 - syntax highlighter for code from blog
 - JavaScript SDK for Contentful content embedding
