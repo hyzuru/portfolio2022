@@ -10,9 +10,9 @@
 /* footer */
 .l-footer {
   padding-top: f.rem(56);
+  // padding-top: 0;
   padding-bottom: f.rem(20);
   // background: darken(v.$COLOR_DARKSAND, 60%);
-
 
   @at-root .page-post & {
     border-top: 1px solid v.$COLOR_GREY_1;
@@ -22,26 +22,36 @@
   position: relative;
   @include m.responsive(md) {
     padding-top: f.rem(64);
+    padding-top: 0;
     padding-bottom: f.rem(20);
   }
 
   // .l-footer__inner
   &__inner {
-    @include m.inner;
     position: relative;
-    width: 100%;
+
     height: 100%;
     display: flex;
     align-items: center;
-    
+    margin: 0 25px ;
+    max-width: 68rem;
+    padding-top: 0;
+    @include m.responsive(md) {
+      width: 100%;
+      margin: 0 100px;
+
+    }
+
   }
   
   // .l-footer__contact
   &__contact {
     // @include m.inner;
-    width: 400px;
     padding-top: 160px;
     padding-bottom: 160px;
+    @include m.responsive(md) {
+      width: 400px;
+    }
   }
   // .l-footer__text
   &__text {
@@ -104,7 +114,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
     
-    @include m.responsive(xl) {
+    @include m.responsive(md) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -114,6 +124,16 @@
       padding-top: 6px;
       padding-bottom: f.rem(20);
     }
+    // @include m.responsive(xl) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-between;
+
+    //   width: calc(100% - 200px);
+    //   position: absolute;
+    //   padding-top: 6px;
+    //   padding-bottom: f.rem(20);
+    // }
   }
   // .l-footer__copytext
   &__copytext {
@@ -121,8 +141,22 @@
     font-size: 14px;
     line-height: 2;
     font-weight: 400;
-   
-    display: inline-block;
+    display: block;
+    // @include m.responsive(md) {
+    //   display: inline-block;
+    //   &:first-child {
+    //     &::after {
+    //       content: "/";
+    //       margin-right: 8px;
+    //       margin-left: 12px;
+    //       // position: absolute;
+    //     }
+    //   }
+    // }
+    @include m.responsive(xl) {
+
+    }
+
 
   }
 }

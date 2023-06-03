@@ -2,128 +2,143 @@
 //                               MAIN JS                               //
 // -------------------------------------------------------------------- //
 
-import "./../scss/style.scss"
+import './../scss/style.scss';
 
 // SYNTAX HIGHLIGHTER
-import hljs from "highlight.js";
-import "highlight.js/styles/rainbow.css";
-
-
+import hljs from 'highlight.js';
+import 'highlight.js/styles/rainbow.css';
 
 // class
-import { SmoothScroll } from "./modules/class/smoothScroll";
+import { SmoothScroll } from './modules/class/smoothScroll';
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
 
 // function
-import { topSectionsFadein } from "./modules/function/topSectionsAnim";
-import { renderPost } from "./modules/function/renderPost";
+import { topSectionsFadein } from './modules/function/topSectionsAnim';
+import { renderPost } from './modules/function/renderPost';
 
 // util
-import { BODY } from "./modules/util/root";
+import { BODY } from './modules/util/root';
 
 (() => {
-//   // drawer
-//   const openButton = document.querySelector(".js-openButton");
-//   const closeButton = document.querySelector(".js-closeButton");
-//   const menuContent = document.querySelector(".js-drawer");
-//   const anchorLinks = document.querySelectorAll(".js-anchorLink");
-//   const tabbableElements = menuContent.querySelectorAll(".js-closeButton, .js-drawer__logo, .js-link");
-//   const firstTabbable = tabbableElements[0];
-//   const lastTabbable = tabbableElements[tabbableElements.length - 1];
-//   const drawer = new Drawer(openButton, closeButton, menuContent, anchorLinks, firstTabbable, lastTabbable);
+  // drawer
+  const toggle = document.querySelector('.js-toggle');
+  const nav = toggle.parentElement;
+  const root = document.documentElement;
+  const navOverlay = document.querySelector('.l-header-overlay');
 
-//   openButton.addEventListener("click", () => {
-//     drawer.onClickOpenButton();
-//   });
+  function openNav() {
+    nav.classList.add('active');
+    root.classList.add('is-drawer-open');
+    navOverlay.classList.remove('hidden');
+  }
+  function closeNav() {
+    nav.classList.remove('active');
+    root.classList.remove('is-drawer-open');
+    navOverlay.classList.add('hidden');
+  }
+  toggle.addEventListener('click', (e) => {
+    // e.defaultPrevented;
+    if (nav.classList.contains('active')) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
 
-//   closeButton.addEventListener("click", () => {
-//     drawer.onClickCloseButton();
-//   });
-
-//   menuContent.addEventListener("transitionend", () => {
-//     drawer.onTransitionendDrawer(event);
-//   });
-
-//   for (let i = 0; i < anchorLinks.length; i++) {
-//     anchorLinks[i].addEventListener("click", () => {
-//       drawer.onClickAnchorLink(event);
-//     });
-//   }
-
-//   firstTabbable.addEventListener("keydown", () => {
-//     drawer.onKeydownTabKeyFirstTabbable(event);
-//   });
-
-//   lastTabbable.addEventListener("keydown", () => {
-//     drawer.onKeydownTabKeyLastTabbable(event);
-//   });
-
-//   window.addEventListener("keydown", () => {
-//     drawer.onKeydownEsc(event);
-//   });
-
-//   // tab
-//   const tabs = document.querySelectorAll(".js-tab");
-//   const tab = new Tab(tabs);
-
-//   tab.init();
-
-//   for (let i = 0; i < tabs.length; i++) {
-//     tabs[i].addEventListener("click", () => {
-//       tab.onClickTab(event);
-//     }, false);
-
-//     tabs[i].addEventListener("focus", () => {
-//       tab.onFocusTab(event);
-//     }, false);
-
-//     tabs[i].addEventListener("keydown", () => {
-//       tab.onKeydownTab(event);
-//     }, false);
-//   }
+  navOverlay.addEventListener('click', function (e) {
+    if (nav.classList.contains('active')) {
+      closeNav();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      closeNav();
+    }
+  });
 
   // smoothscroll
   const smoothScroll = new SmoothScroll({ duration: 1000 });
 
   document.querySelectorAll("a[href^='#']").forEach((element) => {
-    element.addEventListener("click", (event) => {
+    element.addEventListener('click', (event) => {
       event.preventDefault();
-      const targetId = event.target.getAttribute("href");
+      const targetId = event.target.getAttribute('href');
       let targetY;
 
-      if (targetId === "#") {
+      if (targetId === '#') {
         targetY = 0;
       } else {
         const targetElement = document.querySelector(targetId);
         const documentHeight = document.body.clientHeight;
 
-        if (targetElement.getBoundingClientRect().top + window.pageYOffset + window.innerHeight > documentHeight) {
+        if (
+          targetElement.getBoundingClientRect().top +
+            window.pageYOffset +
+            window.innerHeight >
+          documentHeight
+        ) {
           targetY = documentHeight - window.innerHeight;
         } else {
-          targetY = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          targetY =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
         }
       }
       smoothScroll.exeScroll({ target: { y: targetY } });
     });
   });
+
+  // modal
+  const openModalBtn = document.querySelectorAll('.work__list .btn-open');
+  const modals = document.querySelectorAll('.modal');
+  const overlay = document.querySelector('.overlay');
+
+  function showModal(id) {
+    let m = document.getElementById(id);
+    m.classList.remove('hidden');
+    root.classList.add('is-drawer-open');
+    overlay.classList.remove('hidden');
+  }
+  function hideModals() {
+    modals.forEach((m) => {
+      m.classList.add('hidden');
+      root.classList.remove('is-drawer-open');
+      overlay.classList.add('hidden');
+    });
+  }
+  openModalBtn.forEach((b) => {
+    b.addEventListener('click', (event) => {
+      hideModals();
+      showModal(b.dataset.modal);
+    });
+  });
+  modals.forEach((m) => {
+    let x = m.querySelector('button.btn-close');
+    x.addEventListener('click', hideModals);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    modals.forEach((modal) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        hideModals();
+      }
+    });
+  });
+  overlay.addEventListener('click', hideModals);
 })();
 
-
-window.addEventListener("DOMContentLoaded", () => {
-  if (BODY.classList.contains("home")) {
+window.addEventListener('DOMContentLoaded', () => {
+  if (BODY.classList.contains('home')) {
     // loadingAnimation();
 
     topSectionsFadein();
   }
-  if (BODY.querySelector("code")) {
-    document.querySelectorAll('code').forEach(el => {
+  if (BODY.querySelector('code')) {
+    document.querySelectorAll('code').forEach((el) => {
       // then highlight each
       hljs.highlightElement(el);
     });
   }
   renderPost();
-
-
 
   // accordion();
   // productsSlider();

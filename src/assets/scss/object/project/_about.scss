@@ -22,8 +22,8 @@
 
 
 .top {
-    @include m.responsive(xl) {
-        padding-bottom: 200px;
+    @include m.responsive(md) {
+        // padding-bottom: 200px;
     }
 }
 
@@ -103,7 +103,7 @@
     // flex-direction: row-reverse;
     overflow: hidden;
 
-    @include m.responsive(xl) {
+    @include m.responsive(md) {
         height: calc(100vh - 110px);
         height: 100vh;
         // padding-top: 110px;
@@ -114,22 +114,37 @@
 
     // .mv__inner
     &__inner {
+        @include m.responsive(md) {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+        @include m.responsive(xl) {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+    }
 
+    // .mv__content
+    &__content {
         border-left: 1px solid v.$COLOR_TEAL;
         padding: 15px 25px 15px 15px;
-        margin: 25px 0 25px 25px;
+        margin: 25px 0 25px 50px;
 
         position: relative;
         z-index: 1;
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             padding: 20px 0 20px 90px;
-            margin: 110px 0 40px 110px;
+            // margin: 110px 0 40px 110px;
+            margin: 20px 0 40px 110px;
             align-self: flex-start;
             margin-right: auto;
         }
-
-
+        @include m.responsive(xl) {
+            margin: 0 0 0 80px;
+        }
     }
 
     .mv-decoration-container {
@@ -147,7 +162,7 @@
         opacity: 0.2;
         left: -25%;
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             width: 68%;
             opacity: 0.1;
             top: 0;
@@ -184,7 +199,7 @@
         word-break: break-all;
         font-weight: 200;
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             position: relative;
             right: -50px;
             left: auto;
@@ -211,7 +226,7 @@
         letter-spacing: 0.2em;
         font-weight: 500;
         // color: darken(v.$COLOR_TEAL, 25%);
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             font-size: 20px;
             line-height: 30px;
         }
@@ -224,7 +239,7 @@
         font-weight: 400;
         line-height: math.div(36,24);
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             font-size: 24px;
             line-height: 36px;
         }
@@ -235,7 +250,7 @@
         justify-content: flex-start;
         gap: 36px;
         margin-top: 24px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             gap: 48px;
             margin-top: 40px;
         }
@@ -243,7 +258,7 @@
     &__item {
         display: block;
         width: 40px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             width: auto;
         }
         svg {
@@ -275,7 +290,7 @@
         top: 85%;
         right: 24px;
         // position: fixed;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             top: 80%;
         }
     }
@@ -336,34 +351,36 @@
     
     padding-top: 100px;
     
-    @include m.responsive(xl) {
+    @include m.responsive(md) {
+        max-width: 1200px;
+        margin: 0 auto;
+        
         padding-top: 200px;
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        // height: 100vh;
         justify-content: flex-start;
         position: relative;
         align-items: flex-start;
-
     }
 
     // .about__section == .js-section
     &__section {
-        position: relative;
-        margin-top: 200px;
+        // position: relative;
+        margin-top: 80px;
         &:first-of-type {
             margin-top: 0;
         }
-        @include m.responsive(xl) {
-            opacity: 0;
-            min-height: 100vh;
-            position: absolute;
-            margin-top: 0;
+        @include m.responsive(md) {
+            // opacity: 0;
+            // min-height: 100vh;
+            // position: absolute;
+            // margin-top: 0;
         }
     }
     // .js-section {
     //     position: relative;
-    //     @include m.responsive(xl) {
+    //     @include m.responsive(md) {
     //         opacity: 0;
     //         min-height: 100vh;
     //         position: absolute;
@@ -373,9 +390,8 @@
     
     &__block {
         position: relative;
-        
         margin: 0 25px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin: 0 100px;
             width: 660px;
         }
@@ -398,31 +414,33 @@
 }
 
 .blog {
-    
+
     margin: 80px 0 0;
     padding-top: 40px;
-    // @include m.inner;
-    // margin: 220px+80px 100px 0;
-    @include m.responsive(xl) {
-        margin: -500px 100px 0;
+    @include m.responsive(md) {
         margin: 200px 100px 0;
+    }
+    @include m.responsive(xl) {
+        margin: 200px auto 0;
         width: 1120px;
-
     }
 
 
     &__head {
         margin: 0 25px;
+        @include m.responsive(md) {
+            width: 100%;
+            margin: 0;
+        }
         @include m.responsive(xl) {
             width: 980px;
-            margin: 0;
         }
     }
 
     // .blog__list
     &__list {
         margin-top: 44px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin-top: 100px;
         }
     }
@@ -434,17 +452,17 @@
         transition: all .3s ease;
         border-top: 1px solid transparent;
         margin-bottom: -1px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             border-bottom: 1px solid v.$COLOR_GREY_1;
         }
         &:first-child {
             border-top: 1px solid v.$COLOR_TEAL;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 border-top: 1px solid v.$COLOR_GREY_1;
             }
         }
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             &:hover {
                 border-color: v.$COLOR_TEAL;
                 border: 1px solid v.$COLOR_TEAL;
@@ -463,7 +481,7 @@
             
             display: flex;
             padding: 44px 25px;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 padding: 44px 40px;
             }
         }
@@ -477,7 +495,7 @@
         flex-direction: column;
         width: 70px;
         padding-right: 18px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             padding-right: 20px;
         }
         
@@ -493,7 +511,7 @@
 
             & + span {
                 margin-top: 6px;
-                @include m.responsive(xl) {
+                @include m.responsive(md) {
                     margin-top: 12px;
                 }
             }
@@ -505,6 +523,10 @@
         margin-right: 20px;
         margin-top: 4px;
         margin-bottom: 4px;
+        @include m.responsive(md) {
+            display: block;
+            margin-left: 40px;
+        }
         @include m.responsive(xl) {
             display: flex;
             margin-left: 0;
@@ -514,6 +536,11 @@
         }
     }
     &__item-inner {
+        @include m.responsive(md) {
+            margin-left: 0;
+            margin-right: 40px;
+            margin-bottom: 20px;
+        }
         @include m.responsive(xl) {
             margin-left: 80px;
             margin-right: 80px;
@@ -538,14 +565,14 @@
     &__hdg {
         margin-top: 22px;
         color:  v.$COLOR_WHITE;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin-top: 16px;
         }
     }
     &__subhdg {
         margin-top: 12px;
         color:  v.$COLOR_GREY_1;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin-top: 8px;
         }
     }
@@ -561,7 +588,7 @@
         -webkit-box-orient: vertical;
         white-space: normal;
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             -webkit-line-clamp: 2;
         }
     }
@@ -576,7 +603,7 @@
         position: relative;
         margin-top: 30px;
 
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             width: auto;
             height: 180px; 
             margin-top: 0;
@@ -601,7 +628,7 @@
             height: 100%;
             object-position: center;
             object-fit: cover;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 transition: transform .3s ease;
                 filter: grayscale(100%) brightness(103%);
             }
@@ -670,7 +697,7 @@
     
     .header {
         margin: 0 0 90px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin: 190px math.div(200,1440)*100vw 120px;
             display: flex;
             align-items: center;
@@ -685,8 +712,8 @@
             text-align: center;
             margin: auto;
 
-            padding: 50px 25px 0;
-            @include m.responsive(xl) {
+            padding: 150px 25px 0;
+            @include m.responsive(md) {
                 padding: 0;
             }
         }
@@ -699,7 +726,7 @@
         &__title {
             margin-top: 50px;
             text-transform: uppercase;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 margin-top: 40px;
             }
 
@@ -733,7 +760,7 @@
             font-weight: 500;
 
             & + .header__publishdate {
-                @include m.responsive(xl) {
+                @include m.responsive(md) {
                     margin-top: 40px;
                 }
             }
@@ -747,7 +774,7 @@
         &__img {
             width: 100%;
             aspect-ratio: 1 / 1;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 width: 430px;
             }
             img {
@@ -766,7 +793,7 @@
         // border-bottom: 1px solid rgba(v.$COLOR_WHITE, 0.5);
         // padding-bottom: 100px;
         margin: 0 25px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin: 0 math.div(240,1440)*100vw 120px;
         }
     }
@@ -778,7 +805,7 @@
         border-bottom: 1px solid rgba(v.$COLOR_WHITE, 0.5);
         padding: 0 0 100px;
         
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin-left: 100px;
             width: 600px;
         }
@@ -819,7 +846,7 @@
             padding: 12px 0 16px 20px;
             margin-left: 0px;
             font-style: italic;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 padding: 12px 120px 16px 40px;
             }
         }
@@ -893,7 +920,7 @@
         // until i can get contentful <pre> tag rendered
         pre {
             margin: 40px 0px;
-            @include m.responsive(xl) {
+            @include m.responsive(md) {
                 margin: 40px -80px;
             }
             code {
@@ -909,7 +936,7 @@
                 
                 overflow: scroll;
 
-                @include m.responsive(xl) {
+                @include m.responsive(md) {
                     padding: 20px 80px;
                     width: calc(760px);
                 }
@@ -923,7 +950,7 @@
         padding-bottom: 90px;
         
         margin: 0 25px;
-        @include m.responsive(xl) {
+        @include m.responsive(md) {
             margin: 0 100px;
             padding-top: 80px;
             padding-bottom: 150px;
