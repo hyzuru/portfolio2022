@@ -68,9 +68,10 @@
       padding-top: 20px;
       padding-bottom: 20px;
   }
+
+  
   // .l-header__link
   &__link {
-
     
     color: v.$COLOR_WHITE;
     font-weight: 400;
@@ -79,13 +80,17 @@
       margin-left: 48px;
     }
 
-  
-    &:not(.l-header-sp &) {
+    .l-header-sp .l-header-sp__container & {
+      visibility: visible;
+    }
+
+    @at-root .l-header__nav & {
       visibility: hidden;
       @include m.responsive(xl) {
         visibility: visible;
       }
     }
+
 
     // l-header__link--active
     &--active {
