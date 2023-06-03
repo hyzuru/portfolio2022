@@ -7,6 +7,12 @@
       {% else %}
       <a href="{{ site.root }}" class="l-header__link">About</a>
       {% endif %}
+
+      {% if bodyModifier === "page-work" %}
+      <a href="{{ site.root }}work/" class="l-header__link l-header__link--active">Work</a>
+      {% else %}
+      <a href="{{ site.root }}work/" class="l-header__link ">Work</a>
+      {% endif %}
       {# <a href="/work/" class="l-header__link ">Work</a>
       <a href="/photo/" class="l-header__link ">Photo</a> #}
       {% if (bodyModifier === "page-blog") or (bodyModifier === "page-post") %}
@@ -15,5 +21,19 @@
       <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
       {% endif %}
     </div>
+
+
   </div>
+  <div class="l-header-sp">
+    <button class="l-header-sp__toggle js-toggle">
+      <span class="line"></span><span class="line"></span><span class="line"></span>
+    </button>
+    <div class="l-header-sp__container js-drawer">
+      <p class="l-header-sp__decoration">NAV</p>
+      <a href="{{ site.root }}" class="l-header__link">About</a>
+      <a href="{{ site.root }}work/" class="l-header__link ">Work</a>
+      <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
+    </div>
+  </div>
+  <div class="l-header-overlay hidden"></div>
 </header>

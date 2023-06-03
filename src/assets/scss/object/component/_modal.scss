@@ -1,0 +1,76 @@
+@use "../../foundation/function" as f;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use 'sass:math';
+
+.modal {
+    background: rgba(29, 31, 33, 0.9);
+    box-shadow: 0 8px 32px 0 rgba(34, 53, 59, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba(67, 84, 179, 0.1);
+
+    width: calc(100% - 50px);
+    position: fixed;
+    top: 8%;
+    left: 0;
+    right: 0;
+    height: 84vh;
+    margin: auto;
+    border-radius: 4px;
+    z-index: 101;
+    
+    @include m.responsive(md) {
+        width: calc(100% - 100px);
+        
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        font-weight: 600;
+    }
+}
+
+.modal-inner {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    padding: 50px 20px 20px;
+    @include m.responsive(md) {
+        padding: 40px;
+
+    }
+}
+
+.btn-close {
+    transform: translate(20px, -10px);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+
+    position: fixed;
+    z-index: 20;
+}
+
+.hidden {
+    display: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    // background: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
