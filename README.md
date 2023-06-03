@@ -26,20 +26,11 @@ This is my personal website built on JAMstack, using Contentful as a headless CM
 
 ## TO DO
 
-- to add blog api and test with blog entries
-- clean up files/code, mixins, etc
-- syntax highlighter for code from blog
-- JavaScript SDK for Contentful content embedding
-- Responsive/crossbrowser testing
+- fix blog api/image formatting for contentful (embeds, imgs, videos etc)
 - pagination on blog index page
-- next/prev post on blog detail page
-- hamburger menu on SP version
-- contentful body content, embeds, imgs, videos etc
 
 ## WANT TO DO'S
 
-- add three.js capability, throw in cool stuff
-- ~~swiper~~
-- smoothscroll js
-- barba.js page transitions
+- barba.js page transitions or webgl/three.js
 - spotify now listening
+- next/prev post on blog detail page
