@@ -79,8 +79,11 @@
       margin-left: 48px;
     }
 
+    // @at-root .l-header-sp & {
+    //   visibility: visible;
+    // }
   
-    &:not(.l-header-sp &) {
+    @at-root &:not(.l-header-sp .l-header__link) {
       visibility: hidden;
       @include m.responsive(xl) {
         visibility: visible;
