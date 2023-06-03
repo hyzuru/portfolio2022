@@ -71,14 +71,16 @@
   // .l-header__link
   &__link {
 
+    
     color: v.$COLOR_WHITE;
     font-weight: 400;
     transition: color .3s ease;
     &:not(:first-child) {
       margin-left: 48px;
     }
+
   
-    &:not(.l-header-sp .l-header__link) {
+    &:not(.l-header-sp &) {
       visibility: hidden;
       @include m.responsive(xl) {
         visibility: visible;
