@@ -341,21 +341,32 @@
             height: 100%;
             object-position: center;
             object-fit: cover;
+            opacity: 0.8;
         }
 
+    }
+    // .mv__imgoverlay
+    &__imgoverlay {
+        background-color: #0b2435;
+        position: absolute;
+        opacity: 1;
+        z-index: 1;
+        mix-blend-mode: color;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+        
     }
         
 }
 
 .about {
-    
     padding-top: 100px;
-    
     @include m.responsive(md) {
         max-width: 1200px;
+        padding-top: 0;
         margin: 0 auto;
-        
-        padding-top: 200px;
         display: flex;
         flex-direction: row;
         // height: 100vh;
@@ -364,20 +375,50 @@
         align-items: flex-start;
     }
 
+    // .about__block 
+    &__block {
+        position: relative;
+        margin: 0 25px;
+
+        @include m.responsive(md) {
+            margin: 0 50px 0 100px;
+
+            max-width: 1000px;
+            width: 1000px;
+            
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3,1fr);
+            display: grid;
+            grid-gap: 0 2em;
+        }
+
+    }
+
     // .about__section == .js-section
     &__section {
-        // position: relative;
+        position: relative;
         margin-top: 80px;
+
         &:first-of-type {
             margin-top: 0;
+            @include m.responsive(md) {
+                padding-top: 200px;
+            }
         }
         @include m.responsive(md) {
-            // opacity: 0;
-            // min-height: 100vh;
-            // position: absolute;
-            // margin-top: 0;
+            grid-column: span 2;
+            padding-bottom: 20px;
         }
     }
+
+    // .about__img 
+    &__img {
+        @include m.responsive(md) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
     // .js-section {
     //     position: relative;
     //     @include m.responsive(md) {
@@ -387,16 +428,7 @@
     //         margin-top: 0;
     //     }
     // }
-    
-    &__block {
-        position: relative;
-        margin: 0 25px;
-        @include m.responsive(md) {
-            margin: 0 100px;
-            width: 660px;
-        }
 
-    }
 
     // .about__divider
     &__divider {
@@ -477,8 +509,6 @@
             }
         }
         a {
-            
-            
             display: flex;
             padding: 44px 25px;
             @include m.responsive(md) {
@@ -964,7 +994,7 @@
             a {
                 color: v.$COLOR_WHITE;
 
-                &:hover {
+                & {
                     color: v.$COLOR_TEAL;
                 }
             }
@@ -972,4 +1002,16 @@
         }
 
     }
+}
+
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left:0;
+    // opacity: 0.5;
+    pointer-events: none;
 }

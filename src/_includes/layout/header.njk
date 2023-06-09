@@ -1,4 +1,6 @@
 <header class="l-header">
+
+  {# Top of Page Nav Bar #}
   <div class="l-header__block">
     <a href="{{ site.root }}" class="l-header__brand">Jackie Yeung</a>
     <div class="l-header__nav">
@@ -13,17 +15,16 @@
       {% else %}
       <a href="{{ site.root }}work/" class="l-header__link ">Work</a>
       {% endif %}
-      {# <a href="/work/" class="l-header__link ">Work</a>
-      <a href="/photo/" class="l-header__link ">Photo</a> #}
+      {# <a href="/photo/" class="l-header__link ">Photo</a> #}
       {% if (bodyModifier === "page-blog") or (bodyModifier === "page-post") %}
       <a href="{{ site.root }}blog/" class="l-header__link l-header__link--active">Blog</a>
       {% else %}
       <a href="{{ site.root }}blog/" class="l-header__link">Blog</a>
       {% endif %}
     </div>
-
-
   </div>
+
+  {# Hamburger Menu for tablet/mobile size #}
   <div class="l-header-sp">
     <button class="l-header-sp__toggle js-toggle">
       <span class="line"></span><span class="line"></span><span class="line"></span>

@@ -1,4 +1,5 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+
 export default defineConfig({
   build: {
     outDir: '_site',
@@ -11,8 +12,7 @@ export default defineConfig({
         // ビルド時にjsを 'js/[ファイル名].[ハッシュ値].js' で生成
         chunkFileNames: 'assets/js/[name].js',
         entryFileNames: 'assets/js/[name].js',
-      }
+      },
     },
   },
-})
-
+});

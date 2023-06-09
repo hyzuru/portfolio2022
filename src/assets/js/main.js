@@ -11,9 +11,10 @@ import 'highlight.js/styles/rainbow.css';
 // class
 import { SmoothScroll } from './modules/class/smoothScroll';
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
+import Sketch from './modules/class/webgl';
 
 // function
-import { topSectionsFadein } from './modules/function/topSectionsAnim';
+import { topSectionsAnim } from './modules/function/topSectionsAnim';
 import { renderPost } from './modules/function/renderPost';
 
 // util
@@ -86,51 +87,57 @@ import { BODY } from './modules/util/root';
       smoothScroll.exeScroll({ target: { y: targetY } });
     });
   });
-
-  // modal
-  const openModalBtn = document.querySelectorAll('.work__list .btn-open');
-  const modals = document.querySelectorAll('.modal');
-  const overlay = document.querySelector('.overlay');
-
-  function showModal(id) {
-    let m = document.getElementById(id);
-    m.classList.remove('hidden');
-    root.classList.add('is-drawer-open');
-    overlay.classList.remove('hidden');
-  }
-  function hideModals() {
-    modals.forEach((m) => {
-      m.classList.add('hidden');
-      root.classList.remove('is-drawer-open');
-      overlay.classList.add('hidden');
-    });
-  }
-  openModalBtn.forEach((b) => {
-    b.addEventListener('click', (event) => {
-      hideModals();
-      showModal(b.dataset.modal);
-    });
-  });
-  modals.forEach((m) => {
-    let x = m.querySelector('button.btn-close');
-    x.addEventListener('click', hideModals);
-  });
-
-  document.addEventListener('keydown', function (e) {
-    modals.forEach((modal) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        hideModals();
-      }
-    });
-  });
-  overlay.addEventListener('click', hideModals);
 })();
 
 window.addEventListener('DOMContentLoaded', () => {
   if (BODY.classList.contains('home')) {
     // loadingAnimation();
 
-    topSectionsFadein();
+    topSectionsAnim();
+
+    // App();
+    new Sketch({
+      domElement: document.getElementById('container'),
+    });
+  }
+  if (BODY.classList.contains('work')) {
+    // modal
+    const openModalBtn = document.querySelectorAll('.work__list .btn-open');
+    const modals = document.querySelectorAll('.modal');
+    const overlay = document.querySelector('.overlay');
+
+    function showModal(id) {
+      let m = document.getElementById(id);
+      m.classList.remove('hidden');
+      root.classList.add('is-drawer-open');
+      overlay.classList.remove('hidden');
+    }
+    function hideModals() {
+      modals.forEach((m) => {
+        m.classList.add('hidden');
+        root.classList.remove('is-drawer-open');
+        overlay.classList.add('hidden');
+      });
+    }
+    openModalBtn.forEach((b) => {
+      b.addEventListener('click', (event) => {
+        hideModals();
+        showModal(b.dataset.modal);
+      });
+    });
+    modals.forEach((m) => {
+      let x = m.querySelector('button.btn-close');
+      x.addEventListener('click', hideModals);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      modals.forEach((modal) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          hideModals();
+        }
+      });
+    });
+    overlay.addEventListener('click', hideModals);
   }
   if (BODY.querySelector('code')) {
     document.querySelectorAll('code').forEach((el) => {
@@ -139,9 +146,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   renderPost();
-
-  // accordion();
-  // productsSlider();
-  // posts();
   // swiper();
 });
