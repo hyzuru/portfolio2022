@@ -12,6 +12,7 @@ import 'highlight.js/styles/rainbow.css';
 import { SmoothScroll } from './modules/class/smoothScroll';
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
 import Sketch from './modules/class/webgl';
+import Scroll from './modules/class/scroll';
 
 // function
 import { topSectionsAnim } from './modules/function/topSectionsAnim';
@@ -95,7 +96,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     topSectionsAnim();
 
-    // App();
     new Sketch({
       domElement: document.getElementById('container'),
     });

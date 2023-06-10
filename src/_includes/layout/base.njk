@@ -41,20 +41,25 @@ description: Portfolio and Blog by Jackie Yeung.
     {% endif %}
   </head>
   <body class="{{bodyModifier}}">
-    {# {% if bodyModifier === "home" %}
-    <div class="bg"></div>
-    {% endif %} #}
-    <div class="l-wrapper">
-      {% include 'layout/header.njk' %}
-      <main class="l-main">
-        {{ content | safe }}
-      </main>
-      {% include 'layout/footer.njk' %}
-    </div>
-    {% if build.env == "production" %}
-      {% viteScriptTag "src/assets/js/main.js" %}
-    {% else %}
-      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-    {% endif %}
+    <div class="body__container">
+      {# {% if bodyModifier === "home" %}
+      <div class="l-wrapper" data-scroll>
+      {% else %} #}
+      <div class="l-wrapper" data-scroll>
+      {% endif %}
+        {% include 'layout/header.njk' %}
+        <main class="l-main">
+          {{ content | safe }}
+        </main>
+        {% include 'layout/footer.njk' %}
+      </div>
+      {% if build.env == "production" %}
+        {% viteScriptTag "src/assets/js/main.js" %}
+      {% else %}
+        <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+      {% endif %}
+
+      <div id="container"></div>
+    </div><!-- .body__container --> 
   </body>
 </html>

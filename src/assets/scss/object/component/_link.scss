@@ -51,3 +51,53 @@
 //     color: v.$COLOR_TEAL;
 //   }
 // }
+
+// .hover-text-note {
+//   position: relative;
+
+//   &:hover {
+//     &::after {
+//       content: "";
+//       display: block;
+//       font-size: inherit;
+//       line-height: inherit;
+//       color: v.$COLOR_SAND;
+//       position: absolute;
+//       bottom: -28px;
+//       // left: 0;
+//       right: 0;
+//       margin: auto;
+//       text-decoration: none;
+//       font-family: 'Patrick Hand SC', cursive;
+//     }
+
+//     &.link-evoworx {
+//       &::after {
+//         content: "Site only in Japanese!";
+//       }
+//     }
+//   }
+// }
+
+// .plans-ruined-from-covid {
+//   text-decoration: line-through;
+//   color: v.$COLOR_TEAL;
+//   position: relative;
+
+//   &:hover {
+//     &::after {
+//       content: "mostly on-hold, thanks to covid :(";
+//       display: block;
+//       font-size: inherit;
+//       line-height: inherit;
+//       color: v.$COLOR_SAND;
+//       position: absolute;
+//       top: 100%;
+//       left: 0;
+//       right: 0;
+//       margin: auto;
+//       text-decoration: none;
+//       font-family: 'Patrick Hand SC', cursive;
+//     }
+//   }
+// }

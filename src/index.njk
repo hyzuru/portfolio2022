@@ -7,7 +7,7 @@ bodyModifier: home
   
   <div class="mv">
     <div class="mv-decoration-container">
-      {# <h2 class="c-hdg1 mv-decoration">decoration text here</h2> #}
+      {# <!-- <h2 class="c-hdg1 mv-decoration">decoration text here</h2> --> #}
     </div>
     <div class="mv__inner">
       <div class="mv__content">
@@ -42,7 +42,7 @@ bodyModifier: home
     </div>
     <div class="mv__imgbox">
       <div class="mv__imgoverlay"></div>
-      <img src="{{ site.root }}assets/images/IMG_6346.jpg" alt="" class="mv__img">
+      <img src="{{ site.root }}assets/images/IMG_6346.jpg" alt="" class="mv__img" >
     </div>
     
   </div>
@@ -60,11 +60,11 @@ bodyModifier: home
         </div>
 
         <div class="about__img">
-          <img src="{{ site.root }}assets/images/IMG_5650.jpg" alt="About Section Image">
+          <img class="gl-img" src="{{ site.root }}assets/images/IMG_5650.jpg" alt="About Section Image" >
         </div>
 
         <div class="about__img about__img--left">
-          <img src="{{ site.root }}assets/images/IMG_5606.jpg" alt="About Section Image">
+          <img class="gl-img" src="{{ site.root }}assets/images/IMG_5606.jpg" alt="About Section Image" >
         </div>
 
         {# COMING TO JAPAN / WORK EXPERIENCE #}
@@ -140,8 +140,7 @@ bodyModifier: home
             </div>
             {% if post.fields.image.fields.file.url.length > 0 %}
               <div class="blog__thumb">
-                <img src="{{ post.fields.image.fields.file.url }}?w=400" alt=""/>
-                {# <img src="{{ site.root }}assets/images/IMG_5dummy627.jpg" alt=""/> #}
+                <img src="{{ post.fields.image.fields.file.url }}?w=400" alt="" />
               </div>
             {% else %}
             {% endif %}
@@ -161,4 +160,3 @@ bodyModifier: home
   
 </div>
 
-<div id="container"></div>

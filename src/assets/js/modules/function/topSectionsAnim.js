@@ -50,26 +50,26 @@ export function topSectionsAnim() {
         trigger: '.about',
         start: 'top 50%',
         end: '+=' + `${totalDuration}s`,
-        onEnter: () => gsap.to('.l-wrapper', { background: color1 }),
-        onLeave: () => gsap.to('.l-wrapper', { background: 'black' }),
-        onLeaveBack: () => gsap.to('.l-wrapper', { background: 'black' }),
-        onEnterBack: () => gsap.to('.l-wrapper', { background: color1 }),
+        onEnter: () => gsap.to('.body__container', { background: color1 }),
+        onLeave: () => gsap.to('.body__container', { background: 'black' }),
+        onLeaveBack: () => gsap.to('.body__container', { background: 'black' }),
+        onEnterBack: () => gsap.to('.body__container', { background: color1 }),
         pinSpacing: true,
         markers: false,
       });
 
-      gsap.to('.mv__imgbox', {
-        scrollTrigger: {
-          // pin: '.mv__imgbox',
-          end: '+=30%',
-          duration: 1000,
-          // pinSpacing: true,
-          // markers: true,
-          start: 'top top',
-          onLeave: () => gsap.to('.mv__imgbox', { opacity: 0 }),
-          onEnterBack: () => gsap.to('.mv__imgbox', { opacity: 1 }),
-        },
-      });
+      // gsap.to('.mv__imgbox', {
+      //   scrollTrigger: {
+      //     // pin: '.mv__imgbox',
+      //     end: '+=30%',
+      //     duration: 1000,
+      //     // pinSpacing: true,
+      //     // markers: true,
+      //     start: 'top top',
+      //     onLeave: () => gsap.to('.mv__imgbox', { opacity: 0 }),
+      //     onEnterBack: () => gsap.to('.mv__imgbox', { opacity: 1 }),
+      //   },
+      // });
     },
 
     all: function () {

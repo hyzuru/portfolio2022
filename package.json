@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
+    "fontfaceobserver": "^2.3.0",
     "highlight.js": "^11.6.0",
     "imagesloaded": "^5.0.0",
     "swiper": "^6.8.4"
