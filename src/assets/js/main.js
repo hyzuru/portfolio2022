@@ -12,11 +12,14 @@ import 'highlight.js/styles/rainbow.css';
 import { SmoothScroll } from './modules/class/smoothScroll';
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
 import Sketch from './modules/class/webgl';
-import Scroll from './modules/class/scroll';
+// import Scroll from './modules/class/scroll';
 
 // function
 import { topSectionsAnim } from './modules/function/topSectionsAnim';
 import { renderPost } from './modules/function/renderPost';
+import LocomotiveScroll from 'locomotive-scroll';
+import imagesLoaded from 'imagesloaded';
+import FontFaceObserver from 'fontfaceobserver';
 
 // util
 import { BODY } from './modules/util/root';
@@ -99,6 +102,16 @@ window.addEventListener('DOMContentLoaded', () => {
     new Sketch({
       domElement: document.getElementById('container'),
     });
+  } else {
+    const locoScroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      multiplier: 1,
+    });
+
+    setTimeout(() => {
+      locoScroll.update();
+    }, 5000);
   }
   if (BODY.classList.contains('work')) {
     // modal

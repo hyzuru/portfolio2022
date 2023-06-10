@@ -7,10 +7,14 @@
 .post {
 
   .header {
-    margin: 0 0 90px;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 90px;
 
     @include m.responsive(md) {
-      margin: 190px math.div(200, 1440)*100vw 120px;
+      padding-top: 140px;
+      padding-bottom: 120px;
+      margin: 0 math.div(200, 1440)*100vw;
       display: flex;
       align-items: center;
       justify-content: space-between;

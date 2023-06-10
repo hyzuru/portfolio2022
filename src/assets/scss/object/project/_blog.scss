@@ -6,15 +6,17 @@
 
 .blog {
 
-  margin: 80px 0 0;
-  padding-top: 40px;
+  margin: 0;
+  padding-top: 120px;
 
   @include m.responsive(md) {
-    margin: 200px 100px 0;
+    margin: 0 100px;
+    padding-top: 160px;
   }
 
   @include m.responsive(xl) {
-    margin: 200px auto 0;
+    padding-top: 100px;
+    margin: 0 auto;
     width: 1120px;
   }
 

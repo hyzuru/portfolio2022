@@ -6,15 +6,17 @@
 
 .work {
 
-    margin: 80px 0 0;
-    padding-top: 40px;
+    // margin: 80px 0 0;
+    padding-top: 120px;
     @include m.responsive(md) {
-        margin: 100px 100px 0;
+        padding-top: 160px;
+        margin: 0 100px 0;
     }
     @include m.responsive(xl) {
         width: 100%;
         max-width: 900px;
-        margin: 200px auto 100px;
+        padding-top: 200px;
+        margin: 0 auto;
     }
 
     // .work__head

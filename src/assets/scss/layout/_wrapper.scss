@@ -6,7 +6,12 @@
 @use "../foundation/variables" as v;
 
 /* wrapper */
+.body__container {
+  height: 100%;
+}
+
 .l-wrapper {
   position: relative;
   z-index: 1;  
+  height: 100%;
 }

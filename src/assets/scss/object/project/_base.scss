@@ -3,7 +3,9 @@
 @use "../../foundation/variables" as v;
 @use "sass:color";
 @use "sass:math";
-
+* {
+  box-sizing: border-box;
+}
 #container {
   height: 100vh;
   width: 100vw;

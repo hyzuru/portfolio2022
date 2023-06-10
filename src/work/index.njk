@@ -2,18 +2,24 @@
 layout: layout/base.njk
 bodyModifier: page-work
 ---
-<div class="work-index">
-  
-  <div class="work">
-    <div class="work__head">
-    
+<div class="work-index" >
+  {# <div data-scroll-section>
+        <h1 data-scroll>Hey</h1>
+        <p data-scroll>👋</p>
+  </div>
+  <div data-scroll-section>
+        <h2 data-scroll data-scroll-speed="1">What's up?</h2>
+        <p data-scroll data-scroll-speed="2">😬</p>
+  </div> #}
+  <div class="work" >
+    <div class="work__head" data-scroll-section>
       <h2 class="c-hdg1">Things I've worked on</a></h2>
       <p class="c-text-1">Here's some work I've done previously. While I no longer work at <a href="https://www.evoworx.co.jp/works/" class="c-hdg1__link" target="_blank" rel="noopener noreferrer">Evoworx (in Japanese only)</a>, I've also included a few projects I contributed to during my time there.</p>
       <p class="c-text-1">Also feel free to <a href="https://github.com/hyzuru">check out my GitHub</a> for other things I'm playing around with.</p>
     </div>
       
-    <div class="work__list">
-      <div data-modal="modal6" class="work__item btn btn-open">
+    <div class="work__list"data-scroll-section >
+      <div data-modal="modal6" data-scroll data-scroll-speed="1" class="work__item btn btn-open">
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">Graduation Project:<br>Student Review System</h3>
         </div>
@@ -26,7 +32,7 @@ bodyModifier: page-work
           <span>App</span>
         </div>
       </div>
-      <div data-modal="modal1" class="work__item btn btn-open">
+      <div data-modal="modal1" data-scroll data-scroll-speed="1" class="work__item btn btn-open">
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">AMPHI 2022 Site Renewal</h3>
         </div>
@@ -38,7 +44,7 @@ bodyModifier: page-work
           <span>Branding</span>
         </div>
       </div>
-      <div data-modal="modal2" class="work__item btn btn-open">
+      <div data-modal="modal2" data-scroll data-scroll-speed="3" class="work__item btn btn-open">
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">iTSCOM Sonice vs Knuckles the Movie Collaboration</h3>
         </div>
@@ -52,7 +58,7 @@ bodyModifier: page-work
         </div>
 
       </div>
-      <div data-modal="modal3" class="work__item btn btn-open">
+      <div data-modal="modal3" data-scroll data-scroll-speed="3" class="work__item btn btn-open">
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">Connection Lab</h3>
         </div>
@@ -66,7 +72,7 @@ bodyModifier: page-work
         </div>
 
       </div>
-      <div data-modal="modal4" class="work__item btn btn-open">
+      <div data-modal="modal4" data-scroll data-scroll-speed="5" class="work__item btn btn-open">
         
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">Workstyling</h3>
@@ -81,7 +87,7 @@ bodyModifier: page-work
         </div>
 
       </div>
-      <div data-modal="modal5" class="work__item btn btn-open">
+      <div data-modal="modal5" data-scroll data-scroll-speed="5" class="work__item btn btn-open">
         <div class="work__label">
           <h3 class="work__hdg c-hdg2">Scohia Pharma</h3>
         </div>
@@ -147,7 +153,6 @@ bodyModifier: page-work
       </div>
       </div>
     </div>
-
     <div id="modal2" class="modal hidden">
       <button class="btn-close">&times;</button>
       <div class="modal-inner">
@@ -195,7 +200,6 @@ bodyModifier: page-work
       </div>
       </div>
     </div>
-
     <div id="modal3" class="modal hidden">
       <button class="btn-close">&times;</button>
       <div class="modal-inner">
@@ -393,7 +397,6 @@ bodyModifier: page-work
     </div>
 
     <div class="overlay hidden"></div>
-
 
   </div>
 
