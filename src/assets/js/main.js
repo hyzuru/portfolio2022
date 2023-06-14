@@ -11,6 +11,7 @@ import 'highlight.js/styles/rainbow.css';
 // class
 import { SmoothScroll } from './modules/class/smoothScroll';
 // import { swiper } from "./modules/function/swiper"; // css imports working with swiper v6.8.4
+
 import Sketch from './modules/class/webgl';
 // import Scroll from './modules/class/scroll';
 
@@ -18,8 +19,10 @@ import Sketch from './modules/class/webgl';
 import { topSectionsAnim } from './modules/function/topSectionsAnim';
 import { renderPost } from './modules/function/renderPost';
 import LocomotiveScroll from 'locomotive-scroll';
-import imagesLoaded from 'imagesloaded';
-import FontFaceObserver from 'fontfaceobserver';
+// import imagesLoaded from 'imagesloaded';
+// import FontFaceObserver from 'fontfaceobserver';
+
+import renderSpotify from './spotify';
 
 // util
 import { BODY } from './modules/util/root';
@@ -97,60 +100,76 @@ window.addEventListener('DOMContentLoaded', () => {
   if (BODY.classList.contains('home')) {
     // loadingAnimation();
 
-    topSectionsAnim();
-
-    new Sketch({
-      domElement: document.getElementById('container'),
-    });
-  } else {
+    // topSectionsAnim();
+    // new Sketch({
+    //   domElement: document.getElementById('container'),
+    // });
     const locoScroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      multiplier: 1,
+      multiplier: 1.3,
     });
 
     setTimeout(() => {
       locoScroll.update();
-    }, 5000);
-  }
-  if (BODY.classList.contains('work')) {
-    // modal
-    const openModalBtn = document.querySelectorAll('.work__list .btn-open');
-    const modals = document.querySelectorAll('.modal');
-    const overlay = document.querySelector('.overlay');
-
-    function showModal(id) {
-      let m = document.getElementById(id);
-      m.classList.remove('hidden');
-      root.classList.add('is-drawer-open');
-      overlay.classList.remove('hidden');
-    }
-    function hideModals() {
-      modals.forEach((m) => {
-        m.classList.add('hidden');
-        root.classList.remove('is-drawer-open');
-        overlay.classList.add('hidden');
-      });
-    }
-    openModalBtn.forEach((b) => {
-      b.addEventListener('click', (event) => {
-        hideModals();
-        showModal(b.dataset.modal);
-      });
-    });
-    modals.forEach((m) => {
-      let x = m.querySelector('button.btn-close');
-      x.addEventListener('click', hideModals);
+    }, 500);
+  } else {
+    const locoScroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      multiplier: 1.3,
     });
 
-    document.addEventListener('keydown', function (e) {
-      modals.forEach((modal) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    setTimeout(() => {
+      locoScroll.update();
+    }, 500);
+
+    if (BODY.classList.contains('page-work')) {
+      // modal
+      const root = document.documentElement;
+      const openModalBtn = document.querySelectorAll('.work__list .btn-open');
+      const modals = document.querySelectorAll('.modal');
+      // const modalContainer = document.querySelector('.modal__list');
+      const overlay = document.querySelector('.overlay');
+
+      function showModal(id) {
+        let m = document.getElementById(id);
+        m.classList.remove('hidden');
+        root.classList.add('is-drawer-open');
+        overlay.classList.remove('hidden');
+        // modalContainer.classList.remove('hidden');
+
+        locoScroll.stop();
+      }
+      function hideModals() {
+        modals.forEach((m) => {
+          m.classList.add('hidden');
+          root.classList.remove('is-drawer-open');
+          overlay.classList.add('hidden');
+          // modalContainer.classList.add('hidden');
+        });
+        locoScroll.start();
+      }
+      openModalBtn.forEach((b) => {
+        b.addEventListener('click', (event) => {
           hideModals();
-        }
+          showModal(b.dataset.modal);
+        });
       });
-    });
-    overlay.addEventListener('click', hideModals);
+      modals.forEach((m) => {
+        let x = m.querySelector('button.btn-close');
+        x.addEventListener('click', hideModals);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        modals.forEach((modal) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            hideModals();
+          }
+        });
+      });
+      overlay.addEventListener('click', hideModals);
+    }
   }
   if (BODY.querySelector('code')) {
     document.querySelectorAll('code').forEach((el) => {
@@ -159,5 +178,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   renderPost();
-  // swiper();
+  renderSpotify();
 });

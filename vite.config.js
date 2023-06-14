@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 
 export default defineConfig({
   build: {
@@ -15,4 +16,5 @@ export default defineConfig({
       },
     },
   },
+  plugins: [NodeGlobalsPolyfillPlugin({ buffer: true })],
 });

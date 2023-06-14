@@ -54,19 +54,25 @@ description: Portfolio and Blog by Jackie Yeung.
   </div> #}
 
     {% if bodyModifier === "home" %}
-    <div class="body__container">
+    {# <div class="body__container"> #}
+    <div class="body__container" data-scroll-container>
       {% include 'layout/header.njk' %}
-      <div class="l-wrapper" data-custom-scroll>
+      {# <div class="l-wrapper" data-custom-scroll> #}
+      <div class="l-wrapper" data-scroll-section>
     {% else %}
-    <div class="body__container" >
+    <div class="body__container" data-scroll-container>
       {% include 'layout/header.njk' %}
-      <div class="l-wrapper" data-scroll-container>
-    {% endif %}
-        <main class="l-main"data-scroll-section >
+      <div class="l-wrapper" data-scroll-section>
+      {% endif %}
+        <main class="l-main" >
           {{ content | safe }}
         </main>
         {% include 'layout/footer.njk' %}
       </div>
+      {% if bodyModifier === "page-work" %}
+        {% include 'layout/work-list.njk' %}
+      {% endif %}
+
       {% if build.env == "production" %}
         {% viteScriptTag "src/assets/js/main.js" %}
       {% else %}
@@ -75,5 +81,6 @@ description: Portfolio and Blog by Jackie Yeung.
 
       <div id="container"></div>
     </div><!-- .body__container --> 
+
   </body>
 </html>

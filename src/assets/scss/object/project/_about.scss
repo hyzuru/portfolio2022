@@ -27,13 +27,16 @@
     @include m.responsive(md) {
       margin: 0 50px 0 100px;
 
-      max-width: 1000px;
-      width: 1000px;
-
+      
+      
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: repeat(3, 1fr);
       display: grid;
       grid-gap: 0 2em;
+    }
+    @include m.responsive(xl) {
+      width: 100%;
+      max-width: 1000px;
     }
 
   }

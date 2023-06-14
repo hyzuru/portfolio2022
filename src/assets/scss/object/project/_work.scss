@@ -11,6 +11,8 @@
     @include m.responsive(md) {
         padding-top: 160px;
         margin: 0 100px 0;
+
+        
     }
     @include m.responsive(xl) {
         width: 100%;
@@ -66,6 +68,7 @@
         }
 
         &:hover {
+            cursor: pointer;
             .work__thumb{
                 opacity: 0.4;
                 img {
@@ -206,21 +209,7 @@
         color: #c9dbd8;
         margin: 0.4rem 0 0.2rem;
     }
-    .modal-wrapper {
-        @include m.responsive(md) {
-            width: 75%;
-            margin: 0 auto;
-        }
-    }
-    .modal-content {
-        display: flex;
-        flex-direction: column-reverse;
-        @include m.responsive(md) {
-            justify-content: flex-end;
-            flex-direction: row;
-        }
 
-    }
     // .work__details1
     &__details1 {
         @include m.responsive(md) {
@@ -244,3 +233,20 @@
 }
 
 
+.page-work {
+
+    .modal-wrapper {
+        @include m.responsive(md) {
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: column-reverse;
+        @include m.responsive(md) {
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+    }
+}
