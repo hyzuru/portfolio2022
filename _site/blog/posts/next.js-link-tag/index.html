@@ -34,15 +34,20 @@
     
     
   </head>
-  <body class="page-post">
+  <body class="page-post" >
+
+  
+
     
-    <div class="l-wrapper">
+    <div class="body__container" data-scroll-container>
       <header class="l-header">
+
+  
   <div class="l-header__block">
     <a href="/" class="l-header__brand">Jackie Yeung</a>
     <div class="l-header__nav">
       
-      <a href="/" class="l-header__link">About</a>
+      <a href="/" class="l-header__link">About_me</a>
       
 
       
@@ -53,24 +58,29 @@
       <a href="/blog/" class="l-header__link l-header__link--active">Blog</a>
       
     </div>
-
-
   </div>
+
+  
   <div class="l-header-sp">
     <button class="l-header-sp__toggle js-toggle">
       <span class="line"></span><span class="line"></span><span class="line"></span>
     </button>
     <div class="l-header-sp__container js-drawer">
       <p class="l-header-sp__decoration">NAV</p>
-      <a href="/" class="l-header__link">About</a>
+      <a href="/" class="l-header__link">About_me</a>
       <a href="/work/" class="l-header__link ">Work</a>
       <a href="/blog/" class="l-header__link">Blog</a>
     </div>
   </div>
   <div class="l-header-overlay hidden"></div>
+
+
+  <div class="l-header__spotify"></div>
 </header>
-      <main class="l-main">
-          
+      <div class="l-wrapper" data-scroll-section>
+      
+        <main class="l-main" >
+            
 
 <div class="post">
 
@@ -109,8 +119,8 @@
 
 
 
-      </main>
-      <footer class="l-footer color" data-color="#DEDDD8">
+        </main>
+        <footer class="l-footer color" data-color="#DEDDD8">
   
   <div class="l-footer__inner">
     <div class="l-footer__contact">
@@ -147,9 +157,15 @@
 </footer>
 
 
-    </div>
-    
-      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-    
+      </div>
+      
+
+      
+        <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+      
+
+      <div id="container"></div>
+    </div><!-- .body__container --> 
+
   </body>
 </html>

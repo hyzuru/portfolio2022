@@ -34,15 +34,20 @@
     
     
   </head>
-  <body class="page-blog">
+  <body class="page-blog" >
+
+  
+
     
-    <div class="l-wrapper">
+    <div class="body__container" data-scroll-container>
       <header class="l-header">
+
+  
   <div class="l-header__block">
     <a href="/" class="l-header__brand">Jackie Yeung</a>
     <div class="l-header__nav">
       
-      <a href="/" class="l-header__link">About</a>
+      <a href="/" class="l-header__link">About_me</a>
       
 
       
@@ -53,24 +58,29 @@
       <a href="/blog/" class="l-header__link l-header__link--active">Blog</a>
       
     </div>
-
-
   </div>
+
+  
   <div class="l-header-sp">
     <button class="l-header-sp__toggle js-toggle">
       <span class="line"></span><span class="line"></span><span class="line"></span>
     </button>
     <div class="l-header-sp__container js-drawer">
       <p class="l-header-sp__decoration">NAV</p>
-      <a href="/" class="l-header__link">About</a>
+      <a href="/" class="l-header__link">About_me</a>
       <a href="/work/" class="l-header__link ">Work</a>
       <a href="/blog/" class="l-header__link">Blog</a>
     </div>
   </div>
   <div class="l-header-overlay hidden"></div>
+
+
+  <div class="l-header__spotify"></div>
 </header>
-      <main class="l-main">
-        <div class="blog-index">
+      <div class="l-wrapper" data-scroll-section>
+      
+        <main class="l-main" >
+          <div class="blog-index">
   
     
 
@@ -78,7 +88,7 @@
   <div class="blog">
     <div class="blog__head ">
     
-      <h2 class="c-hdg1">Feel free to <a href="/blog/" class="c-hdg1__link">check out my blog</a></h2>
+      <h2 class="c-hdg1">Read my blog here</a></h2>
       <p class="c-text-1">
         You can find me dumping my brain out here in my blog, mostly musings about web development and things I've learnt on my coding journey, but also about cool places for eating and traveling, rambling about random Japan stuff.
       </p>
@@ -183,8 +193,8 @@
 </div>
 
 
-      </main>
-      <footer class="l-footer color" data-color="#DEDDD8">
+        </main>
+        <footer class="l-footer color" data-color="#DEDDD8">
   
   <div class="l-footer__inner">
     <div class="l-footer__contact">
@@ -221,9 +231,15 @@
 </footer>
 
 
-    </div>
-    
-      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-    
+      </div>
+      
+
+      
+        <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+      
+
+      <div id="container"></div>
+    </div><!-- .body__container --> 
+
   </body>
 </html>

@@ -40,21 +40,47 @@ description: Portfolio and Blog by Jackie Yeung.
       {% viteLinkStylesheetTags "src/assets/js/main.js" %}
     {% endif %}
   </head>
-  <body class="{{bodyModifier}}">
-    {% if bodyModifier === "home" %}
-    <div class="bg"></div>
-    {% endif %}
-    <div class="l-wrapper">
-      {% include 'layout/header.njk' %}
-      <main class="l-main">
-        {{ content | safe }}
-      </main>
-      {% include 'layout/footer.njk' %}
+  <body class="{{bodyModifier}}" >
+
+  {# <div data-scroll-container>
+    <div data-scroll-section>
+        <h1 data-scroll>Hey</h1>
+        <p data-scroll>👋</p>
     </div>
-    {% if build.env == "production" %}
-      {% viteScriptTag "src/assets/js/main.js" %}
+    <div data-scroll-section>
+        <h2 data-scroll data-scroll-speed="1">What's up?</h2>
+        <p data-scroll data-scroll-speed="2">😬</p>
+    </div>
+  </div> #}
+
+    {% if bodyModifier === "home" %}
+    {# <div class="body__container"> #}
+    <div class="body__container" data-scroll-container>
+      {% include 'layout/header.njk' %}
+      {# <div class="l-wrapper" data-custom-scroll> #}
+      <div class="l-wrapper" data-scroll-section>
     {% else %}
-      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-    {% endif %}
+    <div class="body__container" data-scroll-container>
+      {% include 'layout/header.njk' %}
+      <div class="l-wrapper" data-scroll-section>
+      {% endif %}
+        <main class="l-main" >
+          {{ content | safe }}
+        </main>
+        {% include 'layout/footer.njk' %}
+      </div>
+      {% if bodyModifier === "page-work" %}
+        {% include 'layout/work-list.njk' %}
+      {% endif %}
+
+      {% if build.env == "production" %}
+        {% viteScriptTag "src/assets/js/main.js" %}
+      {% else %}
+        <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+      {% endif %}
+
+      <div id="container"></div>
+    </div><!-- .body__container --> 
+
   </body>
 </html>

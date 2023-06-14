@@ -124,16 +124,7 @@
       padding-top: 6px;
       padding-bottom: f.rem(20);
     }
-    // @include m.responsive(xl) {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: space-between;
 
-    //   width: calc(100% - 200px);
-    //   position: absolute;
-    //   padding-top: 6px;
-    //   padding-bottom: f.rem(20);
-    // }
   }
   // .l-footer__copytext
   &__copytext {
@@ -142,17 +133,7 @@
     line-height: 2;
     font-weight: 400;
     display: block;
-    // @include m.responsive(md) {
-    //   display: inline-block;
-    //   &:first-child {
-    //     &::after {
-    //       content: "/";
-    //       margin-right: 8px;
-    //       margin-left: 12px;
-    //       // position: absolute;
-    //     }
-    //   }
-    // }
+
     @include m.responsive(xl) {
 
     }

@@ -34,17 +34,21 @@
     
     
   </head>
-  <body class="home">
+  <body class="home" >
+
+  
+
     
-    <div class="bg"></div>
     
-    <div class="l-wrapper">
+    <div class="body__container" data-scroll-container>
       <header class="l-header">
+
+  
   <div class="l-header__block">
     <a href="/" class="l-header__brand">Jackie Yeung</a>
     <div class="l-header__nav">
       
-      <a href="/#about" class="l-header__link l-header__link--active">About</a>
+      <a href="/#about" class="l-header__link l-header__link--active">About_me</a>
       
 
       
@@ -55,24 +59,30 @@
       <a href="/blog/" class="l-header__link">Blog</a>
       
     </div>
-
-
   </div>
+
+  
   <div class="l-header-sp">
     <button class="l-header-sp__toggle js-toggle">
       <span class="line"></span><span class="line"></span><span class="line"></span>
     </button>
     <div class="l-header-sp__container js-drawer">
       <p class="l-header-sp__decoration">NAV</p>
-      <a href="/" class="l-header__link">About</a>
+      <a href="/" class="l-header__link">About_me</a>
       <a href="/work/" class="l-header__link ">Work</a>
       <a href="/blog/" class="l-header__link">Blog</a>
     </div>
   </div>
   <div class="l-header-overlay hidden"></div>
+
+
+  <div class="l-header__spotify"></div>
 </header>
-      <main class="l-main">
-        <div class="top">
+      
+      <div class="l-wrapper" data-scroll-section>
+    
+        <main class="l-main" >
+          <div class="top">
   
   
   <div class="mv">
@@ -110,28 +120,45 @@
       <span class="mv__scroll-text">scroll down</span>
       <span class="mv__scroll-line"></span>
     </div>
-    
+    <div class="mv__imgbox">
+      <div class="mv__imgoverlay"></div>
+      <img src="/assets/images/IMG_6346.jpg" alt="" class="mv__img" >
+    </div>
     
   </div>
-
-  <div id="about" class="about color" data-color="#0F2122">
+  <div id="about" class="about color" data-color="#152d3c">
     <div class="about__wrapper">
       <div class="about__block ">
 
           
         <div class="about__section js-section">
-          <h2 class="c-hdg1">I'm a front end developer with 3+ years experience building websites in Tokyo, and currently teaching myself React.</h2>
+          <h2 class="c-hdg1">I'm a front end developer with 3+ years experience building websites in Tokyo.</h2>
           <p class="c-text-1 ">
-            I’m really into CSS, animation, and admiring beautiful and intuitive designs.<br>I'm always aiming to write better code, improve performance &amp; accessibility, and pick up new technologies along the way.<br>
-            Outside of coding, I like progressive metal and post-hardcore rock, live concerts, photographing moody streets, and <span class="plans-ruined-from-covid">planning my next getaway</span>.<br><br>
+            I'm really into CSS, animation, and I admire beautiful and intuitive designs.<br>I love learning and care about writing maintainable and accessible code, and always keen to pick up new technologies along the way.<br>
+            Outside of coding, I like music, anime, exploring new places and photographing moody streets.<br><br>
           </p>
+        </div>
+
+        <div class="about__img">
+          <img class="gl-img" src="/assets/images/IMG_5650.jpg" alt="About Section Image" >
+        </div>
+
+        <div class="about__img about__img--left">
+          <img class="gl-img" src="/assets/images/IMG_5606.jpg" alt="About Section Image" >
         </div>
 
         
         <div class="about__section js-section">
-          <h2 class="c-hdg1 ">I left home in 2017 to start my coding journey in Tokyo.</h2>
-          <p class="c-text-1 ">Since then, I have graduated from the Japan Electronics College with a Diploma in Web Design, joined a team of enthusiastic designers and developers at Tokyo-based web design studio, 
-            <a href="https://www.evoworx.co.jp/" class="c-hdg1__link" target="_blank" rel="noopener noreferrer">Evoworx</a>, and gained valuable experience working on a wide range of projects, from campaign sites and landing pages to corporate websites.</p>
+          <h2 class="c-hdg1 ">In 2017, I started my coding journey and left home for Tokyo.</h2>
+          <p class="c-text-1 ">Since then, I have graduated top of my class from the Japan Electronics College with a Diploma in Web Design, joined a team of enthusiastic designers and developers at Tokyo-based web design studio, 
+            <a href="https://www.evoworx.co.jp/" class="c-hdg1__link" target="_blank" rel="noopener noreferrer">Evoworx</a>, where I built and maintained over 50 projects for a myriad of clients in airlines, large manufacturers and retailers, real estate, and financial industries.</p>
+
+          <p class="c-text-1">I am great at translating PSD and Figma design mocks into pixel-perfect and responsive code, ensuring reusable/maintainable code, scalable CSS and accessibility.
+            I am passionate about great user-experience and interactivity and love building animations with CSS and GSAP, and have also dabbled with Three.js/WebGL.</p>
+          <a href="/work/" class="blog__morebtn">
+            <span class="text">See work I've done</span>
+            <span class="ico__arr"></span>
+          </a>
         </div>
 
         
@@ -154,24 +181,7 @@
 
           
         </div>
-
-        
-        <div class="about__section js-section">
-          <h2 class="c-hdg1">At
-            <a href="https://www.evoworx.co.jp/" class="c-hdg1__link" target="_blank" rel="noopener noreferrer">Evoworx</a>, I've built and maintained over 50 projects for a myriad of clients in airlines, large manufacturers and retailers, real estate, and financial industries.</h2>
-          <p class="c-text-1">
-            My daily responsibilities include translating PSD and Figma mockups into of pixel-perfect, interactive web delivarables, with a focus on resuable and maintanable code, scalable CSS, user experience, performance and accessibility.
-            I am devoted to ensuring client needs are met on time and in full, while enhancing the interactivity and user-experience through mico-animations with CSS animations and GSAP.<br> <br>
-            <a href="https://www.evoworx.co.jp/works/" class="c-hdg1__link hover-text-note link-evoworx" target="_blank" rel="noopener noreferrer">While I no longer work there, hop over to Evoworx site to see some of the works I've contributed to!</a> </p>
-        </div>
           
-          
-          
-      </div>
-      
-      <div class="about__block about__block--2">
-        
-        <p class="about__section js-section"></p>
       </div>
     </div>
   </div>
@@ -272,8 +282,7 @@
             </div>
             
               <div class="blog__thumb">
-                <img src="//images.ctfassets.net/zn9m65vyk6qw/3OAgfeRAHxK1HLSwKdsb9y/d513e1e972ff72e3819acc8a64d697ce/IMG_3591.jpg?w=400" alt=""/>
-                
+                <img src="//images.ctfassets.net/zn9m65vyk6qw/3OAgfeRAHxK1HLSwKdsb9y/d513e1e972ff72e3819acc8a64d697ce/IMG_3591.jpg?w=400" alt="" />
               </div>
             
           </div>
@@ -289,12 +298,12 @@
       
     </div>
   </div>
-
+  
 </div>
 
 
-      </main>
-      <footer class="l-footer color" data-color="#DEDDD8">
+        </main>
+        <footer class="l-footer color" data-color="#DEDDD8">
   
   <div class="l-footer__inner">
     <div class="l-footer__contact">
@@ -331,9 +340,15 @@
 </footer>
 
 
-    </div>
-    
-      <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
-    
+      </div>
+      
+
+      
+        <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+      
+
+      <div id="container"></div>
+    </div><!-- .body__container --> 
+
   </body>
 </html>

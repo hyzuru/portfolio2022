@@ -1,27 +1,24 @@
-const fs = require("fs/promises");
-const path = require("path");
-const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
-const dateFilter = require("nunjucks-date-filter");
+const fs = require('fs/promises');
+const path = require('path');
+const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
+const dateFilter = require('nunjucks-date-filter');
 
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/images');
 
-  eleventyConfig.addNunjucksAsyncShortcode("viteScriptTag", viteScriptTag);
+  eleventyConfig.addNunjucksAsyncShortcode('viteScriptTag', viteScriptTag);
   eleventyConfig.addNunjucksAsyncShortcode(
-    "viteLinkStylesheetTags",
+    'viteLinkStylesheetTags',
     viteLinkStylesheetTags
   );
 
-
-  eleventyConfig.addFilter("renderRichTextAsHtml", (value) =>
-  documentToHtmlString(value)
+  eleventyConfig.addFilter('renderRichTextAsHtml', (value) =>
+    documentToHtmlString(value)
   );
-  eleventyConfig.addNunjucksFilter("date", dateFilter);
-  
+  eleventyConfig.addNunjucksFilter('date', dateFilter);
+
   eleventyConfig.addShortcode('documentToHtmlString', documentToHtmlString);
   // eleventyConfig.addShortcode("contentBlock", function(contentBlock) {
   //   return `
@@ -32,7 +29,6 @@ module.exports = function (eleventyConfig) {
   //       </div>
   //     </section>`;
   // });
-
 
   // eleventyConfig.addPlugin(syntaxHighlight);
   // eleventyConfig.addPlugin(syntaxHighlight, {
@@ -60,9 +56,6 @@ module.exports = function (eleventyConfig) {
   //   codeAttributes: {},
   // });
 
-
-
-
   async function viteScriptTag(entryFilename) {
     const entryChunk = await getChunkInformationFor(entryFilename);
     return `<script src="/${entryChunk.file}"></script>`;
@@ -71,25 +64,22 @@ module.exports = function (eleventyConfig) {
     const entryChunk = await getChunkInformationFor(entryFilename);
     if (!entryChunk.css || entryChunk.css.length === 0) {
       console.warn(`No css found for ${entryFilename} entry. Is that correct?`);
-      return "";
+      return '';
     }
     return entryChunk.css
-      .map(
-        (cssFile) =>
-          `<link rel="stylesheet" href="/${cssFile}">`
-      )
-      .join("\n");
+      .map((cssFile) => `<link rel="stylesheet" href="/${cssFile}">`)
+      .join('\n');
   }
 
   async function getChunkInformationFor(entryFilename) {
     if (!entryFilename) {
       throw new Error(
-        "You must specify an entryFilename, so that vite-script can find the correct file."
+        'You must specify an entryFilename, so that vite-script can find the correct file.'
       );
     }
 
     const manifest = await fs.readFile(
-      path.resolve(process.cwd(), "_site", "manifest.json")
+      path.resolve(process.cwd(), '_site', 'manifest.json')
     );
     const parsed = JSON.parse(manifest);
 
@@ -110,18 +100,16 @@ module.exports = function (eleventyConfig) {
 
   return {
     templateFormats: ['njk', 'html'],
-    pathPrefix: "/",
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
+    pathPrefix: '/',
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    dataTemplateEngine: 'njk',
     passthroughFileCopy: true,
     dir: {
-      input: "src",
-      output: "_site",
-      includes: "_includes",
-      data: "_data",
+      input: 'src',
+      output: '_site',
+      includes: '_includes',
+      data: '_data',
     },
-  }
-}
-  
-
+  };
+};

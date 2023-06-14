@@ -6,15 +6,19 @@
 
 .work {
 
-    margin: 80px 0 0;
-    padding-top: 40px;
+    // margin: 80px 0 0;
+    padding-top: 120px;
     @include m.responsive(md) {
-        margin: 100px 100px 0;
+        padding-top: 160px;
+        margin: 0 100px 0;
+
+        
     }
     @include m.responsive(xl) {
         width: 100%;
         max-width: 900px;
-        margin: 200px auto 100px;
+        padding-top: 200px;
+        margin: 0 auto;
     }
 
     // .work__head
@@ -64,6 +68,7 @@
         }
 
         &:hover {
+            cursor: pointer;
             .work__thumb{
                 opacity: 0.4;
                 img {
@@ -204,21 +209,7 @@
         color: #c9dbd8;
         margin: 0.4rem 0 0.2rem;
     }
-    .modal-wrapper {
-        @include m.responsive(md) {
-            width: 75%;
-            margin: 0 auto;
-        }
-    }
-    .modal-content {
-        display: flex;
-        flex-direction: column-reverse;
-        @include m.responsive(md) {
-            justify-content: flex-end;
-            flex-direction: row;
-        }
 
-    }
     // .work__details1
     &__details1 {
         @include m.responsive(md) {
@@ -242,3 +233,20 @@
 }
 
 
+.page-work {
+
+    .modal-wrapper {
+        @include m.responsive(md) {
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: column-reverse;
+        @include m.responsive(md) {
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+    }
+}

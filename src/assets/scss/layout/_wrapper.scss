@@ -6,12 +6,12 @@
 @use "../foundation/variables" as v;
 
 /* wrapper */
-.l-wrapper {
-  // min-height: 100vh;
-  // @include m.flex(
-  //   $direction: column
-  // );
+.body__container {
+  height: 100%;
+}
 
-  // padding-top: 110px;
-  
+.l-wrapper {
+  position: relative;
+  z-index: 1;  
+  height: 100%;
 }
