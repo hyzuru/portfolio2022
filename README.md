@@ -33,4 +33,4 @@ This is my personal website built on JAMstack, using Contentful as a headless CM
 
 - barba.js page transitions or webgl/three.js
 - spotify now listening
-- next/prev post on blog detail page
+- go prev/next post on individual posts or go to random post?
